@@ -64,6 +64,9 @@
 	height: auto;
 
 	}
+	@include breakpoint(small) {
+    width: 100%;
+	}	
 }
 
 #unit-count {
@@ -86,6 +89,11 @@
 	position: absolute;
 	bottom: 5px;
 	right: 15px;
+	cursor: pointer;
+}
+
+#unit-counter:hover {
+	color: #D3D3D3;
 }
 
 

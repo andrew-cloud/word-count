@@ -5597,7 +5597,8 @@ a.thumbnail {
 
 #words-container {
   margin-top: 1rem;
-  width: 60%; }
+  width: 60%;
+  width: 100%; }
   #words-container #words-input {
     border-radius: 4px;
     height: auto; }
@@ -5617,4 +5618,8 @@ a.thumbnail {
 #unit-counter {
   position: absolute;
   bottom: 5px;
-  right: 15px; }
+  right: 15px;
+  cursor: pointer; }
+
+#unit-counter:hover {
+  color: #D3D3D3; }
