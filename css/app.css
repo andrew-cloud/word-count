@@ -5596,7 +5596,11 @@ a.thumbnail {
   animation-delay: 700ms !important; }
 
 #words-container {
-  margin-top: 1rem; }
+  margin-top: 1rem;
+  width: 60%; }
   #words-container #words-input {
     border-radius: 4px;
     height: auto; }
+
+#unit-count {
+  border-radius: 4px; }
