@@ -70,6 +70,24 @@
 	border-radius: 4px;
 }
 
+.unit-button {
+	border-radius: 2px;
+}
+
+.unit-button:active {
+	color: red;
+}
+
+#word-input-container {
+	position: relative;
+}
+
+#unit-counter {
+	position: absolute;
+	bottom: 5px;
+	right: 15px;
+}
+
 
 
 

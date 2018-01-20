@@ -10,19 +10,24 @@
 </head>
 
 <body>
-
     <div id="words-container" class="grid-container">
         <div class="grid-x grid-margin-x">
-              <div class="large-2 cell">
+            <div class="large-2 cell">
                 <input id="unit-count" type="number" placeholder="Number">
-              </div>
-               <div class="large-12 cell">
+            </div>
+            <div class="large-4 cell">
+                <div class="button-group">
+                    <a class="button unit-button">Characters</a>
+                    <a class="button unit-button">Words</a>
+                    <a class="button unit-button">Paragraphs</a>
+                </div>
+            </div>
+            <div id="word-input-container" class="large-12 cell">
                 <textarea id="words-input" rows="8"></textarea>
-              </div>
+                <p id="unit-counter">120/250</p>
+            </div>
         </div>
-      </div>
-
-    
+    </div>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/what-input/dist/what-input.js"></script>
     <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
