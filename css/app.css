@@ -5597,11 +5597,13 @@ a.thumbnail {
 
 #words-container {
   margin-top: 1rem;
-  width: 60%;
-  width: 100%; }
+  width: 60%; }
   #words-container #words-input {
     border-radius: 4px;
     height: auto; }
+  @media screen and (max-width: 39.9375em) {
+    #words-container {
+      width: 100%; } }
 
 #unit-count {
   border-radius: 4px; }
@@ -5622,4 +5624,13 @@ a.thumbnail {
   cursor: pointer; }
 
 #unit-counter:hover {
-  color: #D3D3D3; }
+  color: #D3D3D3;
+  opacity: 1; }
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }

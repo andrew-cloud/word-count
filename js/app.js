@@ -6,7 +6,7 @@ let words = "";
 // word count
 let count = "0";
 // unit-counter
-let unit_counter = document.getElementById("unit-counter").innerHTML;
+let unit_counter = document.getElementById("unit-counter");
 
 // gets inputted words form text area
 function refreshWords() {
@@ -31,9 +31,27 @@ function refreshCounter() {
 	document.getElementById("unit-counter").innerHTML = `${count}/250`;
 }
 
+// hide unit-counter
+document.getElementById("unit-counter").addEventListener("click", makeTransparent);
+
 // refreshes values after input
 document.addEventListener("keyup", refreshWords);
 document.addEventListener("keyup", refreshCount);
 document.addEventListener("keyup", refreshCounter);
+
+// hide method
+function hide() {
+	if (this.style.display = "block") {
+		this.style.display = "none";
+	}
+	else this.style.display = "block";
+}
+
+function makeTransparent() {
+	if (this.style.color != "white") {
+		this.style.color = "white";
+	}
+	else this.style.color = "black";
+}
 
 console.log(count);
