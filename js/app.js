@@ -1,12 +1,22 @@
 $(document).foundation();
 
 
-// inputted words
+// inputted words variable
 let words = "";
-// word count
+// word count variable
 let count = "0";
+// goal variable
+let goal = 0;
+// goal input
+let goal_input = document.getElementById("unit-count");
 // unit-counter
 let unit_counter = document.getElementById("unit-counter");
+
+
+// gets goal number from input field
+function refreshGoal() {
+goal = goal_input.value;
+}
 
 // gets inputted words form text area
 function refreshWords() {
@@ -28,16 +38,17 @@ function wordCount(s) {
 
 // refresh displayed count
 function refreshCounter() {
-	document.getElementById("unit-counter").innerHTML = `${count}/250`;
+	document.getElementById("unit-counter").innerHTML = `${count}/${goal}`;
 }
 
 // hide unit-counter
-document.getElementById("unit-counter").addEventListener("click", makeTransparent);
+document.getElementById("unit-counter").addEventListener("click", hideCounter);
 
 // refreshes values after input
 document.addEventListener("keyup", refreshWords);
 document.addEventListener("keyup", refreshCount);
 document.addEventListener("keyup", refreshCounter);
+document.getElementById("unit-count").addEventListener("input", refreshGoal);
 
 // hide method
 function hide() {
@@ -47,11 +58,9 @@ function hide() {
 	else this.style.display = "block";
 }
 
-function makeTransparent() {
-	if (this.style.color != "white") {
-		this.style.color = "white";
+function hideCounter() {
+	if (this.classList.contains("unit-counter-hidden")) {
+		this.classList.remove("unit-counter-hidden");
 	}
-	else this.style.color = "black";
+	else this.classList.add("unit-counter-hidden");
 }
-
-console.log(count);

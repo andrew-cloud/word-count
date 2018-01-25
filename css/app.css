@@ -5623,9 +5623,8 @@ a.thumbnail {
   right: 15px;
   cursor: pointer; }
 
-#unit-counter:hover {
-  color: #D3D3D3;
-  opacity: 1; }
+#unit-counter-hidden {
+  color: #FFFFFF; }
 
 .unselectable {
   -webkit-touch-callout: none;
