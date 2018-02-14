@@ -4,13 +4,19 @@ $(document).foundation();
 // inputted words variable
 let words = "";
 // word count variable
-let count = "0";
+let count = 0;
 // goal variable
 let goal = 0;
 // goal input
 let goal_input = document.getElementById("unit-count");
 // unit-counter
 let unit_counter = document.getElementById("unit-counter");
+// character count boolean
+let countByCharacters = false;
+// word count boolean, true by default
+let countByWords = true;
+// paragraph count boolean
+let countByParagraphs = false;
 
 
 // gets goal number from input field
@@ -25,7 +31,15 @@ function refreshWords() {
 
 // refreshes word count
 function refreshCount() {
-	count = wordCount(words);
+	if (countByCharacters == true) {
+		count = characterCount(words);
+	}
+	else if (countByWords == true) {
+		count = wordCount(words);
+	}
+	else {
+		count = paragraphCount(words);
+	}
 }
 
 // word count
@@ -33,7 +47,23 @@ function wordCount(s) {
 	s = s.replace(/(^\s*)|(\s*$)/gi,""); //exclude  start and end white-space
     s = s.replace(/[ ]{2,}/gi," "); // 2 or more spaces to 1
     s = s.replace(/\n /,"\n"); // exclude newline with a start spacing
+    if (words == "") {
+    	return 0;
+    } 
+    else {
     return s.split(' ').length; 
+}
+}
+
+// character count
+function characterCount(s) {
+ s = s.replace(/\s/g, "");
+ return s.length;
+}
+
+// paragraph count
+function paragraphCount() {
+
 }
 
 // refresh displayed count
@@ -58,6 +88,7 @@ function hide() {
 	else this.style.display = "block";
 }
 
+// hides counter
 function hideCounter() {
 	if (this.classList.contains("unit-counter-hidden")) {
 		this.classList.remove("unit-counter-hidden");
