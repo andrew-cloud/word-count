@@ -21,7 +21,11 @@ let countByParagraphs = false;
 
 // gets goal number from input field
 function refreshGoal() {
+    if (goal >= 0) {
     goal = goal_input.value;
+	} else {
+		console.log("no negatives");
+	}
 }
 
 // gets inputted words form text area
