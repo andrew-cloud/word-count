@@ -14,9 +14,9 @@ let unit_counter = document.getElementById("unit-counter");
 // character count boolean
 let countByCharacters = false;
 // word count boolean, true by default
-let countByWords = false;
+let countByWords = true;
 // paragraph count boolean
-let countByParagraphs = true;
+let countByParagraphs = false;
 
 
 // gets goal number from input field
@@ -35,7 +35,6 @@ function refreshCount() {
         count = characterCount(words);
     } else if (countByWords == true) {
         count = wordCount(words);
-        console.log("hello");
     } else {
         count = paragraphCount(words);
     }
@@ -48,7 +47,6 @@ function wordCount(s) {
     s = s.replace(/\n /, "\n"); // exclude newline with a start spacing
     if (words == "") {
         return 0;
-        console.log("hey");
     } else {
         return s.split(' ').length;
     }
@@ -75,12 +73,39 @@ function setToWords() {
 	countByWords = true;
 	countByCharacters = false;
 	countByParagraphs = false;
+	// THIS IS WHERE YOU LEFT OFF
 	refreshCount();
-	console.log("hi");
+	refreshCounter();
+}
+
+// set count to characters
+function setToCharacters() {
+	countByWords = false;
+	countByCharacters = true;
+	countByParagraphs = false;
+	// THIS IS WHERE YOU LEFT OFF
+	refreshCount();
+	refreshCounter();
+}
+
+// set count to paragraphs
+function setToParagraphs() {
+	countByWords = false;
+	countByCharacters = false;
+	countByParagraphs = true;
+	// THIS IS WHERE YOU LEFT OFF
+	refreshCount();
+	refreshCounter();
 }
 
 // button click - set count to words
 document.getElementById("words-button").addEventListener("click", setToWords);
+
+// button click - set count to words
+document.getElementById("characters-button").addEventListener("click", setToCharacters);
+
+// button click - set count to words
+document.getElementById("paragraphs-button").addEventListener("click", setToParagraphs);
 
 
 
