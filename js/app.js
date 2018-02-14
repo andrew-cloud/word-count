@@ -21,55 +21,72 @@ let countByParagraphs = true;
 
 // gets goal number from input field
 function refreshGoal() {
-goal = goal_input.value;
+    goal = goal_input.value;
 }
 
 // gets inputted words form text area
 function refreshWords() {
-	words = document.getElementById("words-input").value;
+    words = document.getElementById("words-input").value;
 }
 
 // refreshes word count
 function refreshCount() {
-	if (countByCharacters == true) {
-		count = characterCount(words);
-	}
-	else if (countByWords == true) {
-		count = wordCount(words);
-	}
-	else {
-		count = paragraphCount(words);
-	}
+    if (countByCharacters == true) {
+        count = characterCount(words);
+    } else if (countByWords == true) {
+        count = wordCount(words);
+        console.log("hello");
+    } else {
+        count = paragraphCount(words);
+    }
 }
 
 // word count
 function wordCount(s) {
-	s = s.replace(/(^\s*)|(\s*$)/gi,""); //exclude  start and end white-space
-    s = s.replace(/[ ]{2,}/gi," "); // 2 or more spaces to 1
-    s = s.replace(/\n /,"\n"); // exclude newline with a start spacing
+    s = s.replace(/(^\s*)|(\s*$)/gi, ""); //exclude  start and end white-space
+    s = s.replace(/[ ]{2,}/gi, " "); // 2 or more spaces to 1
+    s = s.replace(/\n /, "\n"); // exclude newline with a start spacing
     if (words == "") {
-    	return 0;
-    } 
-    else {
-    return s.split(' ').length; 
-}
+        return 0;
+        console.log("hey");
+    } else {
+        return s.split(' ').length;
+    }
 }
 
 // character count
 function characterCount(s) {
- s = s.replace(/\s/g, "");
- return s.length;
+    s = s.replace(/\s/g, "");
+    return s.length;
 }
 
 // paragraph count
 function paragraphCount(s) {
-s = s.replace(/\n$/gm, '');
-return s.split(/\n/).length;
+    s = s.replace(/\n$/gm, '');
+    if (words == "") {
+        return 0;
+    } else {
+        return s.split(/\n/).length;
+    }
 }
+
+// set count to words
+function setToWords() {
+	countByWords = true;
+	countByCharacters = false;
+	countByParagraphs = false;
+	refreshCount();
+	console.log("hi");
+}
+
+// button click - set count to words
+document.getElementById("words-button").addEventListener("click", setToWords);
+
+
 
 // refresh displayed count
 function refreshCounter() {
-	document.getElementById("unit-counter").innerHTML = `${count}/${goal}`;
+    document.getElementById("unit-counter").innerHTML = `${count}/${goal}`;
 }
 
 // hide unit-counter
@@ -83,16 +100,14 @@ document.getElementById("unit-count").addEventListener("input", refreshGoal);
 
 // hide method
 function hide() {
-	if (this.style.display = "block") {
-		this.style.display = "none";
-	}
-	else this.style.display = "block";
+    if (this.style.display = "block") {
+        this.style.display = "none";
+    } else this.style.display = "block";
 }
 
 // hides counter
 function hideCounter() {
-	if (this.classList.contains("unit-counter-hidden")) {
-		this.classList.remove("unit-counter-hidden");
-	}
-	else this.classList.add("unit-counter-hidden");
+    if (this.classList.contains("unit-counter-hidden")) {
+        this.classList.remove("unit-counter-hidden");
+    } else this.classList.add("unit-counter-hidden");
 }
