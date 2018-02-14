@@ -14,9 +14,9 @@ let unit_counter = document.getElementById("unit-counter");
 // character count boolean
 let countByCharacters = false;
 // word count boolean, true by default
-let countByWords = true;
+let countByWords = false;
 // paragraph count boolean
-let countByParagraphs = false;
+let countByParagraphs = true;
 
 
 // gets goal number from input field
@@ -62,8 +62,9 @@ function characterCount(s) {
 }
 
 // paragraph count
-function paragraphCount() {
-
+function paragraphCount(s) {
+s = s.replace(/\n$/gm, '');
+return s.split(/\n/).length;
 }
 
 // refresh displayed count
