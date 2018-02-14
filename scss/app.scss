@@ -90,8 +90,16 @@
     cursor: pointer;
 }
 
-#unit-counter-hidden {
+#unit-counter:hover {
+    color: grey;
+}
+
+.unit-counter-hidden {
     color: #FFFFFF;
+}
+
+.unit-counter-hidden:hover {
+    color: gray;
 }
 
 .unselectable {
