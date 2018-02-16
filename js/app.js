@@ -76,6 +76,7 @@ function setToWords() {
     // THIS IS WHERE YOU LEFT OFF
     refreshCount();
     refreshCounter();
+    goalMetAlert();
 }
 
 // set count to characters
@@ -86,6 +87,7 @@ function setToCharacters() {
     // THIS IS WHERE YOU LEFT OFF
     refreshCount();
     refreshCounter();
+    goalMetAlert();
 }
 
 // set count to paragraphs
@@ -96,6 +98,7 @@ function setToParagraphs() {
     // THIS IS WHERE YOU LEFT OFF
     refreshCount();
     refreshCounter();
+    goalMetAlert();
 }
 
 // checks to see if goal is met
@@ -103,7 +106,7 @@ function isGoalMet() {
     return (count >= goal);
 }
 
-// changes border color of text area when goal is met
+// changes color of text when goal is met
 function goalMetAlert() {
     if ((isGoalMet()) & (goal != 0)) {
         console.log("Goal is met!")
