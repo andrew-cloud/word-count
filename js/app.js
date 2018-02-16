@@ -21,11 +21,7 @@ let countByParagraphs = false;
 
 // gets goal number from input field
 function refreshGoal() {
-    if (goal >= 0) {
-    goal = goal_input.value;
-	} else {
-		console.log("no negatives");
-	}
+    goal = goal_input.valueAsNumber;
 }
 
 // gets inputted words form text area
@@ -74,33 +70,50 @@ function paragraphCount(s) {
 
 // set count to words
 function setToWords() {
-	countByWords = true;
-	countByCharacters = false;
-	countByParagraphs = false;
-	// THIS IS WHERE YOU LEFT OFF
-	refreshCount();
-	refreshCounter();
+    countByWords = true;
+    countByCharacters = false;
+    countByParagraphs = false;
+    // THIS IS WHERE YOU LEFT OFF
+    refreshCount();
+    refreshCounter();
 }
 
 // set count to characters
 function setToCharacters() {
-	countByWords = false;
-	countByCharacters = true;
-	countByParagraphs = false;
-	// THIS IS WHERE YOU LEFT OFF
-	refreshCount();
-	refreshCounter();
+    countByWords = false;
+    countByCharacters = true;
+    countByParagraphs = false;
+    // THIS IS WHERE YOU LEFT OFF
+    refreshCount();
+    refreshCounter();
 }
 
 // set count to paragraphs
 function setToParagraphs() {
-	countByWords = false;
-	countByCharacters = false;
-	countByParagraphs = true;
-	// THIS IS WHERE YOU LEFT OFF
-	refreshCount();
-	refreshCounter();
+    countByWords = false;
+    countByCharacters = false;
+    countByParagraphs = true;
+    // THIS IS WHERE YOU LEFT OFF
+    refreshCount();
+    refreshCounter();
 }
+
+// checks to see if goal is met
+function isGoalMet() {
+    return (count >= goal);
+}
+
+// changes border color of text area when goal is met
+function goalMetAlert() {
+    if ((isGoalMet()) & (goal != 0)) {
+        console.log("Goal is met!")
+        document.getElementById("words-input").classList.add("green-border");
+    } else {
+        document.getElementById("words-input").classList.remove("green-border");
+    }
+}
+
+
 
 // button click - set count to words
 document.getElementById("words-button").addEventListener("click", setToWords);
@@ -125,6 +138,7 @@ document.getElementById("unit-counter").addEventListener("click", hideCounter);
 document.addEventListener("keyup", refreshWords);
 document.addEventListener("keyup", refreshCount);
 document.addEventListener("keyup", refreshCounter);
+document.addEventListener("keyup", goalMetAlert);
 document.getElementById("unit-count").addEventListener("input", refreshGoal);
 
 // hide method

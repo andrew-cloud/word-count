@@ -5605,6 +5605,9 @@ a.thumbnail {
     #words-container {
       width: 100%; } }
 
+.green-border {
+  color: green; }
+
 #unit-count {
   border-radius: 4px; }
 
