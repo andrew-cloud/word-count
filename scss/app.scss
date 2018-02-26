@@ -58,6 +58,8 @@
     margin-top: 1rem;
     width: 60%;
 
+
+
     #words-input {
         border-radius: 4px;
         height: auto;
@@ -114,3 +116,24 @@
     -ms-user-select: none;
     user-select: none;
 }
+
+// entries container
+#entries-container {
+width: 60%;
+border-radius: 4px;
+display: flex;
+flex-wrap: wrap;
+
+.entry {
+    width: 25%;
+    height: auto;
+    border: 1px solid blue;
+    border-radius: 4px;
+    padding: 0.5rem;
+    flex-direction: row;
+    margin: 0.2rem;
+}
+
+}
+
+

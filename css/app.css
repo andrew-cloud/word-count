@@ -5642,3 +5642,17 @@ a.thumbnail {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+
+#entries-container {
+  width: 60%;
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap; }
+  #entries-container .entry {
+    width: 25%;
+    height: auto;
+    border: 1px solid blue;
+    border-radius: 4px;
+    padding: 0.5rem;
+    flex-direction: row;
+    margin: 0.2rem; }
