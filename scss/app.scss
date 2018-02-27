@@ -123,6 +123,9 @@
     border-radius: 4px;
     border: 1px solid purple;
     height: auto;
+    @include breakpoint(small only) {
+        width: 100%;
+    }
 }
 
 .entry {
