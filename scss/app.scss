@@ -87,8 +87,6 @@
 
 #word-input-container {
     position: relative;
-    width: 100%;
-    margin: 0px;
 }
 
 #unit-counter {
@@ -123,19 +121,16 @@
 #entries-container {
     width: 60%;
     border-radius: 4px;
-    display: flex;
-    flex-wrap: wrap;
     border: 1px solid purple;
     height: auto;
-
-
-        .entry {
-            width: 25%;
-            height: auto;
-            border: 1px solid blue;
-            border-radius: 4px;
-            padding: 0.5rem;
-            flex-direction: row;
-            margin: 0.2rem;
-        }
 }
+
+.entry {
+        width: 20%; 
+        height: auto;
+        border: 1px solid blue;
+        border-radius: 4px;
+        margin: 0.2rem;
+        padding: 0.5rem;
+        
+    }
