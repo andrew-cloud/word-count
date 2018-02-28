@@ -5657,3 +5657,7 @@ a.thumbnail {
   border: 1px solid blue;
   border-radius: 4px;
   padding: 0.5rem; }
+
+.save {
+  width: 100%;
+  background-color: purple; }
