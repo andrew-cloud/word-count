@@ -5674,3 +5674,8 @@ a.thumbnail {
 #save {
   width: 100%;
   background-color: purple; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
