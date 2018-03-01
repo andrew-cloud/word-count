@@ -6,7 +6,7 @@ let words = "";
 // word count variable
 let count = 0;
 // goal variable
-let goal = 0;
+let goal = 250;
 // goal input
 let goal_input = document.getElementById("unit-count");
 // unit-counter
@@ -17,6 +17,8 @@ let countByCharacters = false;
 let countByWords = true;
 // paragraph count boolean
 let countByParagraphs = false;
+// has the goal input been clicked before?
+let goalClicked = false;
 
 
 // gets goal number from input field
@@ -73,7 +75,6 @@ function setToWords() {
     countByWords = true;
     countByCharacters = false;
     countByParagraphs = false;
-    // THIS IS WHERE YOU LEFT OFF
     refreshCount();
     refreshCounter();
     goalMetAlert();
@@ -84,7 +85,6 @@ function setToCharacters() {
     countByWords = false;
     countByCharacters = true;
     countByParagraphs = false;
-    // THIS IS WHERE YOU LEFT OFF
     refreshCount();
     refreshCounter();
     goalMetAlert();
@@ -95,7 +95,6 @@ function setToParagraphs() {
     countByWords = false;
     countByCharacters = false;
     countByParagraphs = true;
-    // THIS IS WHERE YOU LEFT OFF
     refreshCount();
     refreshCounter();
     goalMetAlert();
@@ -110,10 +109,18 @@ function isGoalMet() {
 function goalMetAlert() {
     if ((isGoalMet()) & (goal != 0)) {
         console.log("Goal is met!")
-        document.getElementById("words-input").classList.add("green-border");
+        document.getElementById("words-input").classList.add("green-text");
     } else {
-        document.getElementById("words-input").classList.remove("green-border");
+        document.getElementById("words-input").classList.remove("green-text");
     }
+}
+
+function goalFirstClick(e) {
+	if (goalClicked == false) {
+		this.select();
+	}
+	goalClicked = true;
+	
 }
 
 // applies active class to unit buttons
@@ -126,11 +133,11 @@ function unitButtonActive() {
 
 // remove active class from unit buttons
 function removeActiveUnitButton() {
-	var list = document.getElementsByClassName("active");
-	var i;
-	for (i = 0; i < list.length; i++) {
-		list[i].classList.remove("active");
-	}
+    var list = document.getElementsByClassName("active");
+    var i;
+    for (i = 0; i < list.length; i++) {
+        list[i].classList.remove("active");
+    }
 }
 
 
@@ -160,6 +167,9 @@ document.addEventListener("keyup", refreshCount);
 document.addEventListener("keyup", refreshCounter);
 document.addEventListener("keyup", goalMetAlert);
 document.getElementById("unit-count").addEventListener("input", refreshGoal);
+
+// add comment
+document.getElementById("unit-count").addEventListener("click", goalFirstClick);
 
 // adds active class to unit buttons
 document.getElementById("characters-button").addEventListener("click", unitButtonActive);
