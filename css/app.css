@@ -5605,17 +5605,26 @@ a.thumbnail {
     #words-container {
       width: 100%; } }
 
-.green-border {
-  color: green; }
-
 #unit-count {
   border-radius: 4px; }
 
-.unit-button {
-  border-radius: 2px; }
+#unit-button-group .unit-button {
+  border-radius: 2px;
+  margin-right: 0; }
 
-.unit-button:active {
-  color: red; }
+#unit-button-group #characters-button {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px; }
+
+#unit-button-group #words-button {
+  border-radius: 0px; }
+
+#unit-button-group #paragraphs-button {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px; }
+
+#unit-button-group .active {
+  background-color: red; }
 
 #word-input-container {
   position: relative; }
@@ -5658,6 +5667,6 @@ a.thumbnail {
   border-radius: 4px;
   padding: 0.5rem; }
 
-.save {
+#save {
   width: 100%;
   background-color: purple; }

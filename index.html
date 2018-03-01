@@ -5,11 +5,31 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
+    <title>250 Words</title>
     <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body>
+    <!-- NAV BAR -->
+    <div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">250 Words</li>
+      <li>
+        <a href="#">One</a>
+        <ul class="menu vertical">
+          <li><a href="#">One</a></li>
+          <li><a href="#">Two</a></li>
+          <li><a href="#">Three</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Two</a></li>
+      <li><a href="#">Three</a></li>
+    </ul>
+  </div>
+</div>
+
+    <!-- ALL THE GOAL SETTING AND TEXT INPUT STUFF -->
     <div id="words-container" class="grid-container">
         <div class="grid-x grid-margin-x">
             <div class="large-2 small-4 cell">
@@ -17,11 +37,11 @@
                 <input id="unit-count" type="number" placeholder=0 min="0">
             </div>
             <div class="large-4 small-12 cell">
-                <div class="button-group">
+                <div id="unit-button-group" class="button-group">
                     <!-- word unit buttons -->
-                    <a id="characters-button" class="button unit-button">Characters</a>
-                    <a id="words-button" class="button unit-button">Words</a>
-                    <a id="paragraphs-button" class="button unit-button">Paragraphs</a>
+                    <a id="characters-button" class="button unit-button active" type="radio">Characters</a>
+                    <a id="words-button" class="button unit-button" type="radio">Words</a>
+                    <a id="paragraphs-button" class="button unit-button" type="radio">Paragraphs</a>
                 </div>
             </div>
         </div>
@@ -29,17 +49,19 @@
             <div id="word-input-container" class="large-12 cell">
                 <!-- word input -->
                 <textarea id="words-input" rows="8"></textarea>
-                <!-- counter -->
+                <!-- goal counter -->
                 <p id="unit-counter" class="unselectable">0/0</p>
             </div>
         </div>
         <div class="grid-x grid-margin-x align-right">
             <div class="large-2 cell align-right">
-                <button type="submit" class="save button">Save</button>
+                <!-- save button -->
+                <button type="submit" id="save" class="button">Save</button>
             </div>
         </div>
         
     </div>
+    <!-- past entries kept here -->
     <div id="entries-container" class="grid-container">
         <div class="grid-x grid-margin-x grid-margin-y">
             <div class="large-3 small-12 cell">

@@ -116,6 +116,23 @@ function goalMetAlert() {
     }
 }
 
+// applies active class to unit buttons
+function unitButtonActive() {
+    removeActiveUnitButton();
+    if (this.classList.contains("active")) {
+        this.classList.remove("active");
+    } else this.classList.add("active");
+}
+
+// remove active class from unit buttons
+function removeActiveUnitButton() {
+	var list = document.getElementsByClassName("active");
+	var i;
+	for (i = 0; i < list.length; i++) {
+		list[i].classList.remove("active");
+	}
+}
+
 
 
 // button click - set count to words
@@ -143,6 +160,11 @@ document.addEventListener("keyup", refreshCount);
 document.addEventListener("keyup", refreshCounter);
 document.addEventListener("keyup", goalMetAlert);
 document.getElementById("unit-count").addEventListener("input", refreshGoal);
+
+// adds active class to unit buttons
+document.getElementById("characters-button").addEventListener("click", unitButtonActive);
+document.getElementById("words-button").addEventListener("click", unitButtonActive);
+document.getElementById("paragraphs-button").addEventListener("click", unitButtonActive);
 
 // hide method
 function hide() {
