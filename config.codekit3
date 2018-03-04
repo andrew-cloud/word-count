@@ -5210,6 +5210,16 @@
 		"sC": 3,
 		"tS": 1
 		},
+	"\/js\/fontawesome-all.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/fontawesome-all-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/js\/min\/app-min.js": {
 		"ft": 64,
 		"ma": 0,

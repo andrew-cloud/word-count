@@ -110,8 +110,10 @@ function goalMetAlert() {
     if ((isGoalMet()) & (goal != 0)) {
         console.log("Goal is met!")
         document.getElementById("words-input").classList.add("green-text");
+        document.getElementById("goal-checkmark").classList.add("goal-checkmark-met");
     } else {
         document.getElementById("words-input").classList.remove("green-text");
+        document.getElementById("goal-checkmark").classList.remove("goal-checkmark-met");
     }
 }
 
@@ -155,7 +157,7 @@ document.getElementById("paragraphs-button").addEventListener("click", setToPara
 
 // refresh displayed count
 function refreshCounter() {
-    document.getElementById("unit-counter").innerHTML = `${count}/${goal}`;
+    document.getElementById("unit-counter").innerHTML = `${count}/${goal} <i id="goal-checkmark" class="fas fa-check-circle">`;
 }
 
 // hide unit-counter

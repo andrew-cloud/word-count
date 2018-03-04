@@ -5619,6 +5619,9 @@ body {
   margin-bottom: 2rem;
   padding: 2rem;
   border-radius: 4px; }
+  @media screen and (max-width: 39.9375em) {
+    #words-container {
+      border-radius: 0; } }
   #words-container #words-input {
     border-radius: 4px;
     height: auto;
@@ -5663,8 +5666,14 @@ body {
 .unit-counter-hidden:hover {
   color: gray; }
 
+#goal-checkmark {
+  color: red; }
+
+.goal-checkmark-met {
+  color: green !important; }
+
 .green-text {
-  color: green; }
+  border: 2px solid green !important; }
 
 .unselectable {
   -webkit-touch-callout: none;
@@ -5680,6 +5689,9 @@ body {
   height: auto;
   background-color: white;
   padding: 2rem; }
+  @media screen and (max-width: 39.9375em) {
+    #entries-container {
+      border-radius: 0; } }
 
 .entry {
   height: auto;

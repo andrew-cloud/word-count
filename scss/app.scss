@@ -82,6 +82,9 @@ body {
     margin-bottom: 2rem;
     padding: 2rem;
     border-radius: 4px;
+    @include breakpoint(small only) {
+        border-radius: 0;
+    }
 
     #words-input {
         border-radius: 4px;
@@ -147,8 +150,22 @@ body {
     color: gray;
 }
 
+// checkmark icon that appears when goal is met
+#goal-checkmark {
+    color: red;
+    // visibility: hidden;
+    // opacity: 0;
+    // transition: visibility 0s, opacity 0.5s linear;
+}
+
+.goal-checkmark-met {
+    color: green !important;
+}
+
+
+
 .green-text {
-    color: green;
+    border: 2px solid green !important;
 }
 
 // utility class, currently used to make unit counter unselectable
@@ -168,6 +185,9 @@ body {
     height: auto;
     background-color: white;
     padding: 2rem;
+    @include breakpoint(small only) {
+        border-radius: 0;
+    }
 }
 
 // inidividual entry
