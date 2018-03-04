@@ -53,18 +53,40 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+
+body {
+    background-color: #D9E5E9;
+}
+
+#all-container {
+    background-color: #D9E5E9;
+    // reminder: setting a container to display: flex turns it into a flex parent, 
+    // allowing you to apply foundation flex utility classes
+    flex-direction: column;
+    width: 60%;
+    padding: 2rem 1rem 2rem 1rem;
+    border-radius: 4px;
+    @include breakpoint(medium only) {
+        width: 90%;
+    }
+    @include breakpoint(small only) {
+        width: 100%;
+        padding: 0;
+    }
+}
 // goal-setting and text input
 #words-container {
     margin-top: 1rem;
-    width: 60%;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 4px;
 
     #words-input {
         border-radius: 4px;
         height: auto;
         resize: none;
-    }
-    @include breakpoint(small only) {
-        width: 100%;
     }
 }
 
@@ -141,13 +163,11 @@
 
 // entries container
 #entries-container {
-    width: 60%;
+    width: 100%;
     border-radius: 4px;
-    border: 1px solid purple;
     height: auto;
-    @include breakpoint(small only) {
-        width: 100%;
-    }
+    background-color: white;
+    padding: 2rem;
 }
 
 // inidividual entry
@@ -163,6 +183,7 @@
 #save {
     width: 100%;
     background-color: purple;
+    border-radius: 4px;
 }
 
 // MISC
