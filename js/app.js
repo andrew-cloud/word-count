@@ -109,11 +109,14 @@ function isGoalMet() {
 function goalMetAlert() {
     if ((isGoalMet()) & (goal != 0)) {
         console.log("Goal is met!")
-        document.getElementById("words-input").classList.add("green-text");
-        document.getElementById("goal-checkmark").classList.add("goal-checkmark-met");
+        // have to run refreshCounter because the inner html has to be refreshed
+        refreshCounter();
+        document.getElementById("checkmark").classList.remove("checkmark-unmet");
+        document.getElementById("checkmark").classList.add("checkmark-met");
     } else {
-        document.getElementById("words-input").classList.remove("green-text");
-        document.getElementById("goal-checkmark").classList.remove("goal-checkmark-met");
+    	refreshCounter();
+        document.getElementById("checkmark").classList.remove("checkmark-met");
+        document.getElementById("checkmark").classList.add("checkmark-unmet");
     }
 }
 
@@ -157,7 +160,7 @@ document.getElementById("paragraphs-button").addEventListener("click", setToPara
 
 // refresh displayed count
 function refreshCounter() {
-    document.getElementById("unit-counter").innerHTML = `${count}/${goal} <i id="goal-checkmark" class="fas fa-check-circle">`;
+    document.getElementById("unit-counter").innerHTML = `${count}/${goal} <i id="checkmark" class="fas fa-check-circle unselectable checkmark-unmet"></i>`;
 }
 
 // hide unit-counter

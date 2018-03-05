@@ -5666,14 +5666,14 @@ body {
 .unit-counter-hidden:hover {
   color: gray; }
 
-#goal-checkmark {
-  color: red; }
+#checkmark {
+  transition: color 1s; }
 
-.goal-checkmark-met {
-  color: green !important; }
+.checkmark-unmet {
+  color: grey; }
 
-.green-text {
-  border: 2px solid green !important; }
+.checkmark-met {
+  color: green; }
 
 .unselectable {
   -webkit-touch-callout: none;

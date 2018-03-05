@@ -151,21 +151,16 @@ body {
 }
 
 // checkmark icon that appears when goal is met
-#goal-checkmark {
-    color: red;
-    // visibility: hidden;
-    // opacity: 0;
-    // transition: visibility 0s, opacity 0.5s linear;
+#checkmark {
+    transition: color 1s;
 }
 
-.goal-checkmark-met {
-    color: green !important;
+.checkmark-unmet {
+    color: grey;
 }
 
-
-
-.green-text {
-    border: 2px solid green !important;
+.checkmark-met {
+    color: green;
 }
 
 // utility class, currently used to make unit counter unselectable
