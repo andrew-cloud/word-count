@@ -5631,7 +5631,8 @@ body {
     transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
     height: 3.5rem;
     font-size: 2rem;
-    font-family: Rubik; }
+    font-family: Rubik;
+    border-radius: 4px; }
   #words-container #words-input {
     border-radius: 4px;
     height: auto;
