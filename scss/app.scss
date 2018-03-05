@@ -56,11 +56,11 @@
 
 body {
     background-color: #D9E5E9;
+    font-family: 'Roboto', sans-serif;
 }
 
 #all-container {
-    background-color: #D9E5E9;
-    // reminder: setting a container to display: flex turns it into a flex parent, 
+    background-color: #D9E5E9; // reminder: setting a container to display: flex turns it into a flex parent, 
     // allowing you to apply foundation flex utility classes
     flex-direction: column;
     width: 60%;
@@ -74,6 +74,7 @@ body {
         padding: 0;
     }
 }
+
 // goal-setting and text input
 #words-container {
     margin-top: 1rem;
@@ -84,6 +85,10 @@ body {
     border-radius: 4px;
     @include breakpoint(small only) {
         border-radius: 0;
+    }
+
+    .title {
+        font-family: 'Rubik', sans-serif;
     }
 
     #words-input {
@@ -187,11 +192,33 @@ body {
 
 // inidividual entry
 .entry {
-
     height: auto;
-    border: 1px solid blue;
     border-radius: 4px;
     padding: 0.5rem;
+    color: white;
+    background-color: purple;
+    transition: 0.1s ease;
+    cursor: pointer;
+    font-size: 1rem;
+
+    .title {
+        font-family: 'Rubik', sans-serif;
+        font-weight: bold;
+    }
+
+    .date {
+
+
+    }
+
+    .teaser {
+        font-size: 1rem;
+
+    }
+}
+
+.entry:hover {
+    transform: scale(1.1, 1.1);
 }
 
 // save button 
@@ -202,11 +229,9 @@ body {
 }
 
 // MISC
-
-
 // hide number input spinners
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
