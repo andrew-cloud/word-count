@@ -5623,8 +5623,15 @@ body {
   @media screen and (max-width: 39.9375em) {
     #words-container {
       border-radius: 0; } }
-  #words-container .title {
-    font-family: 'Rubik', sans-serif; }
+  #words-container #title-input {
+    outline: none;
+    border: none;
+    background-color: #DFDFDF;
+    box-shadow: none;
+    transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+    height: 3.5rem;
+    font-size: 2rem;
+    font-family: Rubik; }
   #words-container #words-input {
     border-radius: 4px;
     height: auto;

@@ -87,8 +87,15 @@ body {
         border-radius: 0;
     }
 
-    .title {
-        font-family: 'Rubik', sans-serif;
+    #title-input {
+        outline: none;
+        border: none;
+        background-color: #DFDFDF;
+        box-shadow: none;
+        transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+        height: 3.5rem;
+        font-size: 2rem;
+        font-family: Rubik;
     }
 
     #words-input {
@@ -206,14 +213,10 @@ body {
         font-weight: bold;
     }
 
-    .date {
-
-
-    }
+    .date {}
 
     .teaser {
         font-size: 1rem;
-
     }
 }
 
