@@ -8,17 +8,23 @@ let count = 0;
 // goal variable
 let goal = 250;
 // goal input
-let goal_input = document.getElementById("unit-count");
-// unit-counter
-let unit_counter = document.getElementById("unit-counter");
-// character count boolean
-let countByCharacters = false;
-// word count boolean, true by default
-let countByWords = true;
-// paragraph count boolean
-let countByParagraphs = false;
+let goal_input = document.getElementById("goal-input");
+// goal-display
+let goal_display = document.getElementById("goal-display");
 // has the goal input been clicked before?
-let goalClicked = false;
+let goal_clicked = false;
+// word input
+let words_input = document.getElementById("words-input");
+// character count boolean
+let count_characters = false;
+// word count boolean, true by default
+let count_words = true;
+// paragraph count boolean
+let count_paragraphs = false;
+// percentage of goal complete
+let percentage_complete = 0;
+// checkmark
+let checkmark = document.getElementById("checkmark");
 
 
 // gets goal number from input field
@@ -28,14 +34,14 @@ function refreshGoal() {
 
 // gets inputted words form text area
 function refreshWords() {
-    words = document.getElementById("words-input").value;
+    words = words_input.value;
 }
 
 // refreshes word count
 function refreshCount() {
-    if (countByCharacters == true) {
+    if (count_characters == true) {
         count = characterCount(words);
-    } else if (countByWords == true) {
+    } else if (count_words == true) {
         count = wordCount(words);
     } else {
         count = paragraphCount(words);
@@ -72,9 +78,9 @@ function paragraphCount(s) {
 
 // set count to words
 function setToWords() {
-    countByWords = true;
-    countByCharacters = false;
-    countByParagraphs = false;
+    count_words = true;
+    count_characters = false;
+    count_paragraphs = false;
     refreshCount();
     refreshCounter();
     goalMetAlert();
@@ -82,9 +88,9 @@ function setToWords() {
 
 // set count to characters
 function setToCharacters() {
-    countByWords = false;
-    countByCharacters = true;
-    countByParagraphs = false;
+    count_words = false;
+    count_characters = true;
+    count_paragraphs = false;
     refreshCount();
     refreshCounter();
     goalMetAlert();
@@ -92,12 +98,17 @@ function setToCharacters() {
 
 // set count to paragraphs
 function setToParagraphs() {
-    countByWords = false;
-    countByCharacters = false;
-    countByParagraphs = true;
+    count_words = false;
+    count_characters = false;
+    count_paragraphs = true;
     refreshCount();
     refreshCounter();
     goalMetAlert();
+}
+
+// calculate percentage complete
+function calculatePercentage() {
+	percentage_complete = count/goal;
 }
 
 // checks to see if goal is met
@@ -111,20 +122,20 @@ function goalMetAlert() {
         console.log("Goal is met!")
         // have to run refreshCounter because the inner html has to be refreshed
         refreshCounter();
-        document.getElementById("checkmark").classList.remove("checkmark-unmet");
-        document.getElementById("checkmark").classList.add("checkmark-met");
+        checkmark.classList.remove("checkmark-unmet");
+        checkmark.classList.add("checkmark-met");
     } else {
     	refreshCounter();
-        document.getElementById("checkmark").classList.remove("checkmark-met");
-        document.getElementById("checkmark").classList.add("checkmark-unmet");
+        checkmark.classList.remove("checkmark-met");
+        checkmark.classList.add("checkmark-unmet");
     }
 }
 
 function goalFirstClick(e) {
-	if (goalClicked == false) {
+	if (goal_clicked == false) {
 		this.select();
 	}
-	goalClicked = true;
+	goal_clicked = true;
 	
 }
 
@@ -160,21 +171,21 @@ document.getElementById("paragraphs-button").addEventListener("click", setToPara
 
 // refresh displayed count
 function refreshCounter() {
-    document.getElementById("unit-counter").innerHTML = `${count}/${goal} <i id="checkmark" class="fas fa-check-circle unselectable checkmark-unmet"></i>`;
+    document.getElementById("goal-display").innerHTML = `${count}/${goal}`;
 }
 
-// hide unit-counter
-document.getElementById("unit-counter").addEventListener("click", hideCounter);
+// hide goal-display
+document.getElementById("goal-display").addEventListener("click", hideCounter);
 
 // refreshes values after input
 document.addEventListener("keyup", refreshWords);
 document.addEventListener("keyup", refreshCount);
 document.addEventListener("keyup", refreshCounter);
 document.addEventListener("keyup", goalMetAlert);
-document.getElementById("unit-count").addEventListener("input", refreshGoal);
+document.getElementById("goal-input").addEventListener("input", refreshGoal);
 
 // add comment
-document.getElementById("unit-count").addEventListener("click", goalFirstClick);
+document.getElementById("goal-input").addEventListener("click", goalFirstClick);
 
 // adds active class to unit buttons
 document.getElementById("characters-button").addEventListener("click", unitButtonActive);
@@ -190,7 +201,7 @@ function hide() {
 
 // hides counter
 function hideCounter() {
-    if (this.classList.contains("unit-counter-hidden")) {
-        this.classList.remove("unit-counter-hidden");
-    } else this.classList.add("unit-counter-hidden");
+    if (this.classList.contains("goal-display-hidden")) {
+        this.classList.remove("goal-display-hidden");
+    } else this.classList.add("goal-display-hidden");
 }

@@ -13,102 +13,118 @@
 <body>
     <!-- NAV BAR -->
     <div class="top-bar">
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text">250 Words</li>
-      <li>
-        <a href="#">One</a>
-        <ul class="menu vertical">
-          <li><a href="#">One</a></li>
-          <li><a href="#">Two</a></li>
-          <li><a href="#">Three</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Two</a></li>
-      <li><a href="#">Three</a></li>
-    </ul>
-  </div>
-</div>
-
-<div id="all-container" class="grid-container">
-    <!-- ALL THE GOAL SETTING AND TEXT INPUT STUFF -->
-    <div id="words-container" class="grid-container">
-        <div class="grid-x grid-margin-x">
-            <div class="large-12 cell">
-          <input id="title-input" type="text" placeholder="Title goes here.">
-      </div>
-            <div class="large-2 medium-3 small-6 cell">
-                <!-- word unit goal input -->
-                <input id="unit-count" type="number" value=250 min="0">
-            </div>
-            <div class="large-4 medium-9 small-12 cell">
-                <div id="unit-button-group" class="button-group">
-                    <!-- word unit buttons -->
-                    <a id="characters-button" class="button unit-button" type="radio">Characters</a>
-                    <a id="words-button" class="button unit-button active" type="radio">Words</a>
-                    <a id="paragraphs-button" class="button unit-button" type="radio">Paragraphs</a>
-                </div>
-            </div>
-        </div>
-        <div class="grid-x grid-margin-x">
-            <div id="word-input-container" class="large-12 cell">
-                <!-- word input -->
-                <textarea id="words-input" rows="8"></textarea>
-                <!-- goal counter -->
-                <p id="unit-counter" class="unselectable">0/250 <i id="checkmark" class="fas fa-check-circle unselectable checkmark-unmet"></i></p>
-            </div>
-        </div>
-        <div class="grid-x grid-margin-x align-right">
-            <div class="large-2 medium-4 small-12 cell align-right">
-                <!-- save button -->
-                <button type="submit" id="save" class="button">Save</button>
-            </div>
-        </div>
-        
-    </div>
-    <!-- past entries kept here -->
-    <div id="entries-container" class="grid-container">
-        <div class="grid-x grid-margin-x grid-margin-y">
-            <div class="large-3 medium-6 small-12 cell">
-                <div class="entry">
-                    <p class="title">Title</p>
-                    <p class="date">Jan 1, 18</p>
-                    <p class="teaser"> Only the first 25 characters of the entry are included.</p>
-                </div>
-            </div>
-            <div class="large-3 medium-6 small-12 cell">
-                <div class="entry">
-                    This is a word. This is also a word.
-                </div>
-            </div>
-            <div class="large-3 medium-6 small-12 cell">
-                <div class="entry">
-                    This is a word. This is also a word.
-                </div>
-            </div>
-            <div class="large-3 medium-6 small-12 cell">
-                <div class="entry">
-                    This is a word. This is also a word.
-                </div>
-            </div>
-            <div class="large-3 medium-6 small-12 cell">
-                <div class="entry">
-                    This is a word. This is also a word.
-                </div>
-            </div>
-            <div class="large-3 medium-6 small-12 cell">
-                <div class="entry">
-                    This is a word. This is also a word.
-                </div>
-            </div>
+        <div class="top-bar-left">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li class="menu-text">250 Words</li>
+                <li>
+                    <a href="#">One</a>
+                    <ul class="menu vertical">
+                        <li><a href="#">One</a></li>
+                        <li><a href="#">Two</a></li>
+                        <li><a href="#">Three</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two</a></li>
+                <li><a href="#">Three</a></li>
+            </ul>
         </div>
     </div>
-    </div>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/what-input/dist/what-input.js"></script>
-    <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
-    <script src="js/min/app-min.js"></script>
-    <script src="js/fontawesome-all.js"></script>
+    <div id="all-container" class="grid-container">
+        <!-- ALL THE GOAL SETTING AND TEXT INPUT STUFF -->
+        <div id="words-container" class="grid-container">
+            <div class="grid-x grid-margin-x">
+                <div class="large-12 cell">
+                    <input id="title-input" type="text" placeholder="Title goes here.">
+                </div>
+                <div class="large-2 medium-3 small-6 cell">
+                    <!-- word unit goal input -->
+                    <input id="goal-input" type="number" value=250 min="0">
+                </div>
+                <div class="large-4 medium-9 small-12 cell">
+                    <div id="unit-button-group" class="button-group">
+                        <!-- word unit buttons -->
+                        <a id="characters-button" class="button unit-button" type="radio">Characters</a>
+                        <a id="words-button" class="button unit-button active" type="radio">Words</a>
+                        <a id="paragraphs-button" class="button unit-button" type="radio">Paragraphs</a>
+                    </div>
+                </div>
+                <div class="large-12 cell">
+                    <div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100">
+                        <div class="progress-meter" style="width: 50%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-x grid-margin-x">
+                <div id="word-input-container" class="large-12 cell">
+                    <!-- word input -->
+                    <textarea id="words-input" rows="8"></textarea>
+                    <!-- goal counter -->
+                    
+                </div>
+            </div>
+            <div class="grid-x grid-margin-x align-right">
+                <div class="large-2 medium-4 small-12 cell align-right">
+                    <!-- save button -->
+                    <span id="goal-display" class="unselectable">0/250
+                    </span>
+                    <span id="checkmark" class="checkmark-unmet">
+                        <i class="fas fa-check-circle"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- past entries kept here -->
+        <div id="entries-container" class="grid-container">
+            <div class="grid-x grid-margin-x grid-margin-y">
+                <div class="large-3 medium-6 small-12 cell">
+                    <div class="entry">
+                        <p class="title">Title</p>
+                        <p class="date">Jan 1, 18</p>
+                        <p class="teaser"> Only the first 25 characters of the entry are included.</p>
+                    </div>
+                </div>
+                <div class="large-3 medium-6 small-12 cell">
+                    <div class="entry">
+                        <p class="title">Title</p>
+                        <p class="date">Jan 1, 18</p>
+                        <p class="teaser"> Only the first 25 characters of the entry are included.</p>
+                    </div>
+                </div>
+                <div class="large-3 medium-6 small-12 cell">
+                    <div class="entry">
+                        <p class="title">Title</p>
+                        <p class="date">Jan 1, 18</p>
+                        <p class="teaser"> Only the first 25 characters of the entry are included.</p>
+                    </div>
+                </div>
+                <div class="large-3 medium-6 small-12 cell">
+                    <div class="entry">
+                        <p class="title">Title</p>
+                        <p class="date">Jan 1, 18</p>
+                        <p class="teaser"> Only the first 25 characters of the entry are included.</p>
+                    </div>
+                </div>
+                <div class="large-3 medium-6 small-12 cell">
+                    <div class="entry">
+                        <p class="title">Title</p>
+                        <p class="date">Jan 1, 18</p>
+                        <p class="teaser"> Only the first 25 characters of the entry are included.</p>
+                    </div>
+                </div>
+                <div class="large-3 medium-6 small-12 cell">
+                    <div class="entry">
+                        <p class="title">Title</p>
+                        <p class="date">Jan 1, 18</p>
+                        <p class="teaser"> Only the first 25 characters of the entry are included.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/what-input/dist/what-input.js"></script>
+        <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
+        <script src="js/min/app-min.js"></script>
+        <script src="js/fontawesome-all.js"></script>
 </body>
 
 </html>
