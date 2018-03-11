@@ -81,7 +81,7 @@ body {
     width: 100%;
     background-color: white;
     margin-bottom: 2rem;
-    padding: 2rem;
+    padding: 2rem 2rem 0.5rem 2rem;
     border-radius: 4px;
     @include breakpoint(small only) {
         border-radius: 0;
@@ -137,6 +137,7 @@ body {
 
 #goal-display {
     cursor: pointer;
+    text-align: right;
 }
 
 #goal-display:hover {
@@ -154,7 +155,8 @@ body {
 
 // checkmark icon that appears when goal is met
 #checkmark {
-    transition: color 1s;
+    transition: color 200ms;
+    text-align: right;
 }
 
 .checkmark-unmet {
@@ -215,10 +217,12 @@ body {
 }
 
 // save button 
-#save {
+.save {
     width: 100%;
     background-color: purple;
     border-radius: 4px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 // MISC
@@ -227,4 +231,8 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+.text-align-right {
+    text-align: right;
 }

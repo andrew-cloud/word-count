@@ -175,13 +175,20 @@ function refreshCounter() {
 }
 
 // hide goal-display
-document.getElementById("goal-display").addEventListener("click", hideCounter);
+goal_display.addEventListener("click", hideCounter);
+
+// refreshes all values
+function refreshAll() {
+	refreshWords();
+	refreshCount();
+	refreshCounter();
+	goalMetAlert();
+}
 
 // refreshes values after input
-document.addEventListener("keyup", refreshWords);
-document.addEventListener("keyup", refreshCount);
-document.addEventListener("keyup", refreshCounter);
-document.addEventListener("keyup", goalMetAlert);
+document.addEventListener("keyup", refreshAll);
+
+
 document.getElementById("goal-input").addEventListener("input", refreshGoal);
 
 // add comment
