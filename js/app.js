@@ -25,6 +25,13 @@ let count_paragraphs = false;
 let percentage_complete = 0;
 // checkmark
 let checkmark = document.getElementById("checkmark");
+// goal-display with icon
+let goal_display_container = document.getElementById("goal-display-container");
+// all entires
+var entries = document.querySelectorAll('.entry');
+
+// test entry
+let test_entry = document.getElementById("test-entry");
 
 
 // gets goal number from input field
@@ -82,7 +89,7 @@ function setToWords() {
     count_characters = false;
     count_paragraphs = false;
     refreshCount();
-    refreshCounter();
+    refreshGoalDisplay();
     goalMetAlert();
 }
 
@@ -92,7 +99,7 @@ function setToCharacters() {
     count_characters = true;
     count_paragraphs = false;
     refreshCount();
-    refreshCounter();
+    refreshGoalDisplay();
     goalMetAlert();
 }
 
@@ -102,7 +109,7 @@ function setToParagraphs() {
     count_characters = false;
     count_paragraphs = true;
     refreshCount();
-    refreshCounter();
+    refreshGoalDisplay();
     goalMetAlert();
 }
 
@@ -121,11 +128,11 @@ function goalMetAlert() {
     if ((isGoalMet()) & (goal != 0)) {
         console.log("Goal is met!")
         // have to run refreshCounter because the inner html has to be refreshed
-        refreshCounter();
+        refreshGoalDisplay();
         checkmark.classList.remove("checkmark-unmet");
         checkmark.classList.add("checkmark-met");
     } else {
-    	refreshCounter();
+    	refreshGoalDisplay();
         checkmark.classList.remove("checkmark-met");
         checkmark.classList.add("checkmark-unmet");
     }
@@ -170,29 +177,29 @@ document.getElementById("paragraphs-button").addEventListener("click", setToPara
 
 
 // refresh displayed count
-function refreshCounter() {
+function refreshGoalDisplay() {
     document.getElementById("goal-display").innerHTML = `${count}/${goal}`;
 }
 
 // hide goal-display
 goal_display.addEventListener("click", hideCounter);
 
-// refreshes all values
+// refreshes all values (inputted words, inputted goal, inputted goal display, and checks if goal is met)
 function refreshAll() {
 	refreshWords();
 	refreshCount();
-	refreshCounter();
+	refreshGoalDisplay();
 	goalMetAlert();
 }
 
 // refreshes values after input
 document.addEventListener("keyup", refreshAll);
 
-
+// refreshed goal in goal-display when new amount is entered
 document.getElementById("goal-input").addEventListener("input", refreshGoal);
 
 // add comment
-document.getElementById("goal-input").addEventListener("click", goalFirstClick);
+goal_input.addEventListener("click", goalFirstClick);
 
 // adds active class to unit buttons
 document.getElementById("characters-button").addEventListener("click", unitButtonActive);
@@ -212,3 +219,15 @@ function hideCounter() {
         this.classList.remove("goal-display-hidden");
     } else this.classList.add("goal-display-hidden");
 }
+
+// ENTRIES
+
+// applies active class to unit buttons
+function toggleFullscreen(){
+    if (this.classList.contains("fullscreen")) {
+        this.classList.remove("fullscreen");
+    } else this.classList.add("fullscreen");
+}
+
+test_entry.addEventListener("click", toggleFullscreen);
+

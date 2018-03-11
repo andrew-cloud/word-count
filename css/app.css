@@ -5628,31 +5628,37 @@ body {
   #words-container #words-input {
     border-radius: 4px;
     height: auto;
-    resize: none; }
+    resize: none;
+    margin-bottom: 0; }
 
 #goal-input {
   border-radius: 4px; }
 
-#unit-button-group .unit-button {
-  border-radius: 2px;
-  margin-right: 0; }
-
-#unit-button-group #characters-button {
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px; }
-
-#unit-button-group #words-button {
-  border-radius: 0px; }
-
-#unit-button-group #paragraphs-button {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px; }
-
-#unit-button-group .active {
-  background-color: red; }
+#unit-button-group {
+  font-family: 'Rubik', sans-serif; }
+  #unit-button-group .unit-button {
+    border-radius: 2px;
+    margin-right: 0; }
+  #unit-button-group #characters-button {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px; }
+  #unit-button-group #words-button {
+    border-radius: 0px; }
+  #unit-button-group #paragraphs-button {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px; }
+  #unit-button-group .active {
+    background-color: red; }
 
 #word-input-container {
   position: relative; }
+
+#goal-display-tab {
+  background-color: blue; }
+
+#goal-display-container {
+  text-align: right;
+  margin-top: 0.5rem; }
 
 #goal-display {
   cursor: pointer;
@@ -5701,17 +5707,31 @@ body {
   padding: 0.5rem 0.75rem;
   color: white;
   background-color: purple;
-  transition: 0.1s ease;
   cursor: pointer;
-  font-size: 1rem; }
+  font-size: 1rem;
+  width: 100%;
+  transform: 200ms; }
+  .entry p {
+    display: block; }
   .entry .title {
     font-family: 'Rubik', sans-serif;
     font-weight: bold; }
   .entry .teaser {
     font-size: 1rem; }
 
-.entry:hover {
+#test-entry {
+  background-color: blue; }
+
+.entry_hover {
   transform: scale(1.1, 1.1); }
+
+.fullscreen {
+  position: fixed;
+  width: 65%;
+  height: 65%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
 
 .save {
   width: 100%;
@@ -5727,3 +5747,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 .text-align-right {
   text-align: right; }
+
+.display_none {
+  display: none; }

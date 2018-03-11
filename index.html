@@ -54,16 +54,16 @@
                     </div>
                 </div> -->
             </div>
-            <div class="grid-x grid-margin-x">
+            <div class="grid-x grid-margin-x align-right">
                 <div id="word-input-container" class="large-12 cell">
                     <!-- word input -->
                     <textarea id="words-input" rows="8"></textarea>
                 </div>
             </div>
             <div class="grid-x grid-margin-x align-right">
-                <div class="large-2 medium-4 small-12 cell align-right text-align-right">
-                    <!-- save button -->
-                    <span id="goal-display" class="unselectable">0/250
+                <div id="goal-display-container" class="large-2 medium-4 small-12 cell align-right unselectable">
+                    <!-- goal-display -->
+                    <span id="goal-display">0/250
                     </span>
                     <span id="checkmark" class="checkmark-unmet">
                         <i class="fas fa-check-circle"></i>
@@ -71,7 +71,7 @@
                 </div>
             </div>
             <div class="grid-x grid-margin-x align-right">
-                <div class="large-2 medium-4 small-12 cell align-right text-align-right">
+                <div class="large-3 medium-4 small-12 cell text-align-right">
                     <!-- save button -->
                     <button type="button" class="save button">Save</button>
                 </div>
@@ -95,7 +95,7 @@
                     </div>
                 </div>
                 <div class="large-3 medium-6 small-12 cell">
-                    <div class="entry">
+                    <div id="test-entry" class="entry">
                         <p class="title">Title</p>
                         <p class="date">Jan 1, 18</p>
                         <p class="teaser"> Only the first 25 characters of the entry are included.</p>
