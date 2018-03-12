@@ -95,7 +95,7 @@
                     </div>
                 </div>
                 <div class="large-3 medium-6 small-12 cell">
-                    <div id="test-entry" class="entry">
+                    <div id="test-entry" class="entry" data-open="exampleModal1">
                         <p class="title">Title</p>
                         <p class="date">Jan 1, 18</p>
                         <p class="teaser"> Only the first 25 characters of the entry are included.</p>
@@ -124,10 +124,14 @@
                 </div>
             </div>
         </div>
-
         <!-- MODALS -->
-        <div id="test-modal" class="fullscreen">
-        Here's some content.
+        <div class="reveal" id="exampleModal1" data-reveal>
+            <h1>Awesome. I Have It.</h1>
+            <p class="lead">Your couch. It is mine.</p>
+            <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/what-input/dist/what-input.js"></script>
