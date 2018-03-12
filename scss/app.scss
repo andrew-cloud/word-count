@@ -238,12 +238,17 @@ body {
 }
 
 .fullscreen {
+    max-height: calc(100% - 100px);
     position: fixed;
     width: 65%;
     height: 65%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: black;
+    background-color: gray !important;
+    cursor: auto;
+    display: none;
 }
 
 // save button 
@@ -267,6 +272,6 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: right;
 }
 
-.display_none {
-    display: none;
+.display-block {
+    display: block;
 }

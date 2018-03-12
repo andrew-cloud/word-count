@@ -224,9 +224,9 @@ function hideCounter() {
 
 // applies active class to unit buttons
 function toggleFullscreen(){
-    if (this.classList.contains("fullscreen")) {
-        this.classList.remove("fullscreen");
-    } else this.classList.add("fullscreen");
+    if (document.getElementById("test-modal").classList.contains("display-block")) {
+        document.getElementById("test-modal").classList.remove("display-block");
+    } else document.getElementById("test-modal").classList.add("display-block");
 }
 
 test_entry.addEventListener("click", toggleFullscreen);
