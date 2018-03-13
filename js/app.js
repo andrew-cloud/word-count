@@ -29,7 +29,8 @@ let checkmark = document.getElementById("checkmark");
 let goal_display_container = document.getElementById("goal-display-container");
 // all entires
 var entries = document.querySelectorAll('.entry');
-
+// entries container
+var entries_container = document.getElementById("entries-container");
 // test entry
 let test_entry = document.getElementById("test-entry");
 
@@ -221,6 +222,11 @@ function hideCounter() {
 }
 
 // ENTRIES
+
+// closes entries container
+function closeEntries() {
+	entries_container.style.maxHeight = 0;
+}
 
 // applies active class to unit buttons
 /*function toggleFullscreen(){

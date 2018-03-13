@@ -196,6 +196,9 @@ body {
     height: auto;
     background-color: white;
     padding: 2rem;
+    transition: max-height 0.3s ease;
+    max-height: 30rem;
+    overflow: hidden;
     @include breakpoint(small only) {
         border-radius: 0;
     }
@@ -275,3 +278,19 @@ input[type=number]::-webkit-outer-spin-button {
 .display-block {
     display: block;
 }
+
+.scale-in {
+    @include mui-zoom(
+    $state: in,
+    $from: 0.5,
+    $duration: 300ms,
+    $timing: ease);
+}
+
+// .scale-out {
+//     @include mui-zoom(
+//     $state: out,
+//     $from: 0.5,
+//     $duration: 400ms,
+//     $timing: ease);
+// }
