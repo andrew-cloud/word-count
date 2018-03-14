@@ -5698,7 +5698,7 @@ body {
   background-color: white;
   padding: 2rem;
   transition: max-height 0.3s ease;
-  max-height: 30rem;
+  max-height: 100rem;
   overflow: hidden; }
   @media screen and (max-width: 39.9375em) {
     #entries-container {
@@ -5771,3 +5771,16 @@ input[type=number]::-webkit-outer-spin-button {
 .scale-in.mui-enter.mui-enter-active {
   transform: scale(1);
   opacity: 1; }
+
+.scale-out.mui-leave {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+  transform: scale(1);
+  transition-property: transform, opacity;
+  opacity: 1; }
+
+.scale-out.mui-leave.mui-leave-active {
+  transform: scale(0.5);
+  opacity: 0; }
