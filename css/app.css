@@ -5627,9 +5627,11 @@ body {
     border-radius: 4px; }
   #words-container #words-input {
     border-radius: 4px;
-    height: auto;
     resize: none;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    min-height: 5em;
+    max-height: 125vh;
+    width: 100%; }
 
 #goal-input {
   border-radius: 4px; }

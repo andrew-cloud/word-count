@@ -197,6 +197,7 @@ function refreshAll() {
     refreshCount();
     refreshGoalDisplay();
     goalMetAlert();
+    autoExpand(words_input);
 }
 
 // refreshes values after input
@@ -227,6 +228,25 @@ function hideCounter() {
     } else this.classList.add("goal-display-hidden");
 }
 
+var autoExpand = function (field) {
+
+	// Reset field height
+	field.style.height = 'inherit';
+
+	// Get the computed styles for the element
+	var computed = window.getComputedStyle(field);
+
+	// Calculate the height
+	var height = parseInt(computed.getPropertyValue('border-top-width'), 10)
+	             + parseInt(computed.getPropertyValue('padding-top'), 10)
+	             + field.scrollHeight
+	             + parseInt(computed.getPropertyValue('padding-bottom'), 10)
+	             + parseInt(computed.getPropertyValue('border-bottom-width'), 10);
+
+	field.style.height = height + 'px';
+
+};
+
 // ENTRIES
 
 entries_container.style.setProperty("--fullHeight", entries_container.clientHeight + "px");
@@ -238,42 +258,8 @@ function hideDiv() {
     if (entries_container.classList.contains("open-div")) {
         entries_container.classList.remove("open-div");
         entries_container.classList.add("closed-div");
+    } else {
+        entries_container.classList.remove("closed-div");
+        entries_container.classList.add("open-div");
     }
-        else {
-            entries_container.classList.remove("closed-div");
-            entries_container.classList.add("open-div");
-        }
-    }
-
-
-
-    // // hides div
-    // function hideDiv() {
-    //     if (entries_container.classList.contains("open-div")) {
-    //         entries_container.classList.remove("open-div");
-    //         transition({
-    //             element: "entries-container",
-    //             prop: "max-height",
-    //             style: "max-height 10s ease-in-out",
-    //             val: "0"
-    //         });
-    //     } else {
-    //         transition({
-    //             element: "entries-container",
-    //             prop: "max-height",
-    //             style: "max-height 10s ease-in-out",
-    //             val: "auto"
-    //         });
-    //     }
-    // }
-
-
-
-    // applies active class to unit buttons
-    /*function toggleFullscreen(){
-        if (document.getElementById("test-modal").classList.contains("display-block")) {
-            document.getElementById("test-modal").classList.remove("display-block");
-        } else document.getElementById("test-modal").classList.add("display-block");
-    }
-
-    test_entry.addEventListener("click", toggleFullscreen);*/
+}
