@@ -269,6 +269,12 @@ function hideDiv() {
 
 save_button.addEventListener("click", createEntry);
 
+function generateTeaser(s) {
+	let teaser = s.substring(0,56) + "...";
+	teaser.trim();
+	return teaser;
+}
+
 function createEntry() {
 	var newEntryCell = document.createElement("div");
 	newEntryCell.className = "large-3 medium-6 small-12 cell";
@@ -285,9 +291,8 @@ function createEntry() {
 	newEntryDate.innerHTML = "Jan 1, 18";
 	
 	var newEntryTeaser = document.createElement("p");
-	newEntryTeaser.className = "";
-	newEntryTeaser.innerHTML = words;
-	
+	newEntryTeaser.className = "teaser";
+	newEntryTeaser.innerHTML = generateTeaser(words);
 
 	entries_container_inner.appendChild(newEntryCell).appendChild(newEntryDiv).appendChild(newEntryTitle);
 	newEntryDiv.appendChild(newEntryDate);
