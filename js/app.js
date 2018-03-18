@@ -27,6 +27,8 @@ let percentage_complete = 0;
 let checkmark = document.getElementById("checkmark");
 // goal-display with icon
 let goal_display_container = document.getElementById("goal-display-container");
+//save button
+let save_button = document.getElementById("save-button");
 // all entires
 var entries = document.querySelectorAll('.entry');
 // entries container
