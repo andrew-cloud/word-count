@@ -33,6 +33,8 @@ let save_button = document.getElementById("save-button");
 var entries = document.querySelectorAll('.entry');
 // entries container
 var entries_container = document.getElementById("entries-container");
+//entries-container-inner 
+var entries_container_inner = document.getElementById("entries-container-inner");
 // test entry
 let test_entry = document.getElementById("test-entry");
 // close entries link
@@ -262,4 +264,32 @@ function hideDiv() {
         entries_container.classList.remove("closed-div");
         entries_container.classList.add("open-div");
     }
+}
+
+
+save_button.addEventListener("click", createEntry);
+
+function createEntry() {
+	var newEntryCell = document.createElement("div");
+	newEntryCell.className = "large-3 medium-6 small-12 cell";
+	
+	var newEntryDiv = document.createElement("div");
+	newEntryDiv.className = "entry";
+	
+	var newEntryTitle = document.createElement("p");
+	newEntryTitle.className = "title";
+	newEntryTitle.innerHTML = "Title";
+	
+	var newEntryDate = document.createElement("p");
+	newEntryDate.className = "";
+	newEntryDate.innerHTML = "Jan 1, 18";
+	
+	var newEntryTeaser = document.createElement("p");
+	newEntryTeaser.className = "";
+	newEntryTeaser.innerHTML = words;
+	
+
+	entries_container_inner.appendChild(newEntryCell).appendChild(newEntryDiv).appendChild(newEntryTitle);
+	newEntryDiv.appendChild(newEntryDate);
+	newEntryDiv.appendChild(newEntryTeaser);
 }
