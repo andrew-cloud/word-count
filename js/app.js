@@ -33,6 +33,10 @@ var entries = document.querySelectorAll('.entry');
 var entries_container = document.getElementById("entries-container");
 // test entry
 let test_entry = document.getElementById("test-entry");
+// close entries link
+let close_entries_link = document.getElementById("close-entries-link");
+// entries container height
+let entries_container_height = entries_container.clientHeight;
 
 
 // gets goal number from input field
@@ -116,7 +120,7 @@ function setToParagraphs() {
 
 // calculate percentage complete
 function calculatePercentage() {
-	percentage_complete = count/goal;
+    percentage_complete = count / goal;
 }
 
 // checks to see if goal is met
@@ -133,18 +137,18 @@ function goalMetAlert() {
         checkmark.classList.remove("checkmark-unmet");
         checkmark.classList.add("checkmark-met");
     } else {
-    	refreshGoalDisplay();
+        refreshGoalDisplay();
         checkmark.classList.remove("checkmark-met");
         checkmark.classList.add("checkmark-unmet");
     }
 }
 
 function goalFirstClick(e) {
-	if (goal_clicked == false) {
-		this.select();
-	}
-	goal_clicked = true;
-	
+    if (goal_clicked == false) {
+        this.select();
+    }
+    goal_clicked = true;
+
 }
 
 // applies active class to unit buttons
@@ -187,10 +191,10 @@ goal_display.addEventListener("click", hideCounter);
 
 // refreshes all values (inputted words, inputted goal, inputted goal display, and checks if goal is met)
 function refreshAll() {
-	refreshWords();
-	refreshCount();
-	refreshGoalDisplay();
-	goalMetAlert();
+    refreshWords();
+    refreshCount();
+    refreshGoalDisplay();
+    goalMetAlert();
 }
 
 // refreshes values after input
@@ -223,17 +227,51 @@ function hideCounter() {
 
 // ENTRIES
 
-// closes entries container
-function closeEntries() {
-	entries_container.style.maxHeight = 0;
-}
+entries_container.style.setProperty("--fullHeight", entries_container.clientHeight + "px");
 
-// applies active class to unit buttons
-/*function toggleFullscreen(){
-    if (document.getElementById("test-modal").classList.contains("display-block")) {
-        document.getElementById("test-modal").classList.remove("display-block");
-    } else document.getElementById("test-modal").classList.add("display-block");
-}
 
-test_entry.addEventListener("click", toggleFullscreen);*/
+close_entries_link.addEventListener("click", hideDiv);
 
+function hideDiv() {
+    if (entries_container.classList.contains("open-div")) {
+        entries_container.classList.remove("open-div");
+        entries_container.classList.add("closed-div");
+    }
+        else {
+            entries_container.classList.remove("closed-div");
+            entries_container.classList.add("open-div");
+        }
+    }
+
+
+
+    // // hides div
+    // function hideDiv() {
+    //     if (entries_container.classList.contains("open-div")) {
+    //         entries_container.classList.remove("open-div");
+    //         transition({
+    //             element: "entries-container",
+    //             prop: "max-height",
+    //             style: "max-height 10s ease-in-out",
+    //             val: "0"
+    //         });
+    //     } else {
+    //         transition({
+    //             element: "entries-container",
+    //             prop: "max-height",
+    //             style: "max-height 10s ease-in-out",
+    //             val: "auto"
+    //         });
+    //     }
+    // }
+
+
+
+    // applies active class to unit buttons
+    /*function toggleFullscreen(){
+        if (document.getElementById("test-modal").classList.contains("display-block")) {
+            document.getElementById("test-modal").classList.remove("display-block");
+        } else document.getElementById("test-modal").classList.add("display-block");
+    }
+
+    test_entry.addEventListener("click", toggleFullscreen);*/

@@ -5694,26 +5694,22 @@ body {
 #entries-container {
   width: 100%;
   border-radius: 4px;
-  height: auto;
   background-color: white;
   padding: 2rem;
-  transition: max-height 0.3s ease;
-  max-height: 100rem;
+  transition: all 400ms ease;
   overflow: hidden; }
   @media screen and (max-width: 39.9375em) {
     #entries-container {
       border-radius: 0; } }
 
 .entry {
-  height: auto;
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
   color: white;
   background-color: purple;
   cursor: pointer;
   font-size: 1rem;
-  width: 100%;
-  transition: 100ms; }
+  width: 100%; }
   .entry p {
     display: block; }
   .entry .title {
@@ -5721,6 +5717,12 @@ body {
     font-weight: bold; }
   .entry .teaser {
     font-size: 1rem; }
+
+.closed-div {
+  height: 0; }
+
+.open-div {
+  height: var(--fullHeight); }
 
 #test-entry {
   background-color: blue; }
