@@ -96,7 +96,7 @@ body {
         resize: none;
         margin-bottom: 0;
         min-height: 5em;
-        max-height: 125vh;
+        max-height: 50rem;
         width: 100%;
     }
 }
@@ -298,22 +298,22 @@ input[type=number]::-webkit-outer-spin-button {
     display: block;
 }
 
-.scale-in {
+.scaleIn {
     // A long, long fade
     @include mui-zoom( $state: in,
     $from: 0.5,
     $to: 1,
     $fade: true,
-    $duration: 300ms,
+    $duration: 200ms,
     $timing: ease);
 }
 
-.scale-out {
+.scaleOut {
     // A long, long fade
     @include mui-zoom( $state: out,
     $from: 1,
     $to: 0.5,
     $fade: true,
-    $duration: 300ms,
+    $duration: 200ms,
     $timing: ease);
 }

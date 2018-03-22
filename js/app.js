@@ -41,6 +41,8 @@ let test_entry = document.getElementById("test-entry");
 let close_entries_link = document.getElementById("close-entries-link");
 // entries container height
 let entries_container_height = entries_container.clientHeight;
+// body
+let body = document.body;
 
 
 // gets goal number from input field
@@ -276,25 +278,36 @@ function generateTeaser(s) {
 }
 
 function createEntry() {
-	var newEntryCell = document.createElement("div");
+	let newEntryCell = document.createElement("div");
 	newEntryCell.className = "large-3 medium-6 small-12 cell";
 	
-	var newEntryDiv = document.createElement("div");
+	let newEntryDiv = document.createElement("div");
 	newEntryDiv.className = "entry";
+	newEntryDiv.setAttribute("data-open", "exampleModal1");
 	
-	var newEntryTitle = document.createElement("p");
+	let newEntryTitle = document.createElement("p");
 	newEntryTitle.className = "title";
 	newEntryTitle.innerHTML = "Title";
 	
-	var newEntryDate = document.createElement("p");
+	let newEntryDate = document.createElement("p");
 	newEntryDate.className = "";
 	newEntryDate.innerHTML = "Jan 1, 18";
 	
-	var newEntryTeaser = document.createElement("p");
+	let newEntryTeaser = document.createElement("p");
 	newEntryTeaser.className = "teaser";
 	newEntryTeaser.innerHTML = generateTeaser(words);
 
 	entries_container_inner.appendChild(newEntryCell).appendChild(newEntryDiv).appendChild(newEntryTitle);
 	newEntryDiv.appendChild(newEntryDate);
 	newEntryDiv.appendChild(newEntryTeaser);
+
+	let options = {
+		AnimationIn: "scaleIn",
+		AnimationOut: "scaleOut"
+	};
+	let modal = new Foundation.Reveal( $('#exampleModal1'), options);
+	$(document).foundation();
+	console.log(modal);
+
+
 }
