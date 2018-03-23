@@ -271,43 +271,62 @@ function hideDiv() {
 
 save_button.addEventListener("click", createEntry);
 
+// generates the content teaser for entry cards, first 55 characters
 function generateTeaser(s) {
 	let teaser = s.substring(0,56) + "...";
 	teaser.trim();
 	return teaser;
 }
 
+let modal_number = 0;
+function generateID() {
+	modal_number ++;
+	let current_modal = `modal${modal_number}`;
+	return current_modal;
+}
+
 function createEntry() {
+	// creates the cell for the entry card
 	let newEntryCell = document.createElement("div");
 	newEntryCell.className = "large-3 medium-6 small-12 cell";
-	
+	// creates the entry div
 	let newEntryDiv = document.createElement("div");
 	newEntryDiv.className = "entry";
-	newEntryDiv.setAttribute("data-open", "exampleModal1");
-	
+	// creates the entry title
 	let newEntryTitle = document.createElement("p");
 	newEntryTitle.className = "title";
 	newEntryTitle.innerHTML = "Title";
-	
+	// creates the entry date
 	let newEntryDate = document.createElement("p");
 	newEntryDate.className = "";
 	newEntryDate.innerHTML = "Jan 1, 18";
-	
+	// creates the entry teaser
 	let newEntryTeaser = document.createElement("p");
 	newEntryTeaser.className = "teaser";
 	newEntryTeaser.innerHTML = generateTeaser(words);
-
+	// combines everything toegether and appends it to the entries container
 	entries_container_inner.appendChild(newEntryCell).appendChild(newEntryDiv).appendChild(newEntryTitle);
 	newEntryDiv.appendChild(newEntryDate);
 	newEntryDiv.appendChild(newEntryTeaser);
+	// creates the modal content
+	let content = document.createElement("div");
+	content.innerHTML = words;
+	let id = generateID();
+	content.id = id;
+	content.className = "reveal";
+	// new elements have to be appended to something, in this case, the body
+	document.body.appendChild(content);
 
+	// options for newly generated modal
 	let options = {
 		AnimationIn: "scaleIn",
 		AnimationOut: "scaleOut"
 	};
-	let modal = new Foundation.Reveal( $('#exampleModal1'), options);
-	$(document).foundation();
-	console.log(modal);
+
+	let modal = new Foundation.Reveal($(`#${id}`), options);
+	
+	// sets entry div to open newly generated modal
+	newEntryDiv.setAttribute("data-open", id);
 
 
 }
