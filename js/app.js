@@ -1,5 +1,7 @@
 $(document).foundation();
 
+// VARIABLES
+
 
 // inputted words variable
 let words = "";
@@ -134,7 +136,7 @@ function isGoalMet() {
     return (count >= goal);
 }
 
-// changes color of text when goal is met
+// changes color of icon qhen goal is
 function goalMetAlert() {
     if ((isGoalMet()) & (goal != 0)) {
         console.log("Goal is met!")
@@ -149,6 +151,7 @@ function goalMetAlert() {
     }
 }
 
+// selects entire goal input field if it's the first click
 function goalFirstClick(e) {
     if (goal_clicked == false) {
         this.select();
@@ -187,12 +190,12 @@ document.getElementById("paragraphs-button").addEventListener("click", setToPara
 
 
 
-// refresh displayed count
+// updates goal progress
 function refreshGoalDisplay() {
-    document.getElementById("goal-display").innerHTML = `${count}/${goal}`;
+    goal_display.innerHTML = `${count}/${goal}`;
 }
 
-// hide goal-display
+// hides goal-display
 goal_display.addEventListener("click", hideCounter);
 
 // refreshes all values (inputted words, inputted goal, inputted goal display, and checks if goal is met)
@@ -227,12 +230,12 @@ function hide() {
 
 // hides counter
 function hideCounter() {
-    if (this.classList.contains("goal-display-hidden")) {
-        this.classList.remove("goal-display-hidden");
-    } else this.classList.add("goal-display-hidden");
+    this.classList.toggle("goal-display-hidden");
 }
 
-var autoExpand = function (field) {
+
+// auto-expands large input field as it gets filled
+let autoExpand = function (field) {
 
 	// Reset field height
 	field.style.height = 'inherit';
@@ -253,9 +256,15 @@ var autoExpand = function (field) {
 
 // ENTRIES
 
+// sets auto height of entry container to pixels, allowing for smooth transition
 entries_container.style.setProperty("--fullHeight", entries_container.clientHeight + "px");
 
-
+function refreshEntriesHeight() {
+	entries_container.style.setProperty("--fullHeight", "auto");
+	entries_container.style.setProperty("--fullHeight", entries_container.clientHeight + "px");
+	
+}
+// closes entries container
 close_entries_link.addEventListener("click", hideDiv);
 
 function hideDiv() {
@@ -268,7 +277,7 @@ function hideDiv() {
     }
 }
 
-
+// creates a new entry card
 save_button.addEventListener("click", createEntry);
 
 // generates the content teaser for entry cards, first 55 characters
@@ -278,6 +287,7 @@ function generateTeaser(s) {
 	return teaser;
 }
 
+// generates an ID for new modals
 let modal_number = 0;
 function generateID() {
 	modal_number ++;
@@ -285,6 +295,7 @@ function generateID() {
 	return current_modal;
 }
 
+// creates all the elements for a new entry
 function createEntry() {
 	// creates the cell for the entry card
 	let newEntryCell = document.createElement("div");
@@ -328,5 +339,5 @@ function createEntry() {
 	// sets entry div to open newly generated modal
 	newEntryDiv.setAttribute("data-open", id);
 
-
+	refreshEntriesHeight();
 }
