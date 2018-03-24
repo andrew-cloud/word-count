@@ -332,8 +332,11 @@ function createEntry() {
 	let id = generateID();
 	content.id = id;
 	content.className = "reveal";
+	let contentTitle = document.createElement("p");
+	contentTitle.className = "content-title";
+	contentTitle.innerHTML = "This is the title";
 	// new elements have to be appended to something, in this case, the body
-	document.body.appendChild(content);
+	document.body.appendChild(content).appendChild(contentTitle);
 
 	// options for newly generated modal
 	let options = {
@@ -345,6 +348,7 @@ function createEntry() {
 	
 	// sets entry div to open newly generated modal
 	newEntryDiv.setAttribute("data-open", id);
+	$(`#${id}`).foundation();
 
 	refreshEntriesHeight();
 	clearInput();
