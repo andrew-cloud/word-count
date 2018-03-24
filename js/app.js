@@ -254,6 +254,13 @@ let autoExpand = function (field) {
 
 };
 
+// clears input and updates progress feedback after submission
+function clearInput() {
+	words_input.value = "";
+	refreshAll();
+
+}
+
 // ENTRIES
 
 // sets auto height of entry container to pixels, allowing for smooth transition
@@ -340,4 +347,5 @@ function createEntry() {
 	newEntryDiv.setAttribute("data-open", id);
 
 	refreshEntriesHeight();
+	clearInput();
 }
