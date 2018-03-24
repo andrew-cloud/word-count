@@ -5799,3 +5799,6 @@ input[type=number]::-webkit-outer-spin-button {
 .scaleOut.mui-leave.mui-leave-active {
   transform: scale(0.5);
   opacity: 0; }
+
+.container-header {
+  margin-bottom: 1.5rem; }

@@ -305,7 +305,7 @@ function createEntry() {
 	newEntryTeaser.className = "teaser";
 	newEntryTeaser.innerHTML = generateTeaser(words);
 	// combines everything toegether and appends it to the entries container
-	entries_container_inner.appendChild(newEntryCell).appendChild(newEntryDiv).appendChild(newEntryTitle);
+	entries_container_inner.insertBefore(newEntryCell, entries_container_inner.firstChild).appendChild(newEntryDiv).appendChild(newEntryTitle);
 	newEntryDiv.appendChild(newEntryDate);
 	newEntryDiv.appendChild(newEntryTeaser);
 	// creates the modal content
