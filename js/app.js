@@ -322,7 +322,7 @@ function createEntry() {
 	let newEntryTeaser = document.createElement("p");
 	newEntryTeaser.className = "teaser";
 	newEntryTeaser.innerHTML = generateTeaser(words);
-	// combines everything toegether and appends it to the entries container
+	// combines everything together and appends it to the entries container
 	entries_container_inner.insertBefore(newEntryCell, entries_container_inner.firstChild).appendChild(newEntryDiv).appendChild(newEntryTitle);
 	newEntryDiv.appendChild(newEntryDate);
 	newEntryDiv.appendChild(newEntryTeaser);
@@ -332,11 +332,39 @@ function createEntry() {
 	let id = generateID();
 	content.id = id;
 	content.className = "reveal";
+	// create 'close' button
+	let contentClose = document.createElement("button");
+	contentClose.className = "close-button";
+	contentClose.setAttribute("data-close", "");
+	contentClose.setAttribute("aria-label", "Close modal");
+	contentClose.setAttribute("type", "button");
+	// create 'x' for close button
+	let contentCloseX = document.createElement("span");
+	contentCloseX.setAttribute("aria-hidden", "true");
+	contentCloseX.innerHTML = "×";
+	// creates modal title
 	let contentTitle = document.createElement("p");
 	contentTitle.className = "content-title";
-	contentTitle.innerHTML = "This is the title";
+	contentTitle.innerHTML = "This is the title.";
+	// creates modal date
+	let contentDate = document.createElement("p");
+	contentDate.className = "content-date";
+	contentDate.innerHTML = "Jan 1st, 2018";
+	// creates modal goal information
+	let contentGoal = document.createElement("p");
+	contentGoal.className = "content-goal";
+	contentGoal.innerHTML = "265/250 words icon-placeholder";
+	// creates modal body information
+	let contentBody = document.createElement("p");
+	contentBody.className = "content-body";
+	contentBody.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 	// new elements have to be appended to something, in this case, the body
-	document.body.appendChild(content).appendChild(contentTitle);
+	document.body.appendChild(content).appendChild(contentClose).appendChild(contentCloseX);
+	content.appendChild(contentTitle);
+	content.appendChild(contentDate);
+	content.appendChild(contentGoal);
+	content.appendChild(contentBody);
+
 
 	// options for newly generated modal
 	let options = {
