@@ -49,6 +49,8 @@ let test_entry = document.getElementById("test-entry");
 let close_entries_link = document.getElementById("close-entries-link");
 // entries container height
 let entries_container_height = entries_container.clientHeight;
+// maximum number of entry cards
+const maxEntries = 12;
 // body
 let body = document.body;
 
@@ -318,11 +320,20 @@ function generateTeaser(s) {
 
 // generates an ID for new modals
 let modal_number = 0;
-
 function generateID() {
     modal_number++;
     let current_modal = `modal${modal_number}`;
     return current_modal;
+}
+
+// caps number of entries to twelve
+function limitEntries() {
+	let entries_list = document.querySelectorAll(".entry");
+	if (entries_list.length >= 11) {
+		entries_container_inner.removeChild(entries_container_inner.lastChild);
+	}
+	console.log(entries_list.length);
+	console.log(maxEntries);
 }
 
 // creates all the elements for a new entry
@@ -351,7 +362,6 @@ function createEntry() {
     newEntryDiv.appendChild(newEntryTeaser);
     // creates the modal content
     let content = document.createElement("div");
-    content.innerHTML = words;
     let id = generateID();
     content.id = id;
     content.className = "reveal";
@@ -376,7 +386,7 @@ function createEntry() {
     // creates modal goal information
     let contentGoal = document.createElement("p");
     contentGoal.className = "content-goal";
-    contentGoal.innerHTML = "`${count}/${goal}` ${unit} icon-placeholder";
+    contentGoal.innerHTML = `${count}/${goal} ${unit} icon-placeholder`;
     // creates modal body information
     let contentBody = document.createElement("p");
     contentBody.className = "content-body";
@@ -399,8 +409,9 @@ function createEntry() {
 
     // sets entry div to open newly generated modal
     newEntryDiv.setAttribute("data-open", id);
-    $(`#${id}`).foundation();
+    // $(`#${id}`).foundation();
 
     refreshEntriesHeight();
     clearInput();
+    limitEntries()
 }
