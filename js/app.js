@@ -3,18 +3,24 @@ $(document).foundation();
 // VARIABLES
 
 
+// inputted title
+let title = ""
 // inputted words variable
 let words = "";
 // word count variable
 let count = 0;
 // goal variable
 let goal = 250;
+// units
+let unit = "words";
 // goal input
 let goal_input = document.getElementById("goal-input");
 // goal-display
 let goal_display = document.getElementById("goal-display");
 // has the goal input been clicked before?
 let goal_clicked = false;
+// title input
+let title_input = document.getElementById("title-input");
 // word input
 let words_input = document.getElementById("words-input");
 // character count boolean
@@ -56,6 +62,11 @@ function refreshGoal() {
     }
 }
 
+// gets inputted title
+function refreshTitle() {
+	title = title_input.value;
+}
+
 // gets inputted words form text area
 function refreshWords() {
     words = words_input.value;
@@ -74,6 +85,7 @@ function refreshCount() {
 
 // word count
 function wordCount(s) {
+	unit = "words";
     s = s.replace(/(^\s*)|(\s*$)/gi, ""); //exclude  start and end white-space
     s = s.replace(/[ ]{2,}/gi, " "); // 2 or more spaces to 1
     s = s.replace(/\n /, "\n"); // exclude newline with a start spacing
@@ -86,12 +98,14 @@ function wordCount(s) {
 
 // character count
 function characterCount(s) {
+	unit = "characters";
     s = s.replace(/\s/g, "");
     return s.length;
 }
 
 // paragraph count
 function paragraphCount(s) {
+	unit = "paragraphs";
     s = s.replace(/\n$/gm, '');
     if (words == "") {
         return 0;
@@ -214,10 +228,13 @@ function refreshAll() {
 // refreshes values after input
 document.addEventListener("keyup", refreshAll);
 
+// refreshes title
+title_input.addEventListener("input", refreshTitle);
+
 // refreshed goal in goal-display when new amount is entered
 document.getElementById("goal-input").addEventListener("input", refreshGoal);
 
-// add comment
+// highlights everything in goal input on first click
 goal_input.addEventListener("click", goalFirstClick);
 
 // adds active class to unit buttons
@@ -351,7 +368,7 @@ function createEntry() {
     // creates modal title
     let contentTitle = document.createElement("p");
     contentTitle.className = "content-title";
-    contentTitle.innerHTML = "This is the title.";
+    contentTitle.innerHTML = title;
     // creates modal date
     let contentDate = document.createElement("p");
     contentDate.className = "content-date";
@@ -359,11 +376,11 @@ function createEntry() {
     // creates modal goal information
     let contentGoal = document.createElement("p");
     contentGoal.className = "content-goal";
-    contentGoal.innerHTML = "265/250 words icon-placeholder";
+    contentGoal.innerHTML = "`${count}/${goal}` ${unit} icon-placeholder";
     // creates modal body information
     let contentBody = document.createElement("p");
     contentBody.className = "content-body";
-    contentBody.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+    contentBody.innerHTML = words;
     // new elements have to be appended to something, in this case, the body
     document.body.appendChild(content).appendChild(contentClose).appendChild(contentCloseX);
     content.appendChild(contentTitle);
