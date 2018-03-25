@@ -49,7 +49,11 @@ let body = document.body;
 
 // gets goal number from input field
 function refreshGoal() {
-    goal = goal_input.valueAsNumber;
+    if (goal_input.value == "") {
+        goal = 0;
+    } else {
+        goal = goal_input.valueAsNumber;
+    }
 }
 
 // gets inputted words form text area
@@ -235,29 +239,29 @@ function hideCounter() {
 
 
 // auto-expands large input field as it gets filled
-let autoExpand = function (field) {
+let autoExpand = function(field) {
 
-	// Reset field height
-	field.style.height = 'inherit';
+    // Reset field height
+    field.style.height = 'inherit';
 
-	// Get the computed styles for the element
-	var computed = window.getComputedStyle(field);
+    // Get the computed styles for the element
+    var computed = window.getComputedStyle(field);
 
-	// Calculate the height
-	var height = parseInt(computed.getPropertyValue('border-top-width'), 10)
-	             + parseInt(computed.getPropertyValue('padding-top'), 10)
-	             + field.scrollHeight
-	             + parseInt(computed.getPropertyValue('padding-bottom'), 10)
-	             + parseInt(computed.getPropertyValue('border-bottom-width'), 10);
+    // Calculate the height
+    var height = parseInt(computed.getPropertyValue('border-top-width'), 10) +
+        parseInt(computed.getPropertyValue('padding-top'), 10) +
+        field.scrollHeight +
+        parseInt(computed.getPropertyValue('padding-bottom'), 10) +
+        parseInt(computed.getPropertyValue('border-bottom-width'), 10);
 
-	field.style.height = height + 'px';
+    field.style.height = height + 'px';
 
 };
 
 // clears input and updates progress feedback after submission
 function clearInput() {
-	words_input.value = "";
-	refreshAll();
+    words_input.value = "";
+    refreshAll();
 
 }
 
@@ -267,9 +271,9 @@ function clearInput() {
 entries_container.style.setProperty("--fullHeight", entries_container.clientHeight + "px");
 
 function refreshEntriesHeight() {
-	entries_container.style.setProperty("--fullHeight", "auto");
-	entries_container.style.setProperty("--fullHeight", entries_container.clientHeight + "px");
-	
+    entries_container.style.setProperty("--fullHeight", "auto");
+    entries_container.style.setProperty("--fullHeight", entries_container.clientHeight + "px");
+
 }
 // closes entries container
 close_entries_link.addEventListener("click", hideDiv);
@@ -289,95 +293,96 @@ save_button.addEventListener("click", createEntry);
 
 // generates the content teaser for entry cards, first 55 characters
 function generateTeaser(s) {
-	let teaser = s.substring(0,56) + "...";
-	teaser.trim();
-	return teaser;
+    let teaser = s.substring(0, 56) + "...";
+    teaser.trim();
+    return teaser;
 }
 
 // generates an ID for new modals
 let modal_number = 0;
+
 function generateID() {
-	modal_number ++;
-	let current_modal = `modal${modal_number}`;
-	return current_modal;
+    modal_number++;
+    let current_modal = `modal${modal_number}`;
+    return current_modal;
 }
 
 // creates all the elements for a new entry
 function createEntry() {
-	// creates the cell for the entry card
-	let newEntryCell = document.createElement("div");
-	newEntryCell.className = "large-3 medium-6 small-12 cell";
-	// creates the entry div
-	let newEntryDiv = document.createElement("div");
-	newEntryDiv.className = "entry";
-	// creates the entry title
-	let newEntryTitle = document.createElement("p");
-	newEntryTitle.className = "title";
-	newEntryTitle.innerHTML = "Title";
-	// creates the entry date
-	let newEntryDate = document.createElement("p");
-	newEntryDate.className = "";
-	newEntryDate.innerHTML = "Jan 1, 18";
-	// creates the entry teaser
-	let newEntryTeaser = document.createElement("p");
-	newEntryTeaser.className = "teaser";
-	newEntryTeaser.innerHTML = generateTeaser(words);
-	// combines everything together and appends it to the entries container
-	entries_container_inner.insertBefore(newEntryCell, entries_container_inner.firstChild).appendChild(newEntryDiv).appendChild(newEntryTitle);
-	newEntryDiv.appendChild(newEntryDate);
-	newEntryDiv.appendChild(newEntryTeaser);
-	// creates the modal content
-	let content = document.createElement("div");
-	content.innerHTML = words;
-	let id = generateID();
-	content.id = id;
-	content.className = "reveal";
-	// create 'close' button
-	let contentClose = document.createElement("button");
-	contentClose.className = "close-button";
-	contentClose.setAttribute("data-close", "");
-	contentClose.setAttribute("aria-label", "Close modal");
-	contentClose.setAttribute("type", "button");
-	// create 'x' for close button
-	let contentCloseX = document.createElement("span");
-	contentCloseX.setAttribute("aria-hidden", "true");
-	contentCloseX.innerHTML = "×";
-	// creates modal title
-	let contentTitle = document.createElement("p");
-	contentTitle.className = "content-title";
-	contentTitle.innerHTML = "This is the title.";
-	// creates modal date
-	let contentDate = document.createElement("p");
-	contentDate.className = "content-date";
-	contentDate.innerHTML = "Jan 1st, 2018";
-	// creates modal goal information
-	let contentGoal = document.createElement("p");
-	contentGoal.className = "content-goal";
-	contentGoal.innerHTML = "265/250 words icon-placeholder";
-	// creates modal body information
-	let contentBody = document.createElement("p");
-	contentBody.className = "content-body";
-	contentBody.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-	// new elements have to be appended to something, in this case, the body
-	document.body.appendChild(content).appendChild(contentClose).appendChild(contentCloseX);
-	content.appendChild(contentTitle);
-	content.appendChild(contentDate);
-	content.appendChild(contentGoal);
-	content.appendChild(contentBody);
+    // creates the cell for the entry card
+    let newEntryCell = document.createElement("div");
+    newEntryCell.className = "large-3 medium-6 small-12 cell";
+    // creates the entry div
+    let newEntryDiv = document.createElement("div");
+    newEntryDiv.className = "entry";
+    // creates the entry title
+    let newEntryTitle = document.createElement("p");
+    newEntryTitle.className = "title";
+    newEntryTitle.innerHTML = "Title";
+    // creates the entry date
+    let newEntryDate = document.createElement("p");
+    newEntryDate.className = "";
+    newEntryDate.innerHTML = "Jan 1, 18";
+    // creates the entry teaser
+    let newEntryTeaser = document.createElement("p");
+    newEntryTeaser.className = "teaser";
+    newEntryTeaser.innerHTML = generateTeaser(words);
+    // combines everything together and appends it to the entries container
+    entries_container_inner.insertBefore(newEntryCell, entries_container_inner.firstChild).appendChild(newEntryDiv).appendChild(newEntryTitle);
+    newEntryDiv.appendChild(newEntryDate);
+    newEntryDiv.appendChild(newEntryTeaser);
+    // creates the modal content
+    let content = document.createElement("div");
+    content.innerHTML = words;
+    let id = generateID();
+    content.id = id;
+    content.className = "reveal";
+    // create 'close' button
+    let contentClose = document.createElement("button");
+    contentClose.className = "close-button";
+    contentClose.setAttribute("data-close", "");
+    contentClose.setAttribute("aria-label", "Close modal");
+    contentClose.setAttribute("type", "button");
+    // create 'x' for close button
+    let contentCloseX = document.createElement("span");
+    contentCloseX.setAttribute("aria-hidden", "true");
+    contentCloseX.innerHTML = "×";
+    // creates modal title
+    let contentTitle = document.createElement("p");
+    contentTitle.className = "content-title";
+    contentTitle.innerHTML = "This is the title.";
+    // creates modal date
+    let contentDate = document.createElement("p");
+    contentDate.className = "content-date";
+    contentDate.innerHTML = "Jan 1st, 2018";
+    // creates modal goal information
+    let contentGoal = document.createElement("p");
+    contentGoal.className = "content-goal";
+    contentGoal.innerHTML = "265/250 words icon-placeholder";
+    // creates modal body information
+    let contentBody = document.createElement("p");
+    contentBody.className = "content-body";
+    contentBody.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+    // new elements have to be appended to something, in this case, the body
+    document.body.appendChild(content).appendChild(contentClose).appendChild(contentCloseX);
+    content.appendChild(contentTitle);
+    content.appendChild(contentDate);
+    content.appendChild(contentGoal);
+    content.appendChild(contentBody);
 
 
-	// options for newly generated modal
-	let options = {
-		AnimationIn: "scaleIn",
-		AnimationOut: "scaleOut"
-	};
+    // options for newly generated modal
+    let options = {
+        AnimationIn: "scaleIn",
+        AnimationOut: "scaleOut"
+    };
 
-	let modal = new Foundation.Reveal($(`#${id}`), options);
-	
-	// sets entry div to open newly generated modal
-	newEntryDiv.setAttribute("data-open", id);
-	$(`#${id}`).foundation();
+    let modal = new Foundation.Reveal($(`#${id}`), options);
 
-	refreshEntriesHeight();
-	clearInput();
+    // sets entry div to open newly generated modal
+    newEntryDiv.setAttribute("data-open", id);
+    $(`#${id}`).foundation();
+
+    refreshEntriesHeight();
+    clearInput();
 }
