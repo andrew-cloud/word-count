@@ -329,7 +329,7 @@ function generateID() {
 // caps number of entries to twelve
 function limitEntries() {
 	let entries_list = document.querySelectorAll(".entry");
-	if (entries_list.length >= 11) {
+	if (entries_list.length == 12) {
 		entries_container_inner.removeChild(entries_container_inner.lastChild);
 	}
 	console.log(entries_list.length);
