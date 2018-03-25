@@ -147,10 +147,10 @@ body {
 #goal-display-container {
     text-align: right;
     margin-top: 0.5rem;
+    cursor: pointer;
 }
 
 #goal-display {
-    cursor: pointer;
     text-align: right;
 }
 
@@ -179,6 +179,10 @@ body {
 
 .checkmark-met {
     color: green;
+}
+
+.checkmark-hidden {
+    opacity: 0;
 }
 
 // utility class, currently used to make unit counter unselectable

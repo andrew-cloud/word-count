@@ -5660,10 +5660,10 @@ body {
 
 #goal-display-container {
   text-align: right;
-  margin-top: 0.5rem; }
+  margin-top: 0.5rem;
+  cursor: pointer; }
 
 #goal-display {
-  cursor: pointer;
   text-align: right; }
 
 #goal-display:hover {
@@ -5684,6 +5684,9 @@ body {
 
 .checkmark-met {
   color: green; }
+
+.checkmark-hidden {
+  opacity: 0; }
 
 .unselectable {
   -webkit-touch-callout: none;

@@ -200,7 +200,7 @@ function refreshGoalDisplay() {
 }
 
 // hides goal-display
-goal_display.addEventListener("click", hideCounter);
+goal_display_container.addEventListener("click", hideCounter);
 
 // refreshes all values (inputted words, inputted goal, inputted goal display, and checks if goal is met)
 function refreshAll() {
@@ -234,7 +234,8 @@ function hide() {
 
 // hides counter
 function hideCounter() {
-    this.classList.toggle("goal-display-hidden");
+    goal_display.classList.toggle("goal-display-hidden");
+    checkmark.classList.toggle("checkmark-hidden");
 }
 
 
