@@ -53,6 +53,8 @@ let entries_container_height = entries_container.clientHeight;
 const maxEntries = 12;
 // body
 let body = document.body;
+// modal container
+let modal_container = document.getElementById("modal-container");
 
 
 // gets goal number from input field
@@ -329,11 +331,18 @@ function generateID() {
 // caps number of entries to twelve
 function limitEntries() {
 	let entries_list = document.querySelectorAll(".entry");
-	if (entries_list.length == 12) {
-		entries_container_inner.removeChild(entries_container_inner.lastChild);
+	let modal_list = document.querySelectorAll(".reveal");
+	if (entries_list.length >= 13) {
+		let lastEntry = entries_container_inner.lastElementChild;
+		entries_container_inner.removeChild(lastEntry);
+		// let lastModal = modal_container.lastElementChild;
+		// modal_container.removeChild(lastModal);
+		refreshEntriesHeight();
+	}
+	else {
+		return;
 	}
 	console.log(entries_list.length);
-	console.log(maxEntries);
 }
 
 // creates all the elements for a new entry
@@ -392,7 +401,7 @@ function createEntry() {
     contentBody.className = "content-body";
     contentBody.innerHTML = words;
     // new elements have to be appended to something, in this case, the body
-    document.body.appendChild(content).appendChild(contentClose).appendChild(contentCloseX);
+    body.appendChild(content).appendChild(contentClose).appendChild(contentCloseX);
     content.appendChild(contentTitle);
     content.appendChild(contentDate);
     content.appendChild(contentGoal);
