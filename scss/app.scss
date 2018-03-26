@@ -53,14 +53,19 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+$background: #D6EFFF;
+@mixin box-shadow{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
 
 body {
-    background-color: #D9E5E9;
+    background-color: $background;
     font-family: 'Roboto', sans-serif;
 }
 
 #all-container {
-    background-color: #D9E5E9; // reminder: setting a container to display: flex turns it into a flex parent, 
+    background-color: $background; // reminder: setting a container to display: flex turns it into a flex parent, 
     // allowing you to apply foundation flex utility classes
     flex-direction: column;
     width: 60%;
@@ -83,6 +88,7 @@ body {
     margin-bottom: 2rem;
     padding: 2rem 2rem 0.5rem 2rem;
     border-radius: 4px;
+    @include box-shadow;
     @include breakpoint(small only) {
         border-radius: 0;
     }
@@ -203,6 +209,7 @@ body {
     padding: 2rem;
     transition: all 400ms ease;
     overflow: hidden;
+    @include box-shadow;
     @include breakpoint(small only) {
         border-radius: 0;
     }

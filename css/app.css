@@ -5596,11 +5596,11 @@ a.thumbnail {
   animation-delay: 700ms !important; }
 
 body {
-  background-color: #D9E5E9;
+  background-color: #D6EFFF;
   font-family: 'Roboto', sans-serif; }
 
 #all-container {
-  background-color: #D9E5E9;
+  background-color: #D6EFFF;
   flex-direction: column;
   width: 60%;
   padding: 2rem 1rem 2rem 1rem;
@@ -5619,7 +5619,8 @@ body {
   background-color: white;
   margin-bottom: 2rem;
   padding: 2rem 2rem 0.5rem 2rem;
-  border-radius: 4px; }
+  border-radius: 4px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
   @media screen and (max-width: 39.9375em) {
     #words-container {
       border-radius: 0; } }
@@ -5702,7 +5703,8 @@ body {
   background-color: white;
   padding: 2rem;
   transition: all 400ms ease;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
   @media screen and (max-width: 39.9375em) {
     #entries-container {
       border-radius: 0; } }

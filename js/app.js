@@ -355,6 +355,9 @@ function limitEntries() {
 	console.log(entries_list.length);
 }
 
+// resizes entry container when screen is resized
+window.addEventListener("resize", refreshEntriesHeight);
+
 // creates all the elements for a new entry
 function createEntry() {
     // creates the cell for the entry card
