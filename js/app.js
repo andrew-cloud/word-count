@@ -328,6 +328,16 @@ function generateID() {
     return current_modal;
 }
 
+function generateIcon() {
+	if (isGoalMet() == true) {
+		return `<i class="fas fa-check-circle"></i>`;
+	}
+	else {
+		return `<i class="fas fa-times-circle"></i>`;
+
+	}
+}
+
 // caps number of entries to twelve
 function limitEntries() {
 	let entries_list = document.querySelectorAll(".entry");
@@ -349,7 +359,7 @@ function limitEntries() {
 function createEntry() {
     // creates the cell for the entry card
     let newEntryCell = document.createElement("div");
-    newEntryCell.className = "large-3 medium-6 small-12 cell";
+    newEntryCell.className = "large-4 medium-6 small-12 cell";
     // creates the entry div
     let newEntryDiv = document.createElement("div");
     newEntryDiv.className = "entry";
@@ -395,7 +405,7 @@ function createEntry() {
     // creates modal goal information
     let contentGoal = document.createElement("p");
     contentGoal.className = "content-goal";
-    contentGoal.innerHTML = `${count}/${goal} ${unit} icon-placeholder`;
+    contentGoal.innerHTML = `${count}/${goal} ${unit} ${generateIcon()}`;
     // creates modal body information
     let contentBody = document.createElement("p");
     contentBody.className = "content-body";
