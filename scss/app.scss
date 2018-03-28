@@ -54,6 +54,7 @@
 @include motion-ui-animations;
 
 $background: #F8F8F8;
+$border-radius: 4px;
 @mixin box-shadow{
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
@@ -80,14 +81,29 @@ body {
     }
 }
 
+#new-entry-header {
+    color: white;
+    background-color: #715AFF;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    height: 3rem;
+    weight: bold;
+    border-radius: $border-radius $border-radius 0 0;
+    @include box-shadow;
+    font-family: 'rubik';
+    text-transform: uppercase;
+    @include breakpoint(small only) {
+        border-radius: 0;
+    }
+}
+
 // goal-setting and text input
 #words-container {
-    margin-top: 1rem;
     width: 100%;
     background-color: white;
     margin-bottom: 2rem;
     padding: 2rem 2rem 0.5rem 2rem;
-    border-radius: 4px;
+    border-radius: 0 0 $border-radius $border-radius;
     @include box-shadow;
     @include breakpoint(small only) {
         border-radius: 0;
@@ -206,10 +222,13 @@ body {
     width: 100%;
     border-radius: 4px;
     background-color: white;
-    padding: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     transition: all 800ms ease;
     overflow: hidden;
     transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+    @include box-shadow;
+    border-radius: 0 0 $border-radius $border-radius;
     @include box-shadow;
     @include breakpoint(small only) {
         border-radius: 0;
@@ -307,10 +326,14 @@ body {
 
 .closed-div {
     height: 0;
+    padding-top: 0;
 }
 
 .open-div {
     height: var(--fullHeight);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
 }
 
 #test-entry {
