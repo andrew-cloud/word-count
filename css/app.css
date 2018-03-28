@@ -5596,7 +5596,7 @@ a.thumbnail {
   animation-delay: 700ms !important; }
 
 body {
-  background: #D6EFFF;
+  background: #F8F8F8;
   font-family: 'Roboto', sans-serif; }
 
 #all-container {
@@ -5620,7 +5620,7 @@ body {
   margin-bottom: 2rem;
   padding: 2rem 2rem 0.5rem 2rem;
   border-radius: 4px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
   @media screen and (max-width: 39.9375em) {
     #words-container {
       border-radius: 0; } }
@@ -5705,14 +5705,14 @@ body {
   transition: all 800ms ease;
   overflow: hidden;
   transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
   @media screen and (max-width: 39.9375em) {
     #entries-container {
       border-radius: 0; } }
 
 .entry {
   border-radius: 4px;
-  color: #484848;
+  color: #383838;
   background-color: white;
   border: 1px solid #E8E8E8;
   cursor: pointer;
@@ -5722,36 +5722,55 @@ body {
   line-height: 20px;
   transition: 200ms ease;
   position: relative;
-  width: 100%; }
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif; }
   .entry p {
     display: block;
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
-    padding: 0.5rem 0.75rem; }
+    margin: 0 0.75rem; }
   .entry .title {
-    font-family: 'Rubik', sans-serif;
-    font-weight: bold; }
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-top: 1rem; }
+  .entry .date {
+    font-size: 0.75rem;
+    color: #808080;
+    text-transform: uppercase; }
   .entry .teaser {
-    font-size: 1rem; }
+    font-size: 0.95rem;
+    line-height: 1.25rem;
+    margin-top: 1rem; }
   .entry .goal-met {
     height: auto;
-    background-color: green;
+    color: #77B248;
+    background-color: #BAD9A2;
     position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
-    height: 2rem;
-    line-height: 2rem; }
+    height: 3rem;
+    line-height: 3rem;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 800;
+    font-family: 'Roboto'; }
   .entry .goal-unmet {
     height: auto;
-    background-color: red;
+    color: #ff3839;
+    background-color: #FF6B6C;
     position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
     height: 2rem;
-    line-height: 2rem; }
+    text-transform: uppercase;
+    line-height: 2rem;
+    font-weight: 800;
+    font-family: 'Roboto'; }
 
 .truncate {
   width: 100%;
@@ -5771,7 +5790,8 @@ body {
 
 .entry:hover {
   transform: scale(1.1, 1.1);
-  transition: 200ms ease; }
+  transition: 200ms ease;
+  border: 1px solid #C8C8C8; }
 
 .fullscreen {
   max-height: calc(100% - 100px);

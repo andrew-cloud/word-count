@@ -53,9 +53,9 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
-$background: #D6EFFF;
+$background: #F8F8F8;
 @mixin box-shadow{
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
 
 
@@ -219,7 +219,7 @@ body {
 // inidividual entry
 .entry {
     border-radius: 4px;
-    color: #484848;
+    color: #383838;
     background-color: white;
     border: 1px solid #E8E8E8;
     cursor: pointer;
@@ -230,6 +230,8 @@ body {
     transition: 200ms ease;
     position: relative;
     width: 100%;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
 
 
     p {
@@ -237,41 +239,59 @@ body {
         overflow-wrap: break-word;
         word-wrap: break-word;
         hyphens: auto;
-        padding: 0.5rem 0.75rem;
+        margin: 0 0.75rem;
 
     }
 
     .title {
-        font-family: 'Rubik', sans-serif;
         font-weight: bold;
+        text-transform: uppercase;
+        font-size: 1rem;
+        margin-top: 1rem;
+
     }
 
-    .date {}
+    .date {
+        font-size: 0.75rem;
+        color: #808080;
+        text-transform: uppercase;
+    }
 
     .teaser {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.25rem;
+        margin-top: 1rem;
     }
 
     .goal-met {
         height: auto;
-        background-color: green;
+        color: #77B248;
+        background-color: #BAD9A2;
         position: absolute;
         bottom: 0;
         width: 100%;
         text-align: center;
-        height: 2rem;
-        line-height: 2rem;
+        height: 3rem;
+        line-height: 3rem;
+        text-transform: uppercase;
+        font-size: 1.25rem;
+        font-weight: 800;
+        font-family: 'Roboto';
     }
 
     .goal-unmet {
         height: auto;
-        background-color: red;
+        color: #ff3839;
+        background-color: #FF6B6C;
         position: absolute;
         bottom: 0;
         width: 100%;
         text-align: center;
         height: 2rem;
+        text-transform: uppercase;
         line-height: 2rem;
+        font-weight: 800;
+        font-family: 'Roboto';
     }
 }
 
@@ -300,6 +320,7 @@ body {
 .entry:hover {
     transform: scale(1.1, 1.1);
     transition: 200ms ease;
+    border: 1px solid #C8C8C8;
 }
 
 .fullscreen {

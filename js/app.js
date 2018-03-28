@@ -369,10 +369,10 @@ function createEntry() {
     // creates the entry title
     let newEntryTitle = document.createElement("p");
     newEntryTitle.className = "title";
-    newEntryTitle.innerHTML = "Title";
+    newEntryTitle.innerHTML = title;
     // creates the entry date
     let newEntryDate = document.createElement("p");
-    newEntryDate.className = "";
+    newEntryDate.className = "date";
     newEntryDate.innerHTML = "Jan 1, 18";
     // creates the entry teaser
     let newEntryTeaser = document.createElement("p");
@@ -403,7 +403,7 @@ function createEntry() {
     contentTitle.innerHTML = title;
     // creates modal date
     let contentDate = document.createElement("p");
-    contentDate.className = "content-date";
+    contentDate.className = "date";
     contentDate.innerHTML = "Jan 1st, 2018";
     // creates modal goal information
     let contentGoal = document.createElement("p");
