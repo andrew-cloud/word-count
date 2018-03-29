@@ -55,8 +55,9 @@
 
 $background: #F8F8F8;
 $border-radius: 4px;
-$header-color: #0267C1;
-$grey: #50514F;
+$header-color: #006992;
+// $header-color: #3C4F76;
+$grey: #2E3532;
 @mixin box-shadow{
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
@@ -90,13 +91,14 @@ p {
 #new-entry-header {
     color: white;
     background-color: $header-color;
-    font-size: 1.5rem;
+    font-size: 1.10rem;
     line-height: 3rem;
     height: 3rem;
     weight: bold;
     border-radius: $border-radius $border-radius 0 0;
     @include box-shadow;
-    font-family: 'rubik';
+    font-family: 'Rubik';
+    font-weight: 900;
     text-transform: uppercase;
     @include breakpoint(small only) {
         border-radius: 0;
@@ -136,11 +138,14 @@ p {
 
 // buttons that allow you to set goal in characters, words, or paragraphs
 #unit-button-group {
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Roboto', sans-serif;
 
     .unit-button {
         border-radius: 2px;
         margin-right: 0;
+        background-color: #C7EFCF;
+        color: #b3d7ba;
+        font-weight: bold;
     }
 
     #characters-button {
@@ -158,7 +163,8 @@ p {
     }
 
     .active {
-        background-color: red;
+        background-color: #b3d7ba;
+        color: $grey;
     }
 }
 
@@ -291,31 +297,31 @@ p {
 
     .goal-met {
         height: auto;
-        color: #77B248;
-        background-color: #BAD9A2;
+        color: $grey;
+        background-color: #C7EFCF;
         position: absolute;
         bottom: 0;
         width: 100%;
         text-align: center;
-        height: 3rem;
-        line-height: 3rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
         text-transform: uppercase;
-        font-size: 1.25rem;
+        font-size: 1rem;
         font-weight: 800;
         font-family: 'Roboto';
     }
 
     .goal-unmet {
         height: auto;
-        color: #ff3839;
-        background-color: #FF6B6C;
+        color: $grey;
+        background-color: #F25F5C;
         position: absolute;
         bottom: 0;
         width: 100%;
         text-align: center;
-        height: 2rem;
+        height: 2.5rem;
         text-transform: uppercase;
-        line-height: 2rem;
+        line-height: 2.5rem;
         font-weight: 800;
         font-family: 'Roboto';
     }
@@ -374,7 +380,9 @@ p {
 // save button 
 .save {
     width: 100%;
-    background-color: #F25F5C;
+    background-color: #674CAA;
+    color: white;
+    font-weight: bold;
     border-radius: 4px;
     margin-top: 2rem;
     margin-bottom: 1rem;
