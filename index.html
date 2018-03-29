@@ -8,7 +8,6 @@
     <title>250 Words</title>
     <link rel="stylesheet" href="css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Rubik|Chivo" rel="stylesheet">
-
 </head>
 
 <body>
@@ -37,7 +36,7 @@
         </div>
         <div id="words-container" class="grid-container">
             <div class="grid-x grid-margin-x">
-<!-- entry title input -->
+                <!-- entry title input -->
                 <div class="large-12 cell">
                     <input id="title-input" type="text" maxlength="40" placeholder="Title goes here.">
                 </div>
@@ -84,7 +83,14 @@
         </div>
         <!-- past entries kept here -->
         <div id="new-entry-header" class="grid-container">
-            LAST 12 ENTRIES <a id="close-entries-link"><span id="hide-icon"> <i class="fas fa-angle-down fa-lg"></i></span></a>
+            <div class="grid-x">
+                <div class="large-4 cell">
+                    LAST 12 ENTRIES <a id="close-entries-link"><span id="hide-icon"> <i class="fas fa-angle-down fa-lg"></i></span></a>
+                </div>
+                <div class="large-8 cell text-right">
+                    SEE ALL
+                </div>
+            </div>
         </div>
         <div id="entries-container" class="grid-container open-div">
             <div id="entries-container-inner" class="grid-x grid-margin-x grid-margin-y">
@@ -141,63 +147,63 @@
         <!-- MODALS -->
         <!-- placeholder #1 -->
         <div id="modal-container">
-        <div class="reveal" id="exampleModal1" data-reveal>
-            <h1>Awesome. I Have It.</h1>
-            <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-            <button class="close-button" data-close aria-label="Close modal" type="button">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <!-- placeholder #2 -->
-        <div id="modal-container">
-        <div class="reveal" id="exampleModal2" data-reveal>
-            <h1>Awesome. I Have It.</h1>
-            <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-            <button class="close-button" data-close aria-label="Close modal" type="button">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <!-- placeholder #3 -->
-        <div id="modal-container">
-        <div class="reveal" id="exampleModal3" data-reveal>
-            <h1>Awesome. I Have It.</h1>
-            <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-            <button class="close-button" data-close aria-label="Close modal" type="button">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <!-- placeholder #4 -->
-        <div id="modal-container">
-        <div class="reveal" id="exampleModal4" data-reveal>
-            <h1>Awesome. I Have It.</h1>
-            <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-            <button class="close-button" data-close aria-label="Close modal" type="button">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <!-- placeholder #5 -->
-        <div id="modal-container">
-        <div class="reveal" id="exampleModal5" data-reveal>
-            <h1>Awesome. I Have It.</h1>
-            <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-            <button class="close-button" data-close aria-label="Close modal" type="button">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <!-- placeholder #6 -->
-        <div id="modal-container">
-        <div class="reveal" id="exampleModal6" data-reveal>
-            <h1>Awesome. I Have It.</h1>
-            <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-            <button class="close-button" data-close aria-label="Close modal" type="button">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/what-input/dist/what-input.js"></script>
-        <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
-        <script src="js/min/app-min.js"></script>
-        <script src="js/fontawesome-all.js"></script>
+            <div class="reveal" id="exampleModal1" data-reveal>
+                <h1>Awesome. I Have It.</h1>
+                <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+                <button class="close-button" data-close aria-label="Close modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- placeholder #2 -->
+            <div id="modal-container">
+                <div class="reveal" id="exampleModal2" data-reveal>
+                    <h1>Awesome. I Have It.</h1>
+                    <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+                    <button class="close-button" data-close aria-label="Close modal" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- placeholder #3 -->
+                <div id="modal-container">
+                    <div class="reveal" id="exampleModal3" data-reveal>
+                        <h1>Awesome. I Have It.</h1>
+                        <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+                        <button class="close-button" data-close aria-label="Close modal" type="button">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <!-- placeholder #4 -->
+                    <div id="modal-container">
+                        <div class="reveal" id="exampleModal4" data-reveal>
+                            <h1>Awesome. I Have It.</h1>
+                            <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+                            <button class="close-button" data-close aria-label="Close modal" type="button">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!-- placeholder #5 -->
+                        <div id="modal-container">
+                            <div class="reveal" id="exampleModal5" data-reveal>
+                                <h1>Awesome. I Have It.</h1>
+                                <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+                                <button class="close-button" data-close aria-label="Close modal" type="button">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <!-- placeholder #6 -->
+                            <div id="modal-container">
+                                <div class="reveal" id="exampleModal6" data-reveal>
+                                    <h1>Awesome. I Have It.</h1>
+                                    <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+                                    <button class="close-button" data-close aria-label="Close modal" type="button">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <script src="bower_components/jquery/dist/jquery.js"></script>
+                                <script src="bower_components/what-input/dist/what-input.js"></script>
+                                <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
+                                <script src="js/min/app-min.js"></script>
+                                <script src="js/fontawesome-all.js"></script>
 </body>
 
 </html>

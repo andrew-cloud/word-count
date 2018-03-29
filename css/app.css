@@ -5663,6 +5663,9 @@ p {
     background-color: #C7EFCF;
     color: #b3d7ba;
     font-weight: bold; }
+  #unit-button-group .unit-button:hover {
+    background-color: #b3d7ba;
+    color: white; }
   #unit-button-group #characters-button {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px; }
@@ -5687,7 +5690,8 @@ p {
   cursor: pointer; }
 
 #goal-display {
-  text-align: right; }
+  text-align: right;
+  font-weight: 800; }
 
 #goal-display:hover {
   color: grey; }
@@ -5847,6 +5851,9 @@ p {
   margin-top: 2rem;
   margin-bottom: 1rem; }
 
+.save:hover {
+  background-color: #463474; }
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -5886,3 +5893,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 .container-header {
   margin-bottom: 1.5rem; }
+
+.text-right {
+  text-align: right; }
+
+input[type="text"], [type="number"] {
+  box-shadow: none; }
+
+textarea {
+  box-shadow: none; }
