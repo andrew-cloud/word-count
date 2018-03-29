@@ -347,6 +347,26 @@ function generateIcon() {
 	}
 }
 
+function generateGoalClass() {
+	if (isGoalMet() == true) {
+		return "goal-met";
+	}
+	else {
+		return "goal-unmet";
+
+	}
+}
+
+function generateGoalMessage() {
+	if (isGoalMet() == true) {
+		return "Goal Met";
+	}
+	else {
+		return "Not Quite";
+
+	}
+}
+
 // caps number of entries to twelve
 function limitEntries() {
 	let entries_list = document.querySelectorAll(".entry");
@@ -387,10 +407,16 @@ function createEntry() {
     let newEntryTeaser = document.createElement("p");
     newEntryTeaser.className = "teaser";
     newEntryTeaser.innerHTML = generateTeaser(words);
+    // creates goal met/unmet tag
+    let newEntryTag = document.createElement("div");
+    newEntryTag.className = generateGoalClass();
+    newEntryTag.innerHTML = generateGoalMessage();
+    
     // combines everything together and appends it to the entries container
     entries_container_inner.insertBefore(newEntryCell, entries_container_inner.firstChild).appendChild(newEntryDiv).appendChild(newEntryTitle);
     newEntryDiv.appendChild(newEntryDate);
     newEntryDiv.appendChild(newEntryTeaser);
+    newEntryDiv.appendChild(newEntryTag);
     // creates the modal content
     let content = document.createElement("div");
     let id = generateID();
