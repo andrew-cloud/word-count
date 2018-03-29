@@ -55,6 +55,8 @@ const maxEntries = 12;
 let body = document.body;
 // modal container
 let modal_container = document.getElementById("modal-container");
+// hide icon
+let hide_icon = document.getElementById("hide-icon");
 
 
 // gets goal number from input field
@@ -304,10 +306,17 @@ function hideDiv() {
     if (entries_container.classList.contains("open-div")) {
         entries_container.classList.remove("open-div");
         entries_container.classList.add("closed-div");
+        hide_icon.innerHTML = `<i class="fas fa-angle-up fa-lg"></i>`
     } else {
         entries_container.classList.remove("closed-div");
         entries_container.classList.add("open-div");
+        hide_icon.innerHTML = `<i class="fas fa-angle-down fa-lg"></i>`
     }
+}
+
+function flipHideIcon() {
+
+
 }
 
 // creates a new entry card

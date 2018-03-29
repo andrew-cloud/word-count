@@ -55,6 +55,8 @@
 
 $background: #F8F8F8;
 $border-radius: 4px;
+$header-color: #0267C1;
+$grey: #50514F;
 @mixin box-shadow{
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
@@ -63,6 +65,10 @@ $border-radius: 4px;
 body {
     background: $background;
     font-family: 'Roboto', sans-serif;
+}
+
+p {
+    color: #50514F;
 }
 
 #all-container {
@@ -83,7 +89,7 @@ body {
 
 #new-entry-header {
     color: white;
-    background-color: #715AFF;
+    background-color: $header-color;
     font-size: 1.5rem;
     line-height: 3rem;
     height: 3rem;
@@ -217,6 +223,7 @@ body {
     user-select: none;
 }
 
+
 // entries container
 #entries-container {
     width: 100%;
@@ -238,7 +245,6 @@ body {
 // inidividual entry
 .entry {
     border-radius: 4px;
-    color: #383838;
     background-color: white;
     border: 1px solid #E8E8E8;
     cursor: pointer;
@@ -259,6 +265,7 @@ body {
         word-wrap: break-word;
         hyphens: auto;
         margin: 0 0.75rem;
+        color: $grey;
 
     }
 
@@ -336,6 +343,10 @@ body {
 
 }
 
+#hide-icon {
+    color: white;
+}
+
 #test-entry {
     background-color: blue;
 }
@@ -363,7 +374,7 @@ body {
 // save button 
 .save {
     width: 100%;
-    background-color: purple;
+    background-color: #F25F5C;
     border-radius: 4px;
     margin-top: 2rem;
     margin-bottom: 1rem;
