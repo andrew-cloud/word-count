@@ -5660,11 +5660,11 @@ p {
   #unit-button-group .unit-button {
     border-radius: 2px;
     margin-right: 0;
-    background-color: #C7EFCF;
-    color: #b3d7ba;
+    background-color: #A7E8BD;
+    color: white;
     font-weight: bold; }
   #unit-button-group .unit-button:hover {
-    background-color: #b3d7ba;
+    background-color: #96d0aa;
     color: white; }
   #unit-button-group #characters-button {
     border-top-right-radius: 0px;
@@ -5675,8 +5675,8 @@ p {
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px; }
   #unit-button-group .active {
-    background-color: #b3d7ba;
-    color: #2E3532; }
+    background-color: #96d0aa;
+    color: white; }
 
 #word-input-container {
   position: relative; }
@@ -5776,29 +5776,30 @@ p {
     margin-top: 1rem; }
   .entry .goal-met {
     height: auto;
-    color: #2E3532;
-    background-color: #C7EFCF;
+    color: white;
+    background-color: #A7E8BD;
     position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
-    height: 2.5rem;
-    line-height: 2.5rem;
+    height: 2rem;
+    line-height: 2rem;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 800;
     font-family: 'Roboto'; }
   .entry .goal-unmet {
     height: auto;
-    color: #2E3532;
+    color: white;
     background-color: #F25F5C;
     position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
-    height: 2.5rem;
+    height: 2rem;
     text-transform: uppercase;
-    line-height: 2.5rem;
+    line-height: 2rem;
+    font-size: 0.8rem;
     font-weight: 800;
     font-family: 'Roboto'; }
 
@@ -5825,9 +5826,10 @@ p {
   background-color: blue; }
 
 .entry:hover {
-  transform: scale(1.1, 1.1);
+  transform: scale(1.05, 1.05);
   transition: 200ms ease;
-  border: 1px solid #C8C8C8; }
+  border: 1px solid #C8C8C8;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
 
 .fullscreen {
   max-height: calc(100% - 100px);
@@ -5851,7 +5853,7 @@ p {
   margin-top: 2rem;
   margin-bottom: 1rem; }
 
-.save:hover {
+.save:hover, .save:focus {
   background-color: #463474; }
 
 input[type=number]::-webkit-inner-spin-button,

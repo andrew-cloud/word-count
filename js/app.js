@@ -410,7 +410,7 @@ function createEntry() {
     // creates goal met/unmet tag
     let newEntryTag = document.createElement("div");
     newEntryTag.className = generateGoalClass();
-    newEntryTag.innerHTML = generateGoalMessage();
+    newEntryTag.innerHTML = `${count}/${goal} ${unit} ${generateIcon()}`;
     
     // combines everything together and appends it to the entries container
     entries_container_inner.insertBefore(newEntryCell, entries_container_inner.firstChild).appendChild(newEntryDiv).appendChild(newEntryTitle);
