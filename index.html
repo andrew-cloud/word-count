@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>250 Words</title>
     <link rel="stylesheet" href="css/app.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Rubik|Chivo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
 </head>
 
 <body>
@@ -35,62 +35,63 @@
             New Entry
         </div>
         <div id="words-container" class="grid-container">
-            <div class="grid-x grid-margin-x">
-                <!-- entry title input -->
-                <div class="large-12 cell">
-                    <input id="title-input" type="text" maxlength="40" placeholder="Title goes here.">
-                </div>
-                <div class="large-2 medium-3 small-6 cell">
-                    <!-- word unit goal input -->
-                    <input id="goal-input" type="number" value=250 min="0">
-                </div>
-                <div class="large-4 medium-9 small-12 cell">
-                    <div id="unit-button-group" class="button-group expanded">
-                        <!-- word unit buttons -->
-                        <a id="characters-button" class="button unit-button" type="radio">Characters</a>
-                        <a id="words-button" class="button unit-button active" type="radio">Words</a>
-                        <a id="paragraphs-button" class="button unit-button" type="radio">Paragraphs</a>
+            <form>
+                <div class="grid-x grid-margin-x">
+                    <!-- entry title input -->
+                    <div class="large-12 cell">
+                        <input id="title-input" type="text" maxlength="30" placeholder="Title goes here." required>
                     </div>
-                </div>
-                <!-- <div class="large-12 cell">
+                    <div class="large-2 medium-3 small-6 cell">
+                        <!-- word unit goal input -->
+                        <input id="goal-input" type="number" value=250 min="0">
+                    </div>
+                    <div class="large-4 medium-9 small-12 cell">
+                        <div id="unit-button-group" class="button-group expanded">
+                            <!-- word unit buttons -->
+                            <a id="characters-button" class="button unit-button" type="radio">Characters</a>
+                            <a id="words-button" class="button unit-button active" type="radio">Words</a>
+                            <a id="paragraphs-button" class="button unit-button" type="radio">Paragraphs</a>
+                        </div>
+                    </div>
+                    <!-- <div class="large-12 cell">
                     <div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100">
                         <div class="progress-meter" style="width: 50%"></div>
                     </div>
                 </div> -->
-            </div>
-            <div class="grid-x grid-margin-x align-right">
-                <div id="word-input-container" class="large-12 cell">
-                    <!-- word input -->
-                    <textarea id="words-input" rows="8"></textarea>
                 </div>
-            </div>
-            <div class="grid-x grid-margin-x align-right">
-                <div id="goal-display-container" class="large-2 medium-4 small-12 cell align-right unselectable">
-                    <!-- goal-display -->
-                    <span id="goal-display">0/250
+                <div class="grid-x grid-margin-x align-right">
+                    <div id="word-input-container" class="large-12 cell">
+                        <!-- word input -->
+                        <textarea id="words-input" rows="8"></textarea>
+                    </div>
+                </div>
+                <div class="grid-x grid-margin-x align-right">
+                    <div id="goal-display-container" class="large-2 medium-4 small-12 cell align-right unselectable">
+                        <!-- goal-display -->
+                        <span id="goal-display">0/250
                     </span>
-                    <span id="checkmark" class="checkmark-unmet">
+                        <span id="checkmark" class="checkmark-unmet">
                         <i class="fas fa-check-circle"></i>
                     </span>
+                    </div>
                 </div>
-            </div>
-            <div class="grid-x grid-margin-x align-right">
-                <div class="large-3 medium-4 small-12 cell text-align-right">
-                    <!-- save button -->
-                    <button type="button" id="save-button" class="save button">Save</button>
+                <div class="grid-x grid-margin-x align-right">
+                    <div class="large-3 medium-4 small-12 cell text-align-right">
+                        <!-- save button -->
+                        <button type="button" id="save-button" class="save button">Save</button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
         <!-- past entries kept here -->
         <div id="new-entry-header" class="grid-container">
             <div class="grid-x grid-margin-x">
                 <div class="large-4 medium-4 small-8 cell">
-                    LAST 12 ENTRIES <a id="close-entries-link"><span id="hide-icon"> <i class="fas fa-angle-down fa-lg"></i></span></a>
+                    Last 12 Entries <a id="close-entries-link"><span id="hide-icon"> <i class="fas fa-angle-down fa-"></i></span></a>
                 </div>
                 <div class="large-8 medium-8 small-4 cell text-right">
-                    SEE ALL
+                    See All
                 </div>
-                
             </div>
         </div>
         <div id="entries-container" class="grid-container open-div">
@@ -100,7 +101,7 @@
                         <p class="title">Title</p>
                         <p class="date">Jan 1, 2018</p>
                         <p class="teaser"> Only the first 25 characters of the entry are included.</p>
-                        <div class="goal-met">GOAL MET</div>
+                        <div class="goal-met">265/250 words <i class="fas fa-check-circle "></i></div>
                     </div>
                 </div>
                 <div class="large-4 medium-6 small-12 cell" data-open="exampleModal2">
@@ -108,7 +109,7 @@
                         <p class="title">Title</p>
                         <p class="date">Jan 1, 2018</p>
                         <p class="teaser"> Only the first 25 characters of the entry are included.</p>
-                        <div class="goal-unmet">NOT QUITE</div>
+                        <div class="goal-unmet">323/600 characters <i class="fas fa-times-circle "></i></div>
                     </div>
                 </div>
                 <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
@@ -116,31 +117,31 @@
                         <p class="title">Title</p>
                         <p class="date">Jan 1, 2018</p>
                         <p class="teaser"> Only the first 25 characters of the entry are included.</p>
-                        <div class="goal-met">GOAL MET</div>
+                        <div class="goal-met">5/4 paragraphs <i class="fas fa-check-circle "></i></div>
                     </div>
                 </div>
                 <div class="large-4 medium-6 small-12 cell" data-open="exampleModal2">
                     <div class="entry">
-                        <p class="title">Title</p>
+                        <p class="title">I once ate an entire box of peeps</p>
                         <p class="date">Jan 1, 2018</p>
-                        <p class="teaser"> Only the first 25 characters of the entry are included.</p>
-                        <div class="goal-unmet">NOT QUITE</div>
+                        <p class="teaser">I don't know why I did it. I don't know why I did it. Why did I do it? I don't kn...</p>
+                        <div class="goal-unmet">769/800 wharacters <i class="fas fa-times-circle "></i></div>
                     </div>
                 </div>
                 <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
                     <div class="entry">
-                        <p class="title">Title</p>
+                        <p class="title">Struggling as an artist</p>
                         <p class="date">Jan 1, 2018</p>
-                        <p class="teaser"> Only the first 25 characters of the entry are included.</p>
-                        <div class="goal-met">GOAL MET</div>
+                        <p class="teaser">Despite my years of dedication to my craft, no one is willing to purchase...</p>
+                        <div class="goal-met">1201/1000 characters <i class="fas fa-check-circle "></i></div>
                     </div>
                 </div>
                 <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
                     <div class="entry">
-                        <p class="title">Title</p>
+                        <p class="title">My time spent abroad</p>
                         <p class="date">Jan 1, 2018</p>
-                        <p class="teaser"> Only the first 25 characters of the entry are included.</p>
-                        <div class="goal-met">GOAL MET</div>
+                        <p class="teaser">I remember when I first boarded the plane. My heart was pounding with exc...</p>
+                        <div class="goal-met">7426/5000 words <i class="fas fa-check-circle"></i></div>
                     </div>
                 </div>
             </div>
