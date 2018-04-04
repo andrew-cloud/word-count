@@ -59,8 +59,8 @@ $border-radius: 4px;
 $header-color: #006992;
 // $header-color: #3C4F76;
 $grey: #2E3532;
-@mixin box-shadow{
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+@mixin box-shadow {
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -128,7 +128,7 @@ p {
         min-height: 5em;
         max-height: 50rem;
         width: 100%;
-        font-family: 'Raleway';
+        font-family: 'Bitter';
     }
 }
 
@@ -278,7 +278,6 @@ p {
         hyphens: auto;
         margin: 0 0.75rem;
         color: $grey;
-
     }
 
     .title {
@@ -288,7 +287,6 @@ p {
         margin-top: 1rem;
         margin-bottom: 0.1rem;
         line-height: 1.15rem;
-
     }
 
     .date {
@@ -353,7 +351,6 @@ p {
     height: var(--fullHeight);
     padding-top: 2rem;
     padding-bottom: 2rem;
-
 }
 
 #hide-icon {
@@ -396,9 +393,9 @@ p {
     margin-bottom: 1rem;
 }
 
-.save:hover, .save:focus {
+.save:hover,
+.save:focus {
     background-color: #463474;
-
 }
 
 // MISC
@@ -439,19 +436,41 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 // MISC
-
 .container-header {
-        margin-bottom: 1.5rem;
-    }
+    margin-bottom: 1.5rem;
+}
 
 .text-right {
     text-align: right;
 }
 
-input[type="text"], [type="number"] {
+input[type="text"],
+[type="number"] {
     box-shadow: none;
 }
 
 textarea {
     box-shadow: none;
+}
+
+// PROFILE
+#profile-container {
+    width: 100%;
+    background-color: $container-background;
+    margin-bottom: 2rem;
+    border-radius: 0 0 $border-radius $border-radius;
+    overflow: auto;
+    @include box-shadow;
+    @include breakpoint(small only) {
+        border-radius: 0;
+    }
+}
+
+#profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 2rem 0;
 }
