@@ -5920,11 +5920,18 @@ textarea {
 #profile-pic {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
+  position: relative;
   overflow: hidden;
-  box-sizing: border-box;
-  margin: 1rem;
-  border: 4px solid #e5f0f4; }
+  border-radius: 50%;
+  border: 4px solid #006992; }
+  #profile-pic img {
+    display: inline;
+    margin: 0 auto;
+    width: auto; }
+
+@media screen and (max-width: 39.9375em) {
+  #profile-pic-cell {
+    justify-content: center; } }
 
 #profile-header {
   color: #2E3532;
@@ -5950,3 +5957,15 @@ textarea {
   left: 0;
   right: 0;
   z-index: -1; }
+  @media screen and (max-width: 39.9375em) {
+    #profile-header:before {
+      border-radius: 0; } }
+
+.number-callout {
+  font-family: 'Merriweather', serif;
+  font-size: 1.25rem;
+  color: #006992;
+  font-weight: bold; }
+
+.text-callout {
+  font-weight: bold; }

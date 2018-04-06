@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>250 Words</title>
     <link rel="stylesheet" href="css/app.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway|Bitter" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Merriweather" rel="stylesheet">
 </head>
 
 <body>
@@ -29,15 +29,16 @@
         </div>
         <div id="profile-container" class="grid-container">
             <div class="grid-x grid-margin-x">
-                <div id="profile-pic" class="large-4 cell">
-                    <img src="images/profile_pic.jpg">
+                <div id="profile-pic-cell" class="large-4 medium-3 small-12 cell flex-container">
+                    <div id="profile-pic" class="">
+                        <img src="images/profile_pic.jpg">
+                    </div>
                 </div>
-                <div class="large-8 cell">
-                    You've written more words than the entire Harry Potter series combined.
+                <div class="large-8 medium-9 small-12 cell">
+                    You've written <span class="number-callout">92,181</span> words. That's <span class="number-callout">7,040</span> more words than <span class="text-callout">Harry Potter and the Chamber of Secrets!</span>
                 </div>
             </div>
         </div>
-        
     </div>
     <!-- past entries kept here -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
