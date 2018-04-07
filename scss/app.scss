@@ -58,8 +58,12 @@ $container-background: white;
 $border-radius: 4px;
 $header-color: #006992;
 $blue: #006992;
+$green: #A7E8BD;
+$purple: #674CAA;
+$red: #F25F5C;
 // $header-color: #3C4F76;
 $grey: #2E3532;
+$lightGrey: #6c716f;
 @mixin box-shadow {
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
@@ -458,13 +462,16 @@ textarea {
 #profile-container {
     width: 100%;
     background-color: $container-background;
-    margin-bottom: 2rem;
-    border-radius: 0 0 $border-radius $border-radius;
+    border-radius: 0;
     overflow: auto;
     @include box-shadow;
     @include breakpoint(small only) {
         border-radius: 0;
     }
+}
+
+#profile-grid {
+    margin-top: 1rem;
 }
 
 #profile-pic {
@@ -514,6 +521,7 @@ textarea {
     left: 0;
     right: 0;
     z-index: -1;
+    border-radius: $border-radius $border-radius 0 0;
     @include breakpoint(small only) {
         border-radius: 0;
     }
@@ -528,8 +536,12 @@ textarea {
     }
 }
 
+.stat-square {
+    line-height: 1.25rem;
+    margin-bottom: 0.5rem;
+}
 .number-callout {
-    font-family: 'Merriweather', serif;
+    font-family: 'Lato', serif;
     font-size: 1.25rem;
     color: $blue;
     font-weight: bold;
@@ -539,4 +551,39 @@ textarea {
     font-weight: bold;
 }
 
+.stats-header{
+    color: $lightGrey;
+    font-size: 0.75rem;
+    line-height: 0.6rem;
+
+}
+
 // SETTINGS
+#settings-header {
+    color: white;
+    background-color: $blue;
+    font-size: 1.10rem;
+    line-height: 3rem;
+    height: 3rem;
+    border-radius: 0;
+    font-family: 'Lato';
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    position: relative;
+    @include breakpoint(small only) {
+        border-radius: 0;
+    }
+}
+
+#settings-container {
+    height: 4rem;
+    width: 100%;
+    background-color: $blue;
+    margin-bottom: 2rem;
+    border-radius: 0;
+    overflow: auto;
+    @include box-shadow;
+    @include breakpoint(small only) {
+        border-radius: 0;
+    }
+}

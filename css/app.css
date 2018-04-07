@@ -5909,13 +5909,15 @@ textarea {
 #profile-container {
   width: 100%;
   background-color: white;
-  margin-bottom: 2rem;
-  border-radius: 0 0 4px 4px;
+  border-radius: 0;
   overflow: auto;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
   @media screen and (max-width: 39.9375em) {
     #profile-container {
       border-radius: 0; } }
+
+#profile-grid {
+  margin-top: 1rem; }
 
 #profile-pic {
   width: 125px;
@@ -5957,7 +5959,8 @@ textarea {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: -1; }
+  z-index: -1;
+  border-radius: 4px 4px 0 0; }
   @media screen and (max-width: 39.9375em) {
     #profile-header:before {
       border-radius: 0; } }
@@ -5970,11 +5973,47 @@ textarea {
     #stats-container {
       text-align: center; } }
 
+.stat-square {
+  line-height: 1.25rem;
+  margin-bottom: 0.5rem; }
+
 .number-callout {
-  font-family: 'Merriweather', serif;
+  font-family: 'Lato', serif;
   font-size: 1.25rem;
   color: #006992;
   font-weight: bold; }
 
 .text-callout {
   font-weight: bold; }
+
+.stats-header {
+  color: #6c716f;
+  font-size: 0.75rem;
+  line-height: 0.6rem; }
+
+#settings-header {
+  color: white;
+  background-color: #006992;
+  font-size: 1.10rem;
+  line-height: 3rem;
+  height: 3rem;
+  border-radius: 0;
+  font-family: 'Lato';
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  position: relative; }
+  @media screen and (max-width: 39.9375em) {
+    #settings-header {
+      border-radius: 0; } }
+
+#settings-container {
+  height: 4rem;
+  width: 100%;
+  background-color: #006992;
+  margin-bottom: 2rem;
+  border-radius: 0;
+  overflow: auto;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
+  @media screen and (max-width: 39.9375em) {
+    #settings-container {
+      border-radius: 0; } }
