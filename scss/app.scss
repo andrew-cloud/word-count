@@ -540,6 +540,7 @@ textarea {
     line-height: 1.25rem;
     margin-bottom: 0.5rem;
 }
+
 .number-callout {
     font-family: 'Lato', serif;
     font-size: 1.25rem;
@@ -551,11 +552,10 @@ textarea {
     font-weight: bold;
 }
 
-.stats-header{
+.stats-header {
     color: $lightGrey;
     font-size: 0.75rem;
     line-height: 0.6rem;
-
 }
 
 // SETTINGS
@@ -576,14 +576,28 @@ textarea {
 }
 
 #settings-container {
-    height: 4rem;
     width: 100%;
     background-color: $blue;
     margin-bottom: 2rem;
     border-radius: 0;
     overflow: auto;
+    border-radius: 0 0 $border-radius $border-radius;
     @include box-shadow;
     @include breakpoint(small only) {
         border-radius: 0;
+    }
+
+    label {
+        color: white;
+    }
+
+    input[type='text'], [type='select'] {
+        border-radius: 4px;
+        border: none;
+    }
+
+    select {
+        border-radius: 4px;
+        border: none;
     }
 }
