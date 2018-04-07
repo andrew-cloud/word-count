@@ -468,12 +468,13 @@ textarea {
 }
 
 #profile-pic {
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
     position: relative;
     overflow: hidden;
     border-radius: 50%;
     border: 4px solid $blue;
+    margin-bottom: 2rem;
 
     img {
         display: inline;
@@ -515,6 +516,15 @@ textarea {
     z-index: -1;
     @include breakpoint(small only) {
         border-radius: 0;
+    }
+}
+
+#stats-container {
+    line-height: 1.5rem;
+    text-align: left;
+    margin-bottom: 2rem;
+    @include breakpoint(small only) {
+        text-align: center;
     }
 }
 

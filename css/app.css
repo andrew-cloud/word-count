@@ -5918,12 +5918,13 @@ textarea {
       border-radius: 0; } }
 
 #profile-pic {
-  width: 150px;
-  height: 150px;
+  width: 125px;
+  height: 125px;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
-  border: 4px solid #006992; }
+  border: 4px solid #006992;
+  margin-bottom: 2rem; }
   #profile-pic img {
     display: inline;
     margin: 0 auto;
@@ -5960,6 +5961,14 @@ textarea {
   @media screen and (max-width: 39.9375em) {
     #profile-header:before {
       border-radius: 0; } }
+
+#stats-container {
+  line-height: 1.5rem;
+  text-align: left;
+  margin-bottom: 2rem; }
+  @media screen and (max-width: 39.9375em) {
+    #stats-container {
+      text-align: center; } }
 
 .number-callout {
   font-family: 'Merriweather', serif;
