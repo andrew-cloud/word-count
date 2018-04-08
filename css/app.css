@@ -6025,3 +6025,38 @@ textarea {
   #settings-container select {
     border-radius: 4px;
     border: none; }
+
+#all-entries-header {
+  color: white;
+  background-color: #006992;
+  font-size: 1.10rem;
+  line-height: 3rem;
+  height: 3rem;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  font-family: 'Lato';
+  font-weight: bold;
+  letter-spacing: 0.5px; }
+  @media screen and (max-width: 39.9375em) {
+    #all-entries-header {
+      border-radius: 0; } }
+
+#all-entries-container {
+  width: 100%;
+  background-color: white;
+  border-radius: 0 0 4px 4px;
+  overflow: auto;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
+  @media screen and (max-width: 39.9375em) {
+    #all-entries-container {
+      border-radius: 0; } }
+  #all-entries-container input[type='text'], #all-entries-container [type='select'] {
+    border-radius: 4px; }
+  #all-entries-container #search-bar {
+    margin-top: 0.5rem; }
+  #all-entries-container .button {
+    border-radius: 4px; }
+
+#all-entries-inner-container {
+  overflow: auto;
+  margin-bottom: 0.5rem; }
