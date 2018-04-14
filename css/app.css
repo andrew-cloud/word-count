@@ -5602,6 +5602,18 @@ body {
 p {
   color: #50514F; }
 
+.top-bar {
+  color: white;
+  background-color: #674CAA; }
+  .top-bar .top-bar-left {
+    background-color: #674CAA; }
+  .top-bar ul {
+    background-color: #674CAA; }
+  .top-bar a {
+    color: white; }
+  .top-bar .dropdown.menu {
+    color: white; }
+
 #all-container {
   background: none;
   flex-direction: column;
@@ -5886,7 +5898,7 @@ p {
   background-color: blue; }
 
 .entry:hover {
-  transform: scale(1.03, 1.03);
+  transform: translateY(-5px);
   transition: 200ms ease; }
 
 .fullscreen {
@@ -5957,6 +5969,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 .text-right {
   text-align: right; }
+
+.text-center {
+  text-align: center; }
 
 input[type="text"],
 [type="number"] {
@@ -6079,9 +6094,11 @@ textarea {
     color: #2E3532; }
   #settings-container input[type='text'],
   #settings-container [type='select'] {
-    border-radius: 4px; }
+    border-radius: 4px;
+    border: 2px solid #d4d5d6; }
   #settings-container select {
-    border-radius: 4px; }
+    border-radius: 4px;
+    border: 2px solid #d4d5d6; }
 
 #all-entries-header {
   color: #2E3532;
@@ -6125,7 +6142,7 @@ textarea {
   #all-entries-container [type='select'] {
     border-radius: 4px; }
   #all-entries-container #search-bar {
-    margin-top: 0.5rem; }
+    margin-bottom: 1.5rem; }
     #all-entries-container #search-bar input[type='text'] {
       border-radius: 4px;
       border-radius: 4px 0 0 4px;
@@ -6136,7 +6153,6 @@ textarea {
       background-color: white;
       border-radius: 0 4px 4px 0;
       border: 2px solid #d4d5d6;
-      border-width: 2px;
       border-left: none; }
   #all-entries-container .button {
     border-radius: 4px; }
@@ -6144,3 +6160,23 @@ textarea {
 #all-entries-inner-container {
   overflow: auto;
   margin-bottom: 0.5rem; }
+
+#see-more {
+  margin: 0.5rem 0; }
+  #see-more a {
+    color: #2E3532;
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: 'Lato', san-serif; }
+
+.reveal .content-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 0; }
+
+.reveal .content-date {
+  color: grey;
+  font-size: 0.85rem; }
+
+.green {
+  color: #A7E8BD; }

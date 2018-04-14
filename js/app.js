@@ -438,7 +438,7 @@ function createEntry() {
     contentTitle.innerHTML = title;
     // creates modal date
     let contentDate = document.createElement("p");
-    contentDate.className = "date";
+    contentDate.className = "content-date";
     contentDate.innerHTML = "Jan 1st, 2018";
     // creates modal goal information
     let contentGoal = document.createElement("p");
@@ -452,8 +452,8 @@ function createEntry() {
     body.appendChild(content).appendChild(contentClose).appendChild(contentCloseX);
     content.appendChild(contentTitle);
     content.appendChild(contentDate);
-    content.appendChild(contentGoal);
     content.appendChild(contentBody);
+    content.appendChild(contentGoal);
 
 
     // options for newly generated modal
