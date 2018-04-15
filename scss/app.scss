@@ -68,7 +68,7 @@ $lightGrey: #6c716f;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
-
+// BODY
 body {
     background: #f5f6f6;
     font-family: 'Lato', sans-serif;
@@ -78,6 +78,24 @@ p {
     color: #50514F;
 }
 
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    border: 2px #d4d5d6 solid;
+}
+
+a {
+    color: $grey;
+    text-decoration: underline;
+}
+
+// GLOBAL
+.button {
+    border-radius: $border-radius;
+}
+
+// NAV BAR
 .top-bar {
     color: white;
     background-color: $purple;
@@ -99,6 +117,7 @@ p {
     }
 }
 
+// CONTAINERS
 #all-container {
     background: none; // reminder: setting a container to display: flex turns it into a flex parent, 
     // allowing you to apply foundation flex utility classes
@@ -115,7 +134,8 @@ p {
     }
 }
 
-#new-entry-header {
+// CONTAINER HEADER
+%header {
     color: $grey;
     background-color: white;
     font-size: 1.10rem;
@@ -132,7 +152,8 @@ p {
     }
 }
 
-#new-entry-header:before {
+// CONTAINER HEADER (utilizes before so that box-shadow doesn't overlap)
+%header-before {
     @include box-shadow;
     content: "";
     position: absolute;
@@ -147,6 +168,17 @@ p {
     }
 }
 
+
+// NEW ENTRY
+#new-entry-header {
+    @extend %header
+}
+
+#new-entry-header:before {
+    @extend %header-before
+}
+
+
 // goal-setting and text input
 #words-container {
     width: 100%;
@@ -159,48 +191,30 @@ p {
         border-radius: 0;
     }
 
-    #title-input {
-        border-radius: 4px;
-    }
-
     #project-name {
         margin-bottom: 2.5rem;
     }
 
     #words-input {
-        border-radius: 4px;
         resize: none;
         margin-bottom: 0;
         min-height: 5em;
         max-height: 50rem;
         width: 100%;
-        font-family: 'Lato';
     }
-
-    input[type="text"],
-    input[type="number"],
-    select,
-    textarea {
-        border: 2px #d4d5d6 solid;
-    }
-}
-
-// goal setting input
-#goal-input {
-    border-radius: 4px;
 }
 
 // buttons that allow you to set goal in characters, words, or paragraphs
 #unit-button-group {
-    font-family: 'Lato', sans-serif;
 
     .unit-button {
         border-radius: 2px;
         margin-right: 0;
-        background-color: #A7E8BD;
         color: $grey;
+        background-color: $green;
         font-weight: 600;
         letter-spacing: 0.5px;
+        text-decoration: none;
     }
 
     .unit-button:hover {
@@ -233,11 +247,6 @@ p {
     position: relative;
 }
 
-#goal-display-tab {
-    background-color: blue;
-}
-
-
 #goal-display-container {
     text-align: right;
     margin-top: 0.5rem;
@@ -255,7 +264,7 @@ p {
 
 // class that hides unit counter
 .goal-display-hidden {
-    color: #FFFFFF;
+    opacity: 0;
 }
 
 .goal-display-hidden:hover {
@@ -273,7 +282,7 @@ p {
 }
 
 .checkmark-met {
-    color: green;
+    color: $green;
 }
 
 .checkmark-hidden {
@@ -292,41 +301,16 @@ p {
 
 
 #entries-header {
-    color: $grey;
-    background-color: white;
-    font-size: 1.10rem;
-    line-height: 1rem;
+    @extend %header;
     height: 4rem;
     padding: 1.5rem 2rem 0.5rem 2rem;
-    border-radius: $border-radius $border-radius 0 0;
-    font-family: 'Lato';
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    position: relative;
     @include breakpoint(small only) {
         border-radius: 0;
     }
-
-    a {
-        color: $grey;
-        text-decoration: underline;
-    }
-
 }
 
 #entries-header:before {
-    @include box-shadow;
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    border-radius: $border-radius $border-radius 0 0;
-    @include breakpoint(small only) {
-        border-radius: 0;
-    }
+    @extend %header-before;
 }
 
 // entries container
@@ -425,12 +409,11 @@ p {
 }
 
 .entry-met {
- border-color: #A7E8BD;
+    border-color: #A7E8BD;
 }
 
 .entry-unmet {
     border-color: #F25F5C;
-
 }
 
 
@@ -570,8 +553,7 @@ textarea {
     }
 }
 
-#profile-grid {
-}
+#profile-grid {}
 
 #profile-pic {
     width: 125px;
@@ -704,37 +686,12 @@ textarea {
 
 // ALL ENTRIES PAGE
 #all-entries-header {
-    color: $grey;
-    background-color: white;
-    font-size: 1.10rem;
-    line-height: 3rem;
-    height: 3rem;
-    border-radius: $border-radius $border-radius 0 0;
-    font-family: 'Lato';
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    position: relative;
-    @include breakpoint(small only) {
-        border-radius: 0;
-    }
+    @extend %header;
 }
 
 #all-entries-header:before {
-    @include box-shadow;
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    border-radius: $border-radius $border-radius 0 0;
-    @include breakpoint(small only) {
-        border-radius: 0;
-    }
+    @extend %header-before;
 }
-
-
 
 #all-entries-container {
     width: 100%;
@@ -746,36 +703,24 @@ textarea {
         border-radius: 0;
     }
 
-    input[type='text'],
-    [type='select'] {
-        border-radius: 4px;
-    }
-
-
-
     #search-bar {
+        height: 39px;
         margin-bottom: 1.5rem;
 
         input[type='text'] {
-            border-radius: 4px;
             border-radius: $border-radius 0 0 $border-radius;
             border: 2px solid #d4d5d6;
             border-right: none;
         }
 
-    #search-bar-icon {
-        color: #d4d5d6;
-        background-color: white;
-        border-radius: 0 $border-radius $border-radius 0;
-        border: 2px solid #d4d5d6;
-        border-left: none;
+        #search-bar-icon {
+            color: #d4d5d6;
+            background-color: white;
+            border-radius: 0 $border-radius $border-radius 0;
+            border: 2px solid #d4d5d6;
+            border-left: none;
+        }
     }
-
-
-    }
-
-    
-
     .button {
         border-radius: $border-radius;
     }
@@ -798,8 +743,9 @@ textarea {
 }
 
 // Modals
-
 .reveal {
+    border-radius: $border-radius;
+    border: 2px solid #d4d5d6;
 
     .content-title {
         font-size: 1.75rem;
@@ -810,6 +756,16 @@ textarea {
     .content-date {
         color: grey;
         font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .content-body {
+        margin-bottom: 1rem;
+    }
+
+    .content-goal {
+        font-weight: bold;
+        font-size: 1rem;
     }
 }
 
