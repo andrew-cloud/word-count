@@ -85,6 +85,10 @@ a {
     font-family: 'Lato', san-serif;
 }
 
+a:hover {
+    color: $lightGrey;
+}
+
 input[type="text"],
 input[type="number"],
 select,
@@ -101,7 +105,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 // could probably consolidate this somehow
 input[type="text"],
-[type="number"] {
+[type="number"],
+textarea {
     box-shadow: none;
     border-radius: $border-radius;
 }

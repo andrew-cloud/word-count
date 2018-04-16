@@ -2,7 +2,6 @@ $(document).foundation();
 
 // VARIABLES
 
-
 // inputted title
 let title = ""
 // inputted words variable
@@ -58,6 +57,12 @@ let modal_container = document.getElementById("modal-container");
 // hide icon
 let hide_icon = document.getElementById("hide-icon");
 
+// EDITOR FUNCTIONALITY
+
+// gets inputted title
+function refreshTitle() {
+    title = title_input.value;
+}
 
 // gets goal number from input field
 function refreshGoal() {
@@ -68,9 +73,13 @@ function refreshGoal() {
     }
 }
 
-// gets inputted title
-function refreshTitle() {
-	title = title_input.value;
+// selects entire goal input field if it's the first click
+function goalFirstClick(e) {
+    if (goal_clicked == false) {
+        this.select();
+    }
+    goal_clicked = true;
+
 }
 
 // gets inputted words form text area
@@ -89,9 +98,39 @@ function refreshCount() {
     }
 }
 
-// word count
+// sets count to words
+function setToWords() {
+    count_words = true;
+    count_characters = false;
+    count_paragraphs = false;
+    refreshCount();
+    refreshGoalDisplay();
+    goalMetAlert();
+}
+
+// sets count to characters
+function setToCharacters() {
+    count_words = false;
+    count_characters = true;
+    count_paragraphs = false;
+    refreshCount();
+    refreshGoalDisplay();
+    goalMetAlert();
+}
+
+// sets count to paragraphs
+function setToParagraphs() {
+    count_words = false;
+    count_characters = false;
+    count_paragraphs = true;
+    refreshCount();
+    refreshGoalDisplay();
+    goalMetAlert();
+}
+
+// determines word count
 function wordCount(s) {
-	unit = "words";
+    unit = "words";
     s = s.replace(/(^\s*)|(\s*$)/gi, ""); //exclude  start and end white-space
     s = s.replace(/[ ]{2,}/gi, " "); // 2 or more spaces to 1
     s = s.replace(/\n /, "\n"); // exclude newline with a start spacing
@@ -102,86 +141,22 @@ function wordCount(s) {
     }
 }
 
-// character count
+// determines character count
 function characterCount(s) {
-	unit = "characters";
+    unit = "characters";
     s = s.replace(/\s/g, "");
     return s.length;
 }
 
-// paragraph count
+// determines paragraph count
 function paragraphCount(s) {
-	unit = "paragraphs";
+    unit = "paragraphs";
     s = s.replace(/\n$/gm, '');
     if (words == "") {
         return 0;
     } else {
         return s.split(/\n/).length;
     }
-}
-
-// set count to words
-function setToWords() {
-    count_words = true;
-    count_characters = false;
-    count_paragraphs = false;
-    refreshCount();
-    refreshGoalDisplay();
-    goalMetAlert();
-}
-
-// set count to characters
-function setToCharacters() {
-    count_words = false;
-    count_characters = true;
-    count_paragraphs = false;
-    refreshCount();
-    refreshGoalDisplay();
-    goalMetAlert();
-}
-
-// set count to paragraphs
-function setToParagraphs() {
-    count_words = false;
-    count_characters = false;
-    count_paragraphs = true;
-    refreshCount();
-    refreshGoalDisplay();
-    goalMetAlert();
-}
-
-// calculate percentage complete
-function calculatePercentage() {
-    percentage_complete = count / goal;
-}
-
-// checks to see if goal is met
-function isGoalMet() {
-    return (count >= goal);
-}
-
-// changes color of icon qhen goal is
-function goalMetAlert() {
-    if ((isGoalMet()) & (goal != 0)) {
-        console.log("Goal is met!")
-        // have to run refreshCounter because the inner html has to be refreshed
-        refreshGoalDisplay();
-        checkmark.classList.remove("checkmark-unmet");
-        checkmark.classList.add("checkmark-met");
-    } else {
-        refreshGoalDisplay();
-        checkmark.classList.remove("checkmark-met");
-        checkmark.classList.add("checkmark-unmet");
-    }
-}
-
-// selects entire goal input field if it's the first click
-function goalFirstClick(e) {
-    if (goal_clicked == false) {
-        this.select();
-    }
-    goal_clicked = true;
-
 }
 
 // applies active class to unit buttons
@@ -201,7 +176,25 @@ function removeActiveUnitButton() {
     }
 }
 
+// checks to see if goal is met
+function isGoalMet() {
+    return (count >= goal);
+}
 
+// changes color of icon when goal is
+function goalMetAlert() {
+    if ((isGoalMet()) & (goal != 0)) {
+        console.log("Goal is met!")
+        // have to run refreshCounter because the inner html has to be refreshed
+        refreshGoalDisplay();
+        checkmark.classList.remove("checkmark-unmet");
+        checkmark.classList.add("checkmark-met");
+    } else {
+        refreshGoalDisplay();
+        checkmark.classList.remove("checkmark-met");
+        checkmark.classList.add("checkmark-unmet");
+    }
+}
 
 // button click - set count to words
 document.getElementById("words-button").addEventListener("click", setToWords);
@@ -217,6 +210,12 @@ document.getElementById("paragraphs-button").addEventListener("click", setToPara
 // updates goal progress
 function refreshGoalDisplay() {
     goal_display.innerHTML = `${count}/${goal}`;
+}
+
+// hides counter
+function hideCounter() {
+    goal_display.classList.toggle("goal-display-hidden");
+    checkmark.classList.toggle("checkmark-hidden");
 }
 
 // hides goal-display
@@ -254,13 +253,6 @@ function hide() {
         this.style.display = "none";
     } else this.style.display = "block";
 }
-
-// hides counter
-function hideCounter() {
-    goal_display.classList.toggle("goal-display-hidden");
-    checkmark.classList.toggle("checkmark-hidden");
-}
-
 
 // auto-expands large input field as it gets filled
 let autoExpand = function(field) {
@@ -314,11 +306,6 @@ function hideDiv() {
     }
 }
 
-function flipHideIcon() {
-
-
-}
-
 // creates a new entry card
 save_button.addEventListener("click", createEntry);
 
@@ -337,6 +324,7 @@ function generateID() {
     return current_modal;
 }
 
+// generates icon for new entry based on goal status
 function generateIcon() {
 	if (isGoalMet() == true) {
 		return `<i class="fas fa-check-circle"></i>`;
@@ -347,6 +335,7 @@ function generateIcon() {
 	}
 }
 
+// determines class for new entry based on goal status
 function generateGoalClass() {
 	if (isGoalMet() == true) {
 		return "goal-met";
@@ -357,17 +346,7 @@ function generateGoalClass() {
 	}
 }
 
-function generateGoalMessage() {
-	if (isGoalMet() == true) {
-		return "Goal Met";
-	}
-	else {
-		return "Not Quite";
-
-	}
-}
-
-// caps number of entries to twelve
+// caps number of entries on editor page to twelve
 function limitEntries() {
 	let entries_list = document.querySelectorAll(".entry");
 	let modal_list = document.querySelectorAll(".reveal");
