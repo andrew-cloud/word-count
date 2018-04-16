@@ -715,7 +715,6 @@ textarea {
     border-radius: 4px;
     background-color: $container-background;
     padding: 2rem 2rem 0.5rem 2rem;
-    transition: all 800ms ease;
     overflow: hidden;
     @include box-shadow;
     border-radius: 0 0 $border-radius $border-radius;

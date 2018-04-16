@@ -6105,7 +6105,6 @@ textarea {
   border-radius: 4px;
   background-color: white;
   padding: 2rem 2rem 0.5rem 2rem;
-  transition: all 800ms ease;
   overflow: hidden;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   border-radius: 0 0 4px 4px;
