@@ -12,6 +12,10 @@ let count = 0;
 let goal = 250;
 // units
 let unit = "words";
+// selected project
+let project = document.getElementById('select-project').value;
+// selected project
+let project_name = document.getElementById('project-name').value;
 // goal input
 let goal_input = document.getElementById("goal-input");
 // goal-display
@@ -29,8 +33,6 @@ let count_words = true;
 // paragraph count boolean
 let count_paragraphs = false;
 // percentage of goal complete
-let percentage_complete = 0;
-// checkmark
 let checkmark = document.getElementById("checkmark");
 // goal-display with icon
 let goal_display_container = document.getElementById("goal-display-container");
@@ -70,6 +72,15 @@ function refreshGoal() {
         goal = 0;
     } else {
         goal = goal_input.valueAsNumber;
+    }
+}
+
+// display input field if starting new project
+function newProject() {
+    if (project == "new") {
+        project_name.classList.remove("display-none");
+    } else {
+        return;
     }
 }
 
@@ -318,6 +329,7 @@ function generateTeaser(s) {
 
 // generates an ID for new modals
 let modal_number = 0;
+
 function generateID() {
     modal_number++;
     let current_modal = `modal${modal_number}`;
@@ -326,41 +338,38 @@ function generateID() {
 
 // generates icon for new entry based on goal status
 function generateIcon() {
-	if (isGoalMet() == true) {
-		return `<i class="fas fa-check-circle"></i>`;
-	}
-	else {
-		return `<i class="fas fa-times-circle"></i>`;
+    if (isGoalMet() == true) {
+        return `<i class="fas fa-check-circle"></i>`;
+    } else {
+        return `<i class="fas fa-times-circle"></i>`;
 
-	}
+    }
 }
 
 // determines class for new entry based on goal status
 function generateGoalClass() {
-	if (isGoalMet() == true) {
-		return "goal-met";
-	}
-	else {
-		return "goal-unmet";
+    if (isGoalMet() == true) {
+        return "goal-met";
+    } else {
+        return "goal-unmet";
 
-	}
+    }
 }
 
 // caps number of entries on editor page to twelve
 function limitEntries() {
-	let entries_list = document.querySelectorAll(".entry");
-	let modal_list = document.querySelectorAll(".reveal");
-	if (entries_list.length >= 13) {
-		let lastEntry = entries_container_inner.lastElementChild;
-		entries_container_inner.removeChild(lastEntry);
-		// let lastModal = modal_container.lastElementChild;
-		// modal_container.removeChild(lastModal);
-		refreshEntriesHeight();
-	}
-	else {
-		return;
-	}
-	console.log(entries_list.length);
+    let entries_list = document.querySelectorAll(".entry");
+    let modal_list = document.querySelectorAll(".reveal");
+    if (entries_list.length >= 13) {
+        let lastEntry = entries_container_inner.lastElementChild;
+        entries_container_inner.removeChild(lastEntry);
+        // let lastModal = modal_container.lastElementChild;
+        // modal_container.removeChild(lastModal);
+        refreshEntriesHeight();
+    } else {
+        return;
+    }
+    console.log(entries_list.length);
 }
 
 // resizes entry container when screen is resized
@@ -390,7 +399,7 @@ function createEntry() {
     let newEntryTag = document.createElement("div");
     newEntryTag.className = generateGoalClass();
     newEntryTag.innerHTML = `${count}/${goal} ${unit} ${generateIcon()}`;
-    
+
     // combines everything together and appends it to the entries container
     entries_container_inner.insertBefore(newEntryCell, entries_container_inner.firstChild).appendChild(newEntryDiv).appendChild(newEntryTitle);
     newEntryDiv.appendChild(newEntryDate);

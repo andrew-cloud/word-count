@@ -223,13 +223,19 @@ textarea {
         margin-bottom: 2.5rem;
     }
 
+    #goal-input {
+
+    }
+
     #words-input {
         resize: none;
         margin-bottom: 0;
         min-height: 5em;
         max-height: 50rem;
         width: 100%;
-    } // text area
+    } 
+
+    // text area
     #word-input-container {
         position: relative;
     }
@@ -691,3 +697,12 @@ textarea {
 .red {
     color: $red;
 }
+
+.display-inline {
+    display: inline;
+}
+
+.display-none {
+    display: none;
+}
+

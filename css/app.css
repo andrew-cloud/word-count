@@ -6041,3 +6041,9 @@ textarea {
 
 .red {
   color: #F25F5C; }
+
+.display-inline {
+  display: inline; }
+
+.display-none {
+  display: none; }
