@@ -13,9 +13,11 @@ let goal = 250;
 // units
 let unit = "words";
 // selected project
-let project = document.getElementById('select-project').value;
+let project = document.getElementById('select-project');
 // selected project
-let project_name = document.getElementById('project-name').value;
+let project_name = project.options[project.selectedIndex].value;
+// project title input
+let project_input = document.getElementById('project-input');
 // goal input
 let goal_input = document.getElementById("goal-input");
 // goal-display
@@ -75,12 +77,19 @@ function refreshGoal() {
     }
 }
 
+// refresh project
+function refreshProject() {
+    project_name = project.options[project.selectedIndex].value;
+    newProject();
+    console.log(project_name);
+}
+
 // display input field if starting new project
 function newProject() {
-    if (project == "new") {
-        project_name.classList.remove("display-none");
+    if (project_name == "new") {
+        project_input.classList.remove("display-none");
     } else {
-        return;
+        project_input.classList.add("display-none");
     }
 }
 
@@ -206,6 +215,10 @@ function goalMetAlert() {
         checkmark.classList.add("checkmark-unmet");
     }
 }
+
+
+// get current project
+project.addEventListener("input", refreshProject);
 
 // button click - set count to words
 document.getElementById("words-button").addEventListener("click", setToWords);
@@ -356,6 +369,15 @@ function generateGoalClass() {
     }
 }
 
+function generateEntryBorder() {
+    if (isGoalMet() == true) {
+        return "entry-met";
+    } else {
+        return "entry-unmet";
+
+    }
+}
+
 // caps number of entries on editor page to twelve
 function limitEntries() {
     let entries_list = document.querySelectorAll(".entry");
@@ -382,7 +404,7 @@ function createEntry() {
     newEntryCell.className = "large-4 medium-6 small-12 cell";
     // creates the entry div
     let newEntryDiv = document.createElement("div");
-    newEntryDiv.className = "entry";
+    newEntryDiv.className = `entry ${generateEntryBorder()}`;
     // creates the entry title
     let newEntryTitle = document.createElement("p");
     newEntryTitle.className = "title";
