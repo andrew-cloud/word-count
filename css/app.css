@@ -5608,10 +5608,6 @@ select,
 textarea {
   border: 2px #d4d5d6 solid; }
 
-a {
-  color: #2E3532;
-  text-decoration: underline; }
-
 .button {
   border-radius: 4px; }
 
@@ -5641,7 +5637,7 @@ a {
       width: 100%;
       padding: 0; } }
 
-#new-entry-header, #entries-header, #all-entries-header {
+#new-entry-header, #entries-header {
   color: #2E3532;
   background-color: white;
   font-size: 1.10rem;
@@ -5654,10 +5650,10 @@ a {
   letter-spacing: 0.5px;
   position: relative; }
   @media screen and (max-width: 39.9375em) {
-    #new-entry-header, #entries-header, #all-entries-header {
+    #new-entry-header, #entries-header {
       border-radius: 0; } }
 
-#new-entry-header:before, #entries-header:before, #all-entries-header:before {
+#new-entry-header:before, #entries-header:before {
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   content: "";
   position: absolute;
@@ -5668,7 +5664,7 @@ a {
   z-index: -1;
   border-radius: 4px 4px 0 0; }
   @media screen and (max-width: 39.9375em) {
-    #new-entry-header:before, #entries-header:before, #all-entries-header:before {
+    #new-entry-header:before, #entries-header:before {
       border-radius: 0; } }
 
 #words-container {
@@ -5693,11 +5689,10 @@ a {
 #unit-button-group .unit-button {
   border-radius: 2px;
   margin-right: 0;
-  color: #2E3532;
   background-color: #A7E8BD;
+  color: #2E3532;
   font-weight: 600;
-  letter-spacing: 0.5px;
-  text-decoration: none; }
+  letter-spacing: 0.5px; }
 
 #unit-button-group .unit-button:hover {
   background-color: #96d0aa;
@@ -6076,11 +6071,44 @@ textarea {
     border-radius: 4px;
     border: 2px solid #d4d5d6; }
 
+#all-entries-header {
+  color: #2E3532;
+  background-color: white;
+  font-size: 1.10rem;
+  line-height: 1rem;
+  height: 1rem;
+  padding: 1.5rem 2rem 0.5rem 2rem;
+  border-radius: 4px 4px 0 0;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  position: relative; }
+  @media screen and (max-width: 39.9375em) {
+    #all-entries-header {
+      border-radius: 0; } }
+
+#all-entries-header:before {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: 4px 4px 0 0; }
+  @media screen and (max-width: 39.9375em) {
+    #all-entries-header:before {
+      border-radius: 0; } }
+
 #all-entries-container {
   width: 100%;
+  border-radius: 4px;
   background-color: white;
+  padding: 2rem 2rem 0.5rem 2rem;
+  transition: all 800ms ease;
+  overflow: hidden;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   border-radius: 0 0 4px 4px;
-  overflow: auto;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
   @media screen and (max-width: 39.9375em) {
     #all-entries-container {

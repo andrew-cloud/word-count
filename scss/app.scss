@@ -85,11 +85,6 @@ textarea {
     border: 2px #d4d5d6 solid;
 }
 
-a {
-    color: $grey;
-    text-decoration: underline;
-}
-
 // GLOBAL
 .button {
     border-radius: $border-radius;
@@ -210,11 +205,10 @@ a {
     .unit-button {
         border-radius: 2px;
         margin-right: 0;
-        color: $grey;
         background-color: $green;
+        color: $grey;
         font-weight: 600;
         letter-spacing: 0.5px;
-        text-decoration: none;
     }
 
     .unit-button:hover {
@@ -686,18 +680,45 @@ textarea {
 
 // ALL ENTRIES PAGE
 #all-entries-header {
-    @extend %header;
+    color: $grey;
+    background-color: white;
+    font-size: 1.10rem;
+    line-height: 1rem;
+    height: 1rem;
+    padding: 1.5rem 2rem 0.5rem 2rem;
+    border-radius: $border-radius $border-radius 0 0;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    position: relative;
+    @include breakpoint(small only) {
+        border-radius: 0;
+    }
 }
 
 #all-entries-header:before {
-    @extend %header-before;
+    @include box-shadow;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    border-radius: $border-radius $border-radius 0 0;
+    @include breakpoint(small only) {
+        border-radius: 0;
+    }
 }
 
 #all-entries-container {
     width: 100%;
+    border-radius: 4px;
     background-color: $container-background;
+    padding: 2rem 2rem 0.5rem 2rem;
+    transition: all 800ms ease;
+    overflow: hidden;
+    @include box-shadow;
     border-radius: 0 0 $border-radius $border-radius;
-    overflow: auto;
     @include box-shadow;
     @include breakpoint(small only) {
         border-radius: 0;
