@@ -78,11 +78,36 @@ p {
     color: #50514F;
 }
 
+a {
+    color: $grey;
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: 'Lato', san-serif;
+}
+
 input[type="text"],
 input[type="number"],
 select,
 textarea {
     border: 2px #d4d5d6 solid;
+}
+
+// hide number input spinners
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+// could probably consolidate this somehow
+input[type="text"],
+[type="number"] {
+    box-shadow: none;
+    border-radius: $border-radius;
+}
+
+textarea {
+    box-shadow: none;
 }
 
 // GLOBAL
@@ -113,7 +138,7 @@ textarea {
 }
 
 // CONTAINERS
-#all-container {
+.all-container {
     background: none; // reminder: setting a container to display: flex turns it into a flex parent, 
     // allowing you to apply foundation flex utility classes
     flex-direction: column;
@@ -164,7 +189,11 @@ textarea {
 }
 
 
+
+
 // NEW ENTRY
+// in all honestly, I probably should've just used classes for the headers. initially, I toyed with the idea of
+// giving each header different treatments, but that made no sense from a design perpective
 #new-entry-header {
     @extend %header
 }
@@ -173,8 +202,7 @@ textarea {
     @extend %header-before
 }
 
-
-// goal-setting and text input
+// contains all goal-setting, project selection, and text input options
 #words-container {
     width: 100%;
     background-color: $container-background;
@@ -196,10 +224,51 @@ textarea {
         min-height: 5em;
         max-height: 50rem;
         width: 100%;
+    } // text area
+    #word-input-container {
+        position: relative;
+    }
+
+    #goal-display-container {
+        text-align: right;
+        margin-top: 0.5rem;
+        cursor: pointer;
+    }
+
+    #goal-display {
+        text-align: right;
+        font-weight: 800;
+    }
+
+    #goal-display:hover {
+        color: grey;
+    } // class that hides unit counter
+    .goal-display-hidden {
+        opacity: 0;
+    }
+
+    .goal-display-hidden:hover {
+        color: gray;
+    } // checkmark icon that appears when goal is met
+    #checkmark {
+        transition: color 200ms;
+        text-align: right;
+    }
+
+    .checkmark-unmet {
+        color: grey;
+    }
+
+    .checkmark-met {
+        color: $green;
+    }
+
+    .checkmark-hidden {
+        opacity: 0;
     }
 }
 
-// buttons that allow you to set goal in characters, words, or paragraphs
+// buttons that set goal in characters, words, or paragraphs
 #unit-button-group {
 
     .unit-button {
@@ -209,6 +278,7 @@ textarea {
         color: $grey;
         font-weight: 600;
         letter-spacing: 0.5px;
+        text-decoration: none;
     }
 
     .unit-button:hover {
@@ -236,64 +306,7 @@ textarea {
     }
 }
 
-// text area
-#word-input-container {
-    position: relative;
-}
-
-#goal-display-container {
-    text-align: right;
-    margin-top: 0.5rem;
-    cursor: pointer;
-}
-
-#goal-display {
-    text-align: right;
-    font-weight: 800;
-}
-
-#goal-display:hover {
-    color: grey;
-}
-
-// class that hides unit counter
-.goal-display-hidden {
-    opacity: 0;
-}
-
-.goal-display-hidden:hover {
-    color: gray;
-}
-
-// checkmark icon that appears when goal is met
-#checkmark {
-    transition: color 200ms;
-    text-align: right;
-}
-
-.checkmark-unmet {
-    color: grey;
-}
-
-.checkmark-met {
-    color: $green;
-}
-
-.checkmark-hidden {
-    opacity: 0;
-}
-
-// utility class, currently used to make unit counter unselectable
-.unselectable {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-
+// PAST ENTRIES
 #entries-header {
     @extend %header;
     height: 4rem;
@@ -315,7 +328,7 @@ textarea {
     padding-left: 2rem;
     padding-right: 2rem;
     transition: all 800ms ease;
-    overflow: hidden;
+    overflow: hidden; // gives the container a bit of a spring when opening/closing
     transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
     @include box-shadow;
     border-radius: 0 0 $border-radius $border-radius;
@@ -325,7 +338,7 @@ textarea {
     }
 }
 
-// inidividual entry
+// individual entry
 .entry {
     border-radius: 4px;
     background-color: white;
@@ -402,6 +415,11 @@ textarea {
     }
 }
 
+.entry:hover {
+    transform: translateY(-5px);
+    transition: 200ms ease;
+}
+
 .entry-met {
     border-color: #A7E8BD;
 }
@@ -410,52 +428,17 @@ textarea {
     border-color: #F25F5C;
 }
 
-
-// truncutate text
-.truncate {
-    width: 100%;
-    height: 8rem;
-    white-space: wrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.closed-div {
-    height: 0;
-    padding-top: 0;
-}
-
+// styles for when entries container is open
 .open-div {
     height: var(--fullHeight);
     padding-top: 0.5rem;
     padding-bottom: 2rem;
 }
 
-#hide-icon {
-    color: $grey;
-}
-
-#test-entry {
-    background-color: blue;
-}
-
-.entry:hover {
-    transform: translateY(-5px);
-    transition: 200ms ease;
-}
-
-.fullscreen {
-    max-height: calc(100% - 100px);
-    position: fixed;
-    width: 65%;
-    height: 65%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    background-color: gray !important;
-    cursor: auto;
-    display: none;
+// styles for when entries container is closed
+.closed-div {
+    height: 0;
+    padding-top: 0;
 }
 
 // save button 
@@ -475,13 +458,6 @@ textarea {
 }
 
 // MISC
-// hide number input spinners
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
 .text-align-right {
     text-align: right;
 }
@@ -510,44 +486,27 @@ input[type=number]::-webkit-outer-spin-button {
     $timing: ease);
 }
 
-
-// MISC
-.container-header {
-    margin-bottom: 1.5rem;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.text-center {
-    text-align: center;
-}
-
-input[type="text"],
-[type="number"] {
-    box-shadow: none;
-    border-radius: $border-radius;
-}
-
-textarea {
-    box-shadow: none;
-}
-
 // PROFILE
+#profile-header {
+    @extend %header;
+}
+
+#profile-header:before {
+    @extend %header-before;
+}
+
 #profile-container {
     width: 100%;
     background-color: $container-background;
     border-radius: 0 0 $border-radius $border-radius;
-    overflow: auto;
+    padding: 2rem 2rem 0rem 2rem;
     margin-bottom: 2rem;
+    overflow: auto;
     @include box-shadow;
     @include breakpoint(small only) {
         border-radius: 0;
     }
 }
-
-#profile-grid {}
 
 #profile-pic {
     width: 125px;
@@ -571,37 +530,6 @@ textarea {
     }
 }
 
-#profile-header {
-    color: $grey;
-    background-color: white;
-    font-size: 1.10rem;
-    line-height: 3rem;
-    height: 3rem;
-    border-radius: $border-radius $border-radius 0 0;
-    font-family: 'Lato';
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    position: relative;
-    @include breakpoint(small only) {
-        border-radius: 0;
-    }
-}
-
-#profile-header:before {
-    @include box-shadow;
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    border-radius: $border-radius $border-radius 0 0;
-    @include breakpoint(small only) {
-        border-radius: 0;
-    }
-}
-
 #stats-container {
     line-height: 1.5rem;
     text-align: left;
@@ -611,11 +539,20 @@ textarea {
     }
 }
 
+// the cell that houses a stat
 .stat-square {
     line-height: 1.25rem;
     margin-bottom: 0.5rem;
 }
 
+// small text above a number callout
+.stats-header {
+    color: $lightGrey;
+    font-size: 0.75rem;
+    line-height: 0.6rem;
+}
+
+// emphasises the number in a statistic
 .number-callout {
     font-family: 'Lato', serif;
     font-size: 1.25rem;
@@ -623,37 +560,20 @@ textarea {
     font-weight: bold;
 }
 
-.text-callout {
-    font-weight: bold;
-}
-
-.stats-header {
-    color: $lightGrey;
-    font-size: 0.75rem;
-    line-height: 0.6rem;
-}
-
 // SETTINGS
 #settings-header {
-    color: $grey;
-    background-color: white;
-    font-size: 1.10rem;
-    line-height: 3rem;
-    height: 3rem;
-    border-radius: $border-radius $border-radius 0 0;
-    font-family: 'Lato';
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    position: relative;
-    @include breakpoint(small only) {
-        border-radius: 0;
-    }
+    @extend %header;
+}
+
+#settings-header:before {
+    @extend %header-before;
 }
 
 #settings-container {
     width: 100%;
     background-color: white;
     margin-bottom: 2rem;
+    padding: 2rem 2rem 0.5rem 2rem;
     border-radius: 0;
     overflow: auto;
     border-radius: 0 0 $border-radius $border-radius;
@@ -666,12 +586,6 @@ textarea {
         color: $grey;
     }
 
-    input[type='text'],
-    [type='select'] {
-        border-radius: 4px;
-        border: 2px solid #d4d5d6;
-    }
-
     select {
         border-radius: 4px;
         border: 2px solid #d4d5d6;
@@ -680,34 +594,11 @@ textarea {
 
 // ALL ENTRIES PAGE
 #all-entries-header {
-    color: $grey;
-    background-color: white;
-    font-size: 1.10rem;
-    line-height: 1rem;
-    height: 1rem;
-    padding: 1.5rem 2rem 0.5rem 2rem;
-    border-radius: $border-radius $border-radius 0 0;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    position: relative;
-    @include breakpoint(small only) {
-        border-radius: 0;
-    }
+    @extend %header;
 }
 
 #all-entries-header:before {
-    @include box-shadow;
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    border-radius: $border-radius $border-radius 0 0;
-    @include breakpoint(small only) {
-        border-radius: 0;
-    }
+    @extend %header-before;
 }
 
 #all-entries-container {
@@ -741,9 +632,6 @@ textarea {
             border-left: none;
         }
     }
-    .button {
-        border-radius: $border-radius;
-    }
 }
 
 #all-entries-inner-container {
@@ -753,16 +641,9 @@ textarea {
 
 #see-more {
     margin: 0.5rem 0;
-
-    a {
-        color: $grey;
-        text-decoration: underline;
-        font-weight: bold;
-        font-family: 'Lato', san-serif;
-    }
 }
 
-// Modals
+// MODALS
 .reveal {
     border-radius: $border-radius;
     border: 2px solid #d4d5d6;
@@ -789,6 +670,19 @@ textarea {
     }
 }
 
+// UTILITY CLASSES
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
 .green {
     color: $green;
+}
+
+.red {
+    color: $red;
 }
