@@ -15,9 +15,11 @@ let unit = "words";
 // selected project
 let project = document.getElementById('select-project');
 // selected project
-let project_name = project.options[project.selectedIndex].value;
+let project_name = project.options[project.selectedIndex].innerHTML;
 // project title input
 let project_input = document.getElementById('project-input');
+// new project title
+let new_project_name = document.getElementById('project-input').value;
 // goal input
 let goal_input = document.getElementById("goal-input");
 // goal-display
@@ -61,10 +63,6 @@ let modal_container = document.getElementById("modal-container");
 // hide icon
 let hide_icon = document.getElementById("hide-icon");
 
-// all entries variables
-let all_entries = document.getElementsByClassName("entry");
-console.log("hi");
-
 // EDITOR FUNCTIONALITY
 
 // gets inputted title
@@ -81,7 +79,7 @@ function refreshGoal() {
     }
 }
 
-// refresh project
+// refresh selected project
 function refreshProject() {
     project_name = project.options[project.selectedIndex].value;
     newProject();
@@ -95,6 +93,10 @@ function newProject() {
     } else {
         project_input.classList.add("display-none");
     }
+}
+
+function refreshNewProjectName() {
+    new_project_name = document.getElementById('project-input').value;
 }
 
 // selects entire goal input field if it's the first click
@@ -264,6 +266,9 @@ document.addEventListener("keyup", refreshAll);
 // refreshes title
 title_input.addEventListener("input", refreshTitle);
 
+// refreshes new project name
+project_input.addEventListener("input", refreshNewProjectName);
+
 // refreshed goal in goal-display when new amount is entered
 document.getElementById("goal-input").addEventListener("input", refreshGoal);
 
@@ -382,6 +387,19 @@ function generateEntryBorder() {
     }
 }
 
+function generateProjectName() {
+    if (project.options[project.selectedIndex].value == "none") {
+        return "";
+    }
+    if (project.options[project.selectedIndex].value == "new") {
+        refreshNewProjectName();
+        return ` - ${new_project_name}`;
+    } else {
+        return ` - ${project.options[project.selectedIndex].value}`;
+    }
+}
+
+
 // caps number of entries on editor page to twelve
 function limitEntries() {
     let entries_list = document.querySelectorAll(".entry");
@@ -416,7 +434,7 @@ function createEntry() {
     // creates the entry date
     let newEntryDate = document.createElement("p");
     newEntryDate.className = "date";
-    newEntryDate.innerHTML = "Jan 1, 18";
+    newEntryDate.innerHTML = "Jan 14th, 2018";
     // creates the entry teaser
     let newEntryTeaser = document.createElement("p");
     newEntryTeaser.className = "teaser";
@@ -453,7 +471,7 @@ function createEntry() {
     // creates modal date
     let contentDate = document.createElement("p");
     contentDate.className = "content-date";
-    contentDate.innerHTML = "Jan 1st, 2018";
+    contentDate.innerHTML = `Jan 14th, 2018 ${generateProjectName()}`;
     // creates modal goal information
     let contentGoal = document.createElement("p");
     contentGoal.className = "content-goal";

@@ -76,7 +76,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 p {
@@ -92,6 +92,10 @@ a {
 
 a:hover {
     color: $lightGrey;
+}
+
+a:visited {
+    color: $grey;
 }
 
 input[type="text"],
@@ -228,9 +232,7 @@ textarea {
         margin-bottom: 2.5rem;
     }
 
-    #goal-input {
-
-    }
+    #goal-input {}
 
     #words-input {
         resize: none;
@@ -238,9 +240,7 @@ textarea {
         min-height: 5em;
         max-height: 50rem;
         width: 100%;
-    } 
-
-    // text area
+    } // text area
     #word-input-container {
         position: relative;
     }
@@ -673,8 +673,9 @@ textarea {
     border: 2px solid #d4d5d6;
 
     .content-title {
-        font-size: 1.75rem;
-        font-weight: bold;
+        color: $grey;
+        font-size: 1.5rem;
+        font-weight: 500;
         margin-bottom: 0;
     }
 
@@ -688,9 +689,15 @@ textarea {
         margin-bottom: 1rem;
     }
 
+    .content-project {
+        color: grey;
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+
     .content-goal {
-        font-weight: bold;
-        font-size: 1rem;
+        font-weight: 600;
+        font-size: 0.9rem;
     }
 }
 
@@ -717,10 +724,4 @@ textarea {
 
 .display-none {
     display: none;
-}
-
-// SCRATCH PAD
-
-#search-bar-icon:focus {
-    color: red;
 }

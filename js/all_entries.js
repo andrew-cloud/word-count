@@ -15,7 +15,7 @@ function refreshSearchTerm() {
     search_term = search_input.value.toLowerCase();
 }
 
-// loops through all entiries on page
+// searches entries for words in search bar
 function searchEntry() {
     var i;
     for (i = 0; i < all_entries.length; i++) {
@@ -30,6 +30,7 @@ function searchEntry() {
     }
 }
 
+// searches entries for entries within a specific project
 function searchProject() {
     project_value = project_dropdown.value;
     var i;
@@ -50,6 +51,7 @@ function searchProject() {
     }
 }
 
+// displays all entries
 function displayAllEntries() {
     var i;
     for (i = 0; i < all_entries.length; i++) {
@@ -60,9 +62,7 @@ function displayAllEntries() {
 
 // refreshes search term on input
 search_input.addEventListener('input', refreshSearchTerm);
-// loops searching for match
+// listens for words entered in search bar
 search_input.addEventListener('input', searchEntry);
-// refreshes project value
+// listens for new dropdown selection
 project_dropdown.addEventListener('input', searchProject);
-
-console.log(all_entries[0]);

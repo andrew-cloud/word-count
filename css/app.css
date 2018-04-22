@@ -5615,6 +5615,9 @@ a {
 a:hover {
   color: #6c716f; }
 
+a:visited {
+  color: #2E3532; }
+
 input[type="text"],
 input[type="number"],
 select,
@@ -6027,8 +6030,9 @@ textarea {
   border-radius: 4px;
   border: 2px solid #d4d5d6; }
   .reveal .content-title {
-    font-size: 1.75rem;
-    font-weight: bold;
+    color: #2E3532;
+    font-size: 1.5rem;
+    font-weight: 500;
     margin-bottom: 0; }
   .reveal .content-date {
     color: grey;
@@ -6036,9 +6040,13 @@ textarea {
     margin-bottom: 1.5rem; }
   .reveal .content-body {
     margin-bottom: 1rem; }
+  .reveal .content-project {
+    color: grey;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem; }
   .reveal .content-goal {
-    font-weight: bold;
-    font-size: 1rem; }
+    font-weight: 600;
+    font-size: 0.9rem; }
 
 .text-right {
   text-align: right; }
@@ -6057,6 +6065,3 @@ textarea {
 
 .display-none {
   display: none; }
-
-#search-bar-icon:focus {
-  color: red; }
