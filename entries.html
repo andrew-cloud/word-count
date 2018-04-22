@@ -40,8 +40,8 @@
                 </div>
                 <!-- PROJECT FILTER -->
                 <div class="large-4 medium-6 small-12 cell">
-                    <select value="select">
-                        <option value="select">None</option>
+                    <select id="project-dropdown" value="select">
+                        <option value="all">All</option>
                         <option value="travel">Travel Blog</option>
                         <option value="novel">The Great American Novel</option>
                         <option value="new">New Project</option>
@@ -51,7 +51,7 @@
             </div>
             <div id="all-entries-inner-container" class="grid-x grid-margin-x grid-margin-y">
                 <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
-                    <div class="entry entry-met">
+                    <div class="entry entry-met" data-project="none">
                         <p class="title">Title</p>
                         <p class="date">Mar 22, 2018</p>
                         <p class="teaser"> Only the first 25 characters of the entry are included.</p>
@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <div class="large-4 medium-6 small-12 cell" data-open="exampleModal2">
-                    <div class="entry entry-unmet">
+                    <div class="entry entry-unmet" data-project="none">
                         <p class="title">Title</p>
                         <p class="date">Feb 14, 2018</p>
                         <p class="teaser"> Only the first 25 characters of the entry are included.</p>
@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
-                    <div class="entry entry-met">
+                    <div class="entry entry-met" data-project="none">
                         <p class="title">Title</p>
                         <p class="date">Feb 6, 2018</p>
                         <p class="teaser"> Only the first 25 characters of the entry are included.</p>
@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <div class="large-4 medium-6 small-12 cell" data-open="exampleModal2">
-                    <div class="entry entry-unmet">
+                    <div class="entry entry-unmet" data-project="none">
                         <p class="title">I once ate an entire box of peeps</p>
                         <p class="date">Jan 25, 2018</p>
                         <p class="teaser">I don't know why I did it. I don't know why I did it. Why did I do it? I don't kn...</p>
@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
-                    <div class="entry entry-met">
+                    <div class="entry entry-met" data-project="none">
                         <p class="title">Struggling as an artist</p>
                         <p class="date">Jan 3, 2018</p>
                         <p class="teaser">Despite my years of dedication to my craft, no one is willing to purchase...</p>
@@ -91,7 +91,7 @@
                     </div>
                 </div>
                 <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
-                    <div class="entry entry-met">
+                    <div class="entry entry-met" data-project="travel">
                         <p class="title">My time spent abroad</p>
                         <p class="date">Nov 11, 2017</p>
                         <p class="teaser">I remember when I first boarded the plane. My heart was pounding with exc...</p>
