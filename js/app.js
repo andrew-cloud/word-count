@@ -61,6 +61,10 @@ let modal_container = document.getElementById("modal-container");
 // hide icon
 let hide_icon = document.getElementById("hide-icon");
 
+// all entries variables
+let all_entries = document.getElementsByClassName("entry");
+console.log("hi");
+
 // EDITOR FUNCTIONALITY
 
 // gets inputted title
@@ -482,3 +486,5 @@ function createEntry() {
     clearInput();
     limitEntries()
 }
+
+// ENTRIES PAGE
