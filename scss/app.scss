@@ -477,6 +477,14 @@ textarea {
     display: block;
 }
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 .scaleIn {
     // A long, long fade
     @include mui-zoom( $state: in,
