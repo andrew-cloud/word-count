@@ -5597,7 +5597,11 @@ a.thumbnail {
 
 body {
   background: #f5f6f6;
-  font-family: 'Lato', sans-serif; }
+  font-family: 'Lato', sans-serif;
+  -ms-overflow-style: none; }
+
+body::-webkit-scrollbar {
+  display: none; }
 
 p {
   color: #50514F; }
@@ -6053,3 +6057,6 @@ textarea {
 
 .display-none {
   display: none; }
+
+#search-bar-icon:focus {
+  color: red; }

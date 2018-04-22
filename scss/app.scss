@@ -72,6 +72,11 @@ $lightGrey: #6c716f;
 body {
     background: #f5f6f6;
     font-family: 'Lato', sans-serif;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 p {
@@ -714,3 +719,8 @@ textarea {
     display: none;
 }
 
+// SCRATCH PAD
+
+#search-bar-icon:focus {
+    color: red;
+}
