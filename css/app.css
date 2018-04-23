@@ -2737,11 +2737,11 @@ ul.no-bullet, ol.no-bullet {
       background-color: #cc8b00;
       color: #0a0a0a; }
   .button.alert {
-    background-color: #cc4b37;
-    color: #fefefe; }
+    background-color: #F25F5C;
+    color: #0a0a0a; }
     .button.alert:hover, .button.alert:focus {
-      background-color: #a53b2a;
-      color: #fefefe; }
+      background-color: #ed221e;
+      color: #0a0a0a; }
   .button.disabled, .button[disabled] {
     opacity: 0.25;
     cursor: not-allowed; }
@@ -2776,8 +2776,8 @@ ul.no-bullet, ol.no-bullet {
       opacity: 0.25;
       cursor: not-allowed; }
       .button.disabled.alert, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert, .button[disabled].alert:hover, .button[disabled].alert:focus {
-        background-color: #cc4b37;
-        color: #fefefe; }
+        background-color: #F25F5C;
+        color: #0a0a0a; }
   .button.hollow {
     border: 1px solid #1779ba;
     color: #1779ba; }
@@ -2828,14 +2828,14 @@ ul.no-bullet, ol.no-bullet {
           border: 1px solid #ffae00;
           color: #ffae00; }
     .button.hollow.alert {
-      border: 1px solid #cc4b37;
-      color: #cc4b37; }
+      border: 1px solid #F25F5C;
+      color: #F25F5C; }
       .button.hollow.alert:hover, .button.hollow.alert:focus {
-        border-color: #67251a;
-        color: #67251a; }
+        border-color: #9b0f0c;
+        color: #9b0f0c; }
         .button.hollow.alert:hover.disabled, .button.hollow.alert:hover[disabled], .button.hollow.alert:focus.disabled, .button.hollow.alert:focus[disabled] {
-          border: 1px solid #cc4b37;
-          color: #cc4b37; }
+          border: 1px solid #F25F5C;
+          color: #F25F5C; }
   .button.clear {
     border: 1px solid #1779ba;
     color: #1779ba; }
@@ -2896,14 +2896,14 @@ ul.no-bullet, ol.no-bullet {
       .button.clear.warning, .button.clear.warning.disabled, .button.clear.warning[disabled], .button.clear.warning:hover, .button.clear.warning:hover.disabled, .button.clear.warning:hover[disabled], .button.clear.warning:focus, .button.clear.warning:focus.disabled, .button.clear.warning:focus[disabled] {
         border-color: transparent; }
     .button.clear.alert {
-      border: 1px solid #cc4b37;
-      color: #cc4b37; }
+      border: 1px solid #F25F5C;
+      color: #F25F5C; }
       .button.clear.alert:hover, .button.clear.alert:focus {
-        border-color: #67251a;
-        color: #67251a; }
+        border-color: #9b0f0c;
+        color: #9b0f0c; }
         .button.clear.alert:hover.disabled, .button.clear.alert:hover[disabled], .button.clear.alert:focus.disabled, .button.clear.alert:focus[disabled] {
-          border: 1px solid #cc4b37;
-          color: #cc4b37; }
+          border: 1px solid #F25F5C;
+          color: #F25F5C; }
       .button.clear.alert, .button.clear.alert.disabled, .button.clear.alert[disabled], .button.clear.alert:hover, .button.clear.alert:hover.disabled, .button.clear.alert:hover[disabled], .button.clear.alert:focus, .button.clear.alert:focus.disabled, .button.clear.alert:focus[disabled] {
         border-color: transparent; }
   .button.dropdown::after {
@@ -2931,7 +2931,7 @@ ul.no-bullet, ol.no-bullet {
   .button.dropdown.hollow.warning::after {
     border-top-color: #ffae00; }
   .button.dropdown.hollow.alert::after {
-    border-top-color: #cc4b37; }
+    border-top-color: #F25F5C; }
   .button.arrow-only::after {
     top: -0.1em;
     float: none;
@@ -3141,13 +3141,13 @@ select {
     background-image: none; }
 
 .is-invalid-input:not(:focus) {
-  border-color: #cc4b37;
-  background-color: #f9ecea; }
+  border-color: #F25F5C;
+  background-color: #fdeeee; }
   .is-invalid-input:not(:focus)::placeholder {
-    color: #cc4b37; }
+    color: #F25F5C; }
 
 .is-invalid-label {
-  color: #cc4b37; }
+  color: #F25F5C; }
 
 .form-error {
   display: none;
@@ -3155,7 +3155,7 @@ select {
   margin-bottom: 1rem;
   font-size: 0.75rem;
   font-weight: bold;
-  color: #cc4b37; }
+  color: #F25F5C; }
   .form-error.is-visible {
     display: block; }
 
@@ -3313,8 +3313,8 @@ select {
     background: #ffae00;
     color: #0a0a0a; }
   .badge.alert {
-    background: #cc4b37;
-    color: #fefefe; }
+    background: #F25F5C;
+    color: #0a0a0a; }
 
 .breadcrumbs {
   margin: 0 0 1rem 0;
@@ -3399,11 +3399,11 @@ select {
       background-color: #cc8b00;
       color: #0a0a0a; }
   .button-group.alert .button {
-    background-color: #cc4b37;
-    color: #fefefe; }
+    background-color: #F25F5C;
+    color: #0a0a0a; }
     .button-group.alert .button:hover, .button-group.alert .button:focus {
-      background-color: #a53b2a;
-      color: #fefefe; }
+      background-color: #ed221e;
+      color: #0a0a0a; }
   .button-group.stacked, .button-group.stacked-for-small, .button-group.stacked-for-medium {
     flex-wrap: wrap; }
     .button-group.stacked .button, .button-group.stacked-for-small .button, .button-group.stacked-for-medium .button {
@@ -3450,7 +3450,7 @@ select {
     background-color: #fff3d9;
     color: #0a0a0a; }
   .callout.alert {
-    background-color: #f7e4e1;
+    background-color: #fde7e7;
     color: #0a0a0a; }
   .callout.small {
     padding-top: 0.5rem;
@@ -4115,8 +4115,8 @@ select {
     background: #ffae00;
     color: #0a0a0a; }
   .label.alert {
-    background: #cc4b37;
-    color: #fefefe; }
+    background: #F25F5C;
+    color: #0a0a0a; }
 
 .media-object {
   display: flex;
@@ -4288,7 +4288,7 @@ select {
   .progress.warning .progress-meter {
     background-color: #ffae00; }
   .progress.alert .progress-meter {
-    background-color: #cc4b37; }
+    background-color: #F25F5C; }
 
 .progress-meter {
   position: relative;
@@ -6032,14 +6032,15 @@ textarea {
   .reveal .content-title {
     color: #2E3532;
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 0; }
   .reveal .content-date {
     color: grey;
     font-size: 0.85rem;
     margin-bottom: 1.5rem; }
   .reveal .content-body {
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    line-height: 1.4rem; }
   .reveal .content-project {
     color: grey;
     font-size: 0.85rem;

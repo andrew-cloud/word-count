@@ -27,86 +27,89 @@
         <div id="all-entries-header" class="grid-container">
             All Entries
         </div>
-        <div id="all-entries-container" class="grid-container">
-            <div class="grid-x grid-margin-x">
-                <!-- SEARCH BAR -->
-                <div class="large-8 medium-6 small-12 cell">
-                    <div id="search-bar" class="input-group">
-                        <input id="search-input" class="input-group-field" type="text" placeholder="Search">
-                        <span id="search-bar-icon" class="input-group-label"><i class="fas fa-search"></i></span>
-                        <div class="input-group-button">
+        <form data-abide novalidate>
+            <div data-abide-error class="alert callout" style="display: none;">
+                <div id="all-entries-container" class="grid-container">
+                    <div class="grid-x grid-margin-x">
+                        <!-- SEARCH BAR -->
+                        <div class="large-8 medium-6 small-12 cell">
+                            <div id="search-bar" class="input-group">
+                                <input id="search-input" class="input-group-field" type="text" placeholder="Search">
+                                <span id="search-bar-icon" class="input-group-label"><i class="fas fa-search"></i></span>
+                                <div class="input-group-button">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PROJECT FILTER -->
+                        <div class="large-4 medium-6 small-12 cell">
+                            <select id="project-dropdown" value="select">
+                                <option value="all">All</option>
+                                <option value="travel">Travel Blog</option>
+                                <option value="novel">The Great American Novel</option>
+                            </select>
+                        </div>
+                        <!-- ALL ENTRIES -->
+                    </div>
+                    <div id="all-entries-inner-container" class="grid-x grid-margin-x grid-margin-y">
+                        <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
+                            <div class="entry entry-met" data-project="novel">
+                                <p class="title">Title</p>
+                                <p class="date">Mar 22, 2018</p>
+                                <p class="teaser"> Only the first 25 characters of the entry are included.</p>
+                                <div class="goal-met">265/250 words <i class="fas fa-check-circle"></i></div>
+                            </div>
+                        </div>
+                        <div class="large-4 medium-6 small-12 cell" data-open="exampleModal2">
+                            <div class="entry entry-unmet" data-project="novel">
+                                <p class="title">Title</p>
+                                <p class="date">Feb 14, 2018</p>
+                                <p class="teaser"> Only the first 25 characters of the entry are included.</p>
+                                <div class="goal-unmet">323/600 characters <i class="fas fa-times-circle"></i></div>
+                            </div>
+                        </div>
+                        <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
+                            <div class="entry entry-met" data-project="none">
+                                <p class="title">Title</p>
+                                <p class="date">Feb 6, 2018</p>
+                                <p class="teaser"> Only the first 25 characters of the entry are included.</p>
+                                <div class="goal-met">5/4 paragraphs <i class="fas fa-check-circle"></i></div>
+                            </div>
+                        </div>
+                        <div class="large-4 medium-6 small-12 cell" data-open="exampleModal2">
+                            <div class="entry entry-unmet" data-project="travel">
+                                <p class="title">I once ate an entire box of peeps</p>
+                                <p class="date">Jan 25, 2018</p>
+                                <p class="teaser">I don't know why I did it. I don't know why I did it. Why did I do it? I don't kn...</p>
+                                <div class="goal-unmet">769/800 words <i class="fas fa-times-circle"></i></div>
+                            </div>
+                        </div>
+                        <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
+                            <div class="entry entry-met" data-project="novel">
+                                <p class="title">Struggling as an artist</p>
+                                <p class="date">Jan 3, 2018</p>
+                                <p class="teaser">Despite my years of dedication to my craft, no one is willing to purchase...</p>
+                                <div class="goal-met">1201/1000 characters <i class="fas fa-check-circle"></i></div>
+                            </div>
+                        </div>
+                        <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
+                            <div class="entry entry-met" data-project="travel">
+                                <p class="title">My time spent abroad</p>
+                                <p class="date">Nov 11, 2017</p>
+                                <p class="teaser">I remember when I first boarded the plane. My heart was pounding with exc...</p>
+                                <div class="goal-met">1204/500 words <i class="fas fa-check-circle"></i></div>
+                            </div>
+                        </div>
+                        <div id="see-more" class="small-12 cell text-center"><a href="#">See more</a>
                         </div>
                     </div>
                 </div>
-                <!-- PROJECT FILTER -->
-                <div class="large-4 medium-6 small-12 cell">
-                    <select id="project-dropdown" value="select">
-                        <option value="all">All</option>
-                        <option value="travel">Travel Blog</option>
-                        <option value="novel">The Great American Novel</option>
-                        <option value="new">New Project</option>
-                    </select>
-                </div>
-                <!-- ALL ENTRIES -->
             </div>
-            <div id="all-entries-inner-container" class="grid-x grid-margin-x grid-margin-y">
-                <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
-                    <div class="entry entry-met" data-project="none">
-                        <p class="title">Title</p>
-                        <p class="date">Mar 22, 2018</p>
-                        <p class="teaser"> Only the first 25 characters of the entry are included.</p>
-                        <div class="goal-met">265/250 words <i class="fas fa-check-circle"></i></div>
-                    </div>
-                </div>
-                <div class="large-4 medium-6 small-12 cell" data-open="exampleModal2">
-                    <div class="entry entry-unmet" data-project="none">
-                        <p class="title">Title</p>
-                        <p class="date">Feb 14, 2018</p>
-                        <p class="teaser"> Only the first 25 characters of the entry are included.</p>
-                        <div class="goal-unmet">323/600 characters <i class="fas fa-times-circle"></i></div>
-                    </div>
-                </div>
-                <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
-                    <div class="entry entry-met" data-project="none">
-                        <p class="title">Title</p>
-                        <p class="date">Feb 6, 2018</p>
-                        <p class="teaser"> Only the first 25 characters of the entry are included.</p>
-                        <div class="goal-met">5/4 paragraphs <i class="fas fa-check-circle"></i></div>
-                    </div>
-                </div>
-                <div class="large-4 medium-6 small-12 cell" data-open="exampleModal2">
-                    <div class="entry entry-unmet" data-project="none">
-                        <p class="title">I once ate an entire box of peeps</p>
-                        <p class="date">Jan 25, 2018</p>
-                        <p class="teaser">I don't know why I did it. I don't know why I did it. Why did I do it? I don't kn...</p>
-                        <div class="goal-unmet">769/800 words <i class="fas fa-times-circle"></i></div>
-                    </div>
-                </div>
-                <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
-                    <div class="entry entry-met" data-project="none">
-                        <p class="title">Struggling as an artist</p>
-                        <p class="date">Jan 3, 2018</p>
-                        <p class="teaser">Despite my years of dedication to my craft, no one is willing to purchase...</p>
-                        <div class="goal-met">1201/1000 characters <i class="fas fa-check-circle"></i></div>
-                    </div>
-                </div>
-                <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
-                    <div class="entry entry-met" data-project="travel">
-                        <p class="title">My time spent abroad</p>
-                        <p class="date">Nov 11, 2017</p>
-                        <p class="teaser">I remember when I first boarded the plane. My heart was pounding with exc...</p>
-                        <div class="goal-met">1204/500 words <i class="fas fa-check-circle"></i></div>
-                    </div>
-                </div>
-                <div id="see-more" class="small-12 cell text-center"><a href="#">See more</a>
-            </div>
-        </div>
-        <!-- past entries kept here -->
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/what-input/dist/what-input.js"></script>
-        <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
-        <script src="js/all_entries.js"></script>
-        <script src="js/fontawesome-all.js"></script>
+            <!-- past entries kept here -->
+            <script src="bower_components/jquery/dist/jquery.js"></script>
+            <script src="bower_components/what-input/dist/what-input.js"></script>
+            <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
+            <script src="js/all_entries.js"></script>
+            <script src="js/fontawesome-all.js"></script>
 </body>
 
 </html>

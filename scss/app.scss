@@ -61,6 +61,7 @@ $blue: #006992;
 $green: #A7E8BD;
 $purple: #674CAA;
 $red: #F25F5C;
+$input-background-invalid: white;
 // $header-color: #3C4F76;
 $grey: #2E3532;
 $lightGrey: #6c716f;
@@ -675,7 +676,7 @@ textarea {
     .content-title {
         color: $grey;
         font-size: 1.5rem;
-        font-weight: 500;
+        font-weight: 600;
         margin-bottom: 0;
     }
 
@@ -687,6 +688,7 @@ textarea {
 
     .content-body {
         margin-bottom: 1rem;
+        line-height: 1.4rem;
     }
 
     .content-project {

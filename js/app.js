@@ -368,6 +368,16 @@ function generateIcon() {
     }
 }
 
+// generates modal icon based on goal status
+function generateModalIcon() {
+    if (isGoalMet() == true) {
+        return `<i class="fas fa-check-circle green">`;
+    } else {
+        return `<i class="fas fa-times-circle red">`;
+
+    }
+}
+
 // determines class for new entry based on goal status
 function generateGoalClass() {
     if (isGoalMet() == true) {
@@ -421,88 +431,94 @@ window.addEventListener("resize", refreshEntriesHeight);
 
 // creates all the elements for a new entry
 function createEntry() {
-    // creates the cell for the entry card
-    let newEntryCell = document.createElement("div");
-    newEntryCell.className = "large-4 medium-6 small-12 cell";
-    // creates the entry div
-    let newEntryDiv = document.createElement("div");
-    newEntryDiv.className = `entry ${generateEntryBorder()}`;
-    // creates the entry title
-    let newEntryTitle = document.createElement("p");
-    newEntryTitle.className = "title";
-    newEntryTitle.innerHTML = title;
-    // creates the entry date
-    let newEntryDate = document.createElement("p");
-    newEntryDate.className = "date";
-    newEntryDate.innerHTML = "Jan 14th, 2018";
-    // creates the entry teaser
-    let newEntryTeaser = document.createElement("p");
-    newEntryTeaser.className = "teaser";
-    newEntryTeaser.innerHTML = generateTeaser(words);
-    // creates goal met/unmet tag
-    let newEntryTag = document.createElement("div");
-    newEntryTag.className = generateGoalClass();
-    newEntryTag.innerHTML = `${count}/${goal} ${unit} ${generateIcon()}`;
+    $('#new-entry').foundation('validateForm');
+    if ((title != "") && (words != "")) {
 
-    // combines everything together and appends it to the entries container
-    entries_container_inner.insertBefore(newEntryCell, entries_container_inner.firstChild).appendChild(newEntryDiv).appendChild(newEntryTitle);
-    newEntryDiv.appendChild(newEntryDate);
-    newEntryDiv.appendChild(newEntryTeaser);
-    newEntryDiv.appendChild(newEntryTag);
-    // creates the modal content
-    let content = document.createElement("div");
-    let id = generateID();
-    content.id = id;
-    content.className = "reveal";
-    // create 'close' button
-    let contentClose = document.createElement("button");
-    contentClose.className = "close-button";
-    contentClose.setAttribute("data-close", "");
-    contentClose.setAttribute("aria-label", "Close modal");
-    contentClose.setAttribute("type", "button");
-    // create 'x' for close button
-    let contentCloseX = document.createElement("span");
-    contentCloseX.setAttribute("aria-hidden", "true");
-    contentCloseX.innerHTML = "×";
-    // creates modal title
-    let contentTitle = document.createElement("p");
-    contentTitle.className = "content-title";
-    contentTitle.innerHTML = title;
-    // creates modal date
-    let contentDate = document.createElement("p");
-    contentDate.className = "content-date";
-    contentDate.innerHTML = `Jan 14th, 2018 ${generateProjectName()}`;
-    // creates modal goal information
-    let contentGoal = document.createElement("p");
-    contentGoal.className = "content-goal";
-    contentGoal.innerHTML = `${count}/${goal} ${unit} ${generateIcon()}`;
-    // creates modal body information
-    let contentBody = document.createElement("p");
-    contentBody.className = "content-body";
-    contentBody.innerHTML = words;
-    // new elements have to be appended to something, in this case, the body
-    body.appendChild(content).appendChild(contentClose).appendChild(contentCloseX);
-    content.appendChild(contentTitle);
-    content.appendChild(contentDate);
-    content.appendChild(contentBody);
-    content.appendChild(contentGoal);
+        // creates the cell for the entry card
+        let newEntryCell = document.createElement("div");
+        newEntryCell.className = "large-4 medium-6 small-12 cell";
+        // creates the entry div
+        let newEntryDiv = document.createElement("div");
+        newEntryDiv.className = `entry ${generateEntryBorder()}`;
+        // creates the entry title
+        let newEntryTitle = document.createElement("p");
+        newEntryTitle.className = "title";
+        newEntryTitle.innerHTML = title;
+        // creates the entry date
+        let newEntryDate = document.createElement("p");
+        newEntryDate.className = "date";
+        newEntryDate.innerHTML = "Jan 14th, 2018";
+        // creates the entry teaser
+        let newEntryTeaser = document.createElement("p");
+        newEntryTeaser.className = "teaser";
+        newEntryTeaser.innerHTML = generateTeaser(words);
+        // creates goal met/unmet tag
+        let newEntryTag = document.createElement("div");
+        newEntryTag.className = generateGoalClass();
+        newEntryTag.innerHTML = `${count}/${goal} ${unit} ${generateIcon()}`;
+
+        // combines everything together and appends it to the entries container
+        entries_container_inner.insertBefore(newEntryCell, entries_container_inner.firstChild).appendChild(newEntryDiv).appendChild(newEntryTitle);
+        newEntryDiv.appendChild(newEntryDate);
+        newEntryDiv.appendChild(newEntryTeaser);
+        newEntryDiv.appendChild(newEntryTag);
+        // creates the modal content
+        let content = document.createElement("div");
+        let id = generateID();
+        content.id = id;
+        content.className = "reveal";
+        // create 'close' button
+        let contentClose = document.createElement("button");
+        contentClose.className = "close-button";
+        contentClose.setAttribute("data-close", "");
+        contentClose.setAttribute("aria-label", "Close modal");
+        contentClose.setAttribute("type", "button");
+        // create 'x' for close button
+        let contentCloseX = document.createElement("span");
+        contentCloseX.setAttribute("aria-hidden", "true");
+        contentCloseX.innerHTML = "×";
+        // creates modal title
+        let contentTitle = document.createElement("p");
+        contentTitle.className = "content-title";
+        contentTitle.innerHTML = title;
+        // creates modal date
+        let contentDate = document.createElement("p");
+        contentDate.className = "content-date";
+        contentDate.innerHTML = `Jan 14th, 2018 ${generateProjectName()}`;
+        // creates modal goal information
+        let contentGoal = document.createElement("p");
+        contentGoal.className = "content-goal";
+        contentGoal.innerHTML = `${count}/${goal} ${unit} ${generateModalIcon()}`;
+        // creates modal body information
+        let contentBody = document.createElement("p");
+        contentBody.className = "content-body";
+        contentBody.innerHTML = words;
+        // new elements have to be appended to something, in this case, the body
+        body.appendChild(content).appendChild(contentClose).appendChild(contentCloseX);
+        content.appendChild(contentTitle);
+        content.appendChild(contentDate);
+        content.appendChild(contentBody);
+        content.appendChild(contentGoal);
 
 
-    // options for newly generated modal
-    let options = {
-        AnimationIn: "scaleIn",
-        AnimationOut: "scaleOut"
-    };
+        // options for newly generated modal
+        let options = {
+            AnimationIn: "scaleIn",
+            AnimationOut: "scaleOut"
+        };
 
-    let modal = new Foundation.Reveal($(`#${id}`), options);
+        let modal = new Foundation.Reveal($(`#${id}`), options);
 
-    // sets entry div to open newly generated modal
-    newEntryDiv.setAttribute("data-open", id);
-    // $(`#${id}`).foundation();
+        // sets entry div to open newly generated modal
+        newEntryDiv.setAttribute("data-open", id);
+        // $(`#${id}`).foundation();
 
-    refreshEntriesHeight();
-    clearInput();
-    limitEntries()
+        // $('#new-entry').foundation('validateForm');
+        console.log("hi");
+        refreshEntriesHeight();
+        clearInput();
+        limitEntries();
+    }
 }
 
 // ENTRIES PAGE
