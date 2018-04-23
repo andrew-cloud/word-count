@@ -344,9 +344,13 @@ save_button.addEventListener("click", createEntry);
 
 // generates the content teaser for entry cards, first 55 characters
 function generateTeaser(s) {
-    let teaser = s.substring(0, 56) + "...";
-    teaser.trim();
-    return teaser;
+    if (s.length < 57) {
+        return s;
+    } else {
+        let teaser = s.substring(0, 56) + "...";
+        teaser.trim();
+        return teaser;
+    }
 }
 
 // generates an ID for new modals
