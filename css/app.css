@@ -5624,6 +5624,16 @@ select,
 textarea {
   border: 2px #d4d5d6 solid; }
 
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  border: 2px #C0C0C0 solid; }
+
+#all-entries-container #search-bar input[type='text']:focus {
+  border: 2px #C0C0C0 solid;
+  border-right: none; }
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -6007,17 +6017,26 @@ textarea {
       border-radius: 0; } }
   #all-entries-container #search-bar {
     height: 39px;
-    margin-bottom: 1.5rem; }
+    margin-bottom: 1.5rem;
+    position: relative; }
     #all-entries-container #search-bar input[type='text'] {
       border-radius: 4px 0 0 4px;
-      border: 2px solid #d4d5d6;
-      border-right: none; }
+      border: 2px solid #d4d5d6; }
     #all-entries-container #search-bar #search-bar-icon {
-      color: #d4d5d6;
-      background-color: white;
+      color: white;
+      background-color: #d4d5d6;
       border-radius: 0 4px 4px 0;
       border: 2px solid #d4d5d6;
-      border-left: none; }
+      border-left: none;
+      position: relative; }
+    #all-entries-container #search-bar #search-bar-icon-focused {
+      color: white;
+      background-color: #C0C0C0;
+      border-radius: 0 4px 4px 0;
+      border: 2px solid #C0C0C0;
+      border-left: none;
+      position: relative;
+      box-shadow: 0 0 5px #cacaca; }
 
 #all-entries-inner-container {
   overflow: auto;
