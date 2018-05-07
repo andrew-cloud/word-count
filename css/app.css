@@ -5662,6 +5662,8 @@ textarea {
     color: white; }
   .top-bar .dropdown.menu {
     color: white; }
+  .top-bar .active {
+    color: #b5a7d8; }
 
 .all-container {
   background: none;
@@ -5814,6 +5816,9 @@ textarea {
   position: relative;
   width: 100%;
   overflow: hidden; }
+  @media screen and (max-width: 39.9375em) {
+    .entry {
+      height: 10rem; } }
   .entry p {
     display: block;
     overflow-wrap: break-word;
@@ -6026,7 +6031,7 @@ textarea {
     #all-entries-container #search-bar #search-bar-icon {
       border-radius: 0 4px 4px 0;
       border-left: none;
-      transition: 230ms; }
+      transition: 300ms; }
     #all-entries-container #search-bar .search-bar-icon-unfocused {
       color: white;
       background-color: #d4d5d6;
@@ -6046,7 +6051,7 @@ textarea {
 
 .reveal {
   border-radius: 4px;
-  border: 2px solid #d4d5d6; }
+  border: none; }
   .reveal .content-title {
     color: #2E3532;
     font-size: 1.5rem;

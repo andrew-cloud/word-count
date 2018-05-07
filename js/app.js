@@ -405,6 +405,9 @@ function generateProjectName() {
     if (project.options[project.selectedIndex].value == "none") {
         return "";
     }
+    if (project.options[project.selectedIndex].value == "select") {
+        return "";
+    }
     if (project.options[project.selectedIndex].value == "new") {
         refreshNewProjectName();
         return ` - ${new_project_name}`;

@@ -60,6 +60,7 @@ $header-color: #006992;
 $blue: #006992;
 $green: #A7E8BD;
 $purple: #674CAA;
+$active: #b5a7d8;
 $red: #F25F5C;
 $input-background-invalid: white;
 // $header-color: #3C4F76;
@@ -166,6 +167,10 @@ textarea {
 
     .dropdown.menu {
         color: white;
+    }
+
+    .active {
+        color: $active;
     }
 }
 
@@ -386,6 +391,9 @@ textarea {
     position: relative;
     width: 100%;
     overflow: hidden;
+    @include breakpoint(small only) {
+        height: 10rem;
+    }
 
 
     p {
@@ -700,7 +708,7 @@ textarea {
 // MODALS
 .reveal {
     border-radius: $border-radius;
-    border: 2px solid #d4d5d6;
+    border: none;
 
     .content-title {
         color: $grey;
