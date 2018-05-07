@@ -16,7 +16,7 @@
         <div class="top-bar-left">
             <ul class="dropdown menu" data-dropdown-menu>
                 <li class="menu-text">250 Words</li>
-                <li><a class="active" href="index.html">Editor</a></li>
+                <li><a class="nav-active" href="index.html">Editor</a></li>
                 <li><a href="entries.html">Entries</a></li>
                 <li><a href="profile.html">Profile</a></li>
             </ul>
@@ -37,7 +37,7 @@
                     <!-- project selector -->
                     <div class="large-4 cell">
                         <select id="select-project">
-                            <option value="select">Select Project</option>
+                            <option value="select">- Select Project</option>
                             <option value="none">None</option>
                             <option value="Travel Blog">Travel Blog</option>
                             <option value="The Great American Novel">The Great American Novel</option>
@@ -100,29 +100,29 @@
             <div id="entries-container-inner" class="grid-x grid-margin-x grid-margin-y">
                 <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
                     <div class="entry entry-met">
-                        <p class="title">Title</p>
+                        <p class="title">Short Story Outline</p>
                         <p class="date">Mar 22, 2018</p>
-                        <p class="teaser"> Only the first 25 characters of the entry are included.</p>
+                        <p class="teaser">The story opens on a rainy day in 1960s Chicago. A weary detective is a...</p>
                         <div class="goal-met">265/250 words <i class="fas fa-check-circle"></i></div>
                     </div>
                 </div>
                 <div class="large-4 medium-6 small-12 cell" data-open="exampleModal2">
                     <div class="entry entry-unmet">
-                        <p class="title">Title</p>
+                        <p class="title">Dream Journal</p>
                         <p class="date">Feb 14, 2018</p>
-                        <p class="teaser"> Only the first 25 characters of the entry are included.</p>
+                        <p class="teaser">I had this weird dream where I could only speak in Portuguese sonnets...</p>
                         <div class="goal-unmet">323/600 characters <i class="fas fa-times-circle"></i></div>
                     </div>
                 </div>
-                <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
+                <div class="large-4 medium-6 small-12 cell" data-open="exampleModal3">
                     <div class="entry entry-met">
-                        <p class="title">Title</p>
+                        <p class="title">Reviewing the New Pizza Place on Main St.</p>
                         <p class="date">Feb 6, 2018</p>
-                        <p class="teaser"> Only the first 25 characters of the entry are included.</p>
+                        <p class="teaser">The crust? Exsquisite. The sauce? To die for. The cheese? Don't even...</p>
                         <div class="goal-met">5/4 paragraphs <i class="fas fa-check-circle"></i></div>
                     </div>
                 </div>
-                <div class="large-4 medium-6 small-12 cell" data-open="exampleModal2">
+                <div class="large-4 medium-6 small-12 cell" data-open="exampleModal4">
                     <div class="entry entry-unmet">
                         <p class="title">I once ate an entire box of peeps</p>
                         <p class="date">Jan 25, 2018</p>
@@ -130,7 +130,7 @@
                         <div class="goal-unmet">769/800 words <i class="fas fa-times-circle"></i></div>
                     </div>
                 </div>
-                <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
+                <div class="large-4 medium-6 small-12 cell" data-open="exampleModal5">
                     <div class="entry entry-met">
                         <p class="title">Struggling as an artist</p>
                         <p class="date">Jan 3, 2018</p>
@@ -138,12 +138,12 @@
                         <div class="goal-met">1201/1000 characters <i class="fas fa-check-circle"></i></div>
                     </div>
                 </div>
-                <div class="large-4 medium-6 small-12 cell" data-open="exampleModal1">
+                <div class="large-4 medium-6 small-12 cell" data-open="exampleModal6">
                     <div class="entry entry-met">
                         <p class="title">My time spent abroad</p>
                         <p class="date">Nov 11, 2017</p>
                         <p class="teaser">I remember when I first boarded the plane. My heart was pounding with exc...</p>
-                        <div class="goal-met">1204/500 words <i class="fas fa-check-circle"></i></div>
+                        <div class="goal-met">221/200 words <i class="fas fa-check-circle"></i></div>
                     </div>
                 </div>
             </div>
@@ -152,11 +152,15 @@
         <!-- placeholder #1 -->
         <div id="modal-container">
             <div class="reveal" id="exampleModal1" data-reveal>
-                <h1 class="content-title">My amazing trip to Thailand!</h1>
-                <p class="content-date">January 9th, 2018 - Travel Blog</p>
-                <p class="content-body">Maecenas dictum bibendum eros, quis vehicula erat rhoncus ac. Praesent commodo urna sed magna blandit scelerisque non ut lorem. Suspendisse potenti. Phasellus at sapien mattis, congue erat nec, sagittis dui. Aenean ut elit at lorem maximus dignissim. Praesent tempor auctor ipsum et elementum. Nullam tempus ullamcorper lorem a blandit. Donec auctor est dolor, eu elementum dui pellentesque sit amet.
+                <h1 class="content-title">Short Story Outline</h1>
+                <p class="content-date">March 22, 2018 - Great American Novel</p>
+                <p class="content-body">The story opens on a rainy day in 1960s Chicago. A weary detective is at his desk when he hears a knock at the door. Nam faucibus eget leo a sollicitudin. Duis sit amet enim tellus. Morbi odio tortor, lobortis eget ligula ac, lacinia pellentesque purus. Donec ac imperdiet turpis. Fusce ipsum mi, rutrum quis eleifend quis, cursus a nisi. Etiam pretium fringilla ipsum, sed pellentesque eros molestie in. Vestibulum varius, odio vitae efficitur feugiat, ex elit pharetra est, id pellentesque justo diam ut turpis. Nam ac leo orci. Donec gravida pellentesque faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer in pharetra magna. Donec at enim lectus. Donec et urna at sapien maximus luctus non mattis justo. Donec libero urna, ullamcorper non est vitae, rutrum pellentesque mauris.
+                    <br>
+                    <br> Vestibulum finibus velit in dolor dapibus, eget consequat sem efficitur. Quisque dictum a augue in tempus. Nulla vel lorem a quam vestibulum dignissim. Praesent a viverra metus. Mauris lacinia eros quis augue tempor pharetra. Donec a urna at orci feugiat euismod. Fusce vitae odio commodo, ullamcorper nisl a, ullamcorper ante. Praesent nisl elit, sagittis in ultrices nec, placerat nec magna. Donec vitae posuere justo. Ut vehicula purus eget laoreet ultricies. Fusce consectetur rutrum arcu ut condimentum. Integer a lectus quis turpis condimentum vestibulum in vel dui. Proin ullamcorper tellus nec pretium laoreet. Donec vel lacus maximus, accumsan mi sit amet, mattis nisl.
+                    <br>
+                    <br> Maecenas fermentum dolor aliquet nunc facilisis luctus. Proin ac tempus augue. Aliquam vestibulum fringilla ante, vel congue nisl elementum quis. Proin ac ligula id urna scelerisque fermentum non at velit. Curabitur et quam ut.
                 </p>
-                <p class="content-goal"> 230/250 words <i class="fas fa-check-circle green"></i></p>
+                <p class="content-goal">265/250 words <i class="fas fa-check-circle green"></i></p>
                 <button class="close-button" data-close aria-label="Close modal" type="button">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -165,8 +169,10 @@
         <!-- placeholder #2 -->
         <div id="modal-container">
             <div class="reveal" id="exampleModal2" data-reveal>
-                <h1>Awesome. I Have It.</h1>
-                <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+                <h1 class="content-title">Dream Journal</h1>
+                <p class="content-date">February 14, 2018</p>
+                <p class="content-body">I had this weird dream when I could only speak in Portuguese sonnets... Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus sodales luctus venenatis. Nullam euismod arcu quis nisi aliquet efficitur. Praesent hendrerit iaculis risus, sit amet consequat lectus tincidunt ac. Suspendisse potenti. Praesent auctor tellus eleifend </p>
+                <p class="content-goal"> 323/600 characters <i class="fas fa-times-circle red"></i></p>
                 <button class="close-button" data-close aria-label="Close modal" type="button">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -175,8 +181,18 @@
         <!-- placeholder #3 -->
         <div id="modal-container">
             <div class="reveal" id="exampleModal3" data-reveal>
-                <h1>Awesome. I Have It.</h1>
-                <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+                <h1 class="content-title">Reviewing the New Pizza Place on Main St.</h1>
+                <p class="content-date">February 6, 2018</p>
+                <p class="content-body">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus sodales luctus venenatis. Nullam euismod arcu quis nisi aliquet efficitur. Praesent hendrerit iaculis risus, sit amet consequat lectus tincidunt ac. Suspendisse potenti. Praesent auctor tellus eleifend purus molestie tincidunt.
+                    <br>
+                    <br> Nam faucibus eget leo a sollicitudin. Duis sit amet enim tellus. Morbi odio tortor, lobortis eget ligula ac, lacinia pellentesque purus. Donec ac imperdiet turpis. Fusce ipsum mi, rutrum quis eleifend quis, cursus a nisi. Etiam pretium fringilla ipsum, sed pellentesque eros molestie in. Vestibulum varius, odio vitae efficitur feugiat, ex elit pharetra est, id pellentesque justo diam ut turpis.
+                    <br>
+                    <br> Vestibulum finibus velit in dolor dapibus, eget consequat sem efficitur. Quisque dictum a augue in tempus. Nulla vel lorem a quam vestibulum dignissim. Praesent a viverra metus. Mauris lacinia eros quis augue tempor pharetra. Donec a urna at orci feugiat euismod.
+                    <br>
+                    <br> Maecenas fermentum dolor aliquet nunc facilisis luctus. Proin ac tempus augue. Aliquam vestibulum fringilla ante, vel congue nisl elementum quis. Proin ac ligula id urna scelerisque fermentum non at velit. Curabitur et quam ut enim porta tincidunt. Fusce commodo faucibus ex nec viverra. Nulla facilisi. Suspendisse magna est, pellentesque pellentesque magna a, porta vulputate mauris. Maecenas quis mattis dui.
+                    <br>
+                    <br> Nam feugiat interdum nisl, vitae finibus neque suscipit sit amet. Morbi faucibus maximus magna tincidunt hendrerit. Integer at maximus dolor, nec rutrum dui. Morbi viverra, dolor congue venenatis tristique, magna metus iaculis magna, in viverra felis diam quis est. Pellentesque viverra eros ut sollicitudin porta. Nulla tempor varius elit, vitae bibendum ante bibendum cursus.</p>
+                <p class="content-goal"> 5/4 Paragraphs <i class="fas fa-check-circle green"></i></p>
                 <button class="close-button" data-close aria-label="Close modal" type="button">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -185,8 +201,24 @@
         <!-- placeholder #4 -->
         <div id="modal-container">
             <div class="reveal" id="exampleModal4" data-reveal>
-                <h1>Awesome. I Have It.</h1>
-                <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+                <h1 class="content-title">I Once Ate an Entire Box of Peeps</h1>
+                <p class="content-date">January 25, 2018</p>
+                <p class="content-body">I don't know why I did it. I don't know why I did it. Why did I do it? I don't know why I did it. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus sodales luctus venenatis. Nullam euismod arcu quis nisi aliquet efficitur. Praesent hendrerit iaculis risus, sit amet consequat lectus tincidunt ac. Suspendisse potenti.
+                    <br>
+                    <br> Praesent auctor tellus eleifend purus molestie tincidunt. Suspendisse venenatis in eros nec vestibulum. Fusce ut justo dignissim, aliquam felis vel, finibus turpis. Aliquam bibendum auctor enim eu faucibus. Nulla ac feugiat ipsum, euismod pharetra leo. Maecenas cursus magna eu cursus lacinia. Sed posuere suscipit luctus. Nam faucibus eget leo a sollicitudin. Duis sit amet enim tellus. Morbi odio tortor, lobortis eget ligula ac, lacinia pellentesque purus. Donec ac imperdiet turpis. Fusce ipsum mi, rutrum quis eleifend quis, cursus a nisi. Etiam pretium fringilla ipsum, sed pellentesque eros molestie in. Vestibulum varius, odio vitae efficitur feugiat, ex elit pharetra est, id pellentesque justo diam ut turpis. Nam ac leo orci.
+                    <br>
+                    <br> Donec gravida pellentesque faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer in pharetra magna. Donec at enim lectus. Donec et urna at sapien maximus luctus non mattis justo. Donec libero urna, ullamcorper non est vitae, rutrum pellentesque mauris. Vestibulum finibus velit in dolor dapibus, eget consequat sem efficitur. Quisque dictum a augue in tempus. Nulla vel lorem a quam vestibulum dignissim. Praesent a viverra metus. Mauris lacinia eros quis augue tempor pharetra. Donec a urna at orci feugiat euismod. Fusce vitae odio commodo, ullamcorper nisl a, ullamcorper ante. Praesent nisl elit, sagittis in ultrices nec, placerat nec magna. Donec vitae posuere justo. Ut vehicula purus eget laoreet ultricies. Fusce consectetur rutrum arcu ut condimentum. Integer a lectus quis turpis condimentum vestibulum in vel dui. Proin ullamcorper tellus nec pretium laoreet.
+                    <br>
+                    <br> Donec vel lacus maximus, accumsan mi sit amet, mattis nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus sodales luctus venenatis. Nullam euismod arcu quis nisi aliquet efficitur. Praesent hendrerit iaculis risus, sit amet consequat lectus tincidunt ac. Suspendisse potenti. Praesent auctor tellus eleifend purus molestie tincidunt. Suspendisse venenatis in eros nec vestibulum. Fusce ut justo dignissim, aliquam felis vel, finibus turpis. Aliquam bibendum auctor enim eu faucibus. Nulla ac feugiat ipsum, euismod pharetra leo. Maecenas cursus magna eu cursus lacinia. Sed posuere suscipit luctus.
+                    <br>
+                    <br> Nam faucibus eget leo a sollicitudin. Duis sit amet enim tellus. Morbi odio tortor, lobortis eget ligula ac, lacinia pellentesque purus. Donec ac imperdiet turpis. Fusce ipsum mi, rutrum quis eleifend quis, cursus a nisi. Etiam pretium fringilla ipsum, sed pellentesque eros molestie in. Vestibulum varius, odio vitae efficitur feugiat, ex elit pharetra est, id pellentesque justo diam ut turpis. Nam ac leo orci. Donec gravida pellentesque faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer in pharetra magna. Donec at enim lectus. Donec et urna at sapien maximus luctus non mattis justo. Donec libero urna, ullamcorper non est vitae, rutrum pellentesque mauris.
+                    <br>
+                    <br> Vestibulum finibus velit in dolor dapibus, eget consequat sem efficitur. Quisque dictum a augue in tempus. Nulla vel lorem a quam vestibulum dignissim. Praesent a viverra metus. Mauris lacinia eros quis augue tempor pharetra. Donec a urna at orci feugiat euismod. Fusce vitae odio commodo, ullamcorper nisl a, ullamcorper ante. Praesent nisl elit, sagittis in ultrices nec, placerat nec magna. Donec vitae posuere justo. Ut vehicula purus eget laoreet ultricies. Fusce consectetur rutrum arcu ut condimentum. Integer a lectus quis turpis condimentum vestibulum in vel dui. Proin ullamcorper tellus nec pretium laoreet. Donec vel lacus maximus, accumsan mi sit amet, mattis nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus sodales luctus venenatis. Nullam euismod arcu quis nisi aliquet efficitur. Praesent hendrerit iaculis risus, sit amet consequat lectus tincidunt ac. Suspendisse potenti. Praesent auctor tellus eleifend purus molestie tincidunt. Suspendisse venenatis in eros nec vestibulum. Fusce ut justo dignissim, aliquam felis vel, finibus turpis. Aliquam bibendum auctor enim eu faucibus. Nulla ac feugiat ipsum, euismod pharetra leo. Maecenas cursus magna eu cursus lacinia. Sed posuere suscipit luctus.
+                    <br>
+                    <br> Nam faucibus eget leo a sollicitudin. Duis sit amet enim tellus. Morbi odio tortor, lobortis eget ligula ac, lacinia pellentesque purus. Donec ac imperdiet turpis. Fusce ipsum mi, rutrum quis eleifend quis, cursus a nisi. Etiam pretium fringilla ipsum, sed pellentesque eros molestie in. Vestibulum varius, odio vitae efficitur feugiat, ex elit pharetra est, id pellentesque justo diam ut turpis. Nam ac leo orci. Donec gravida pellentesque faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer in pharetra magna. Donec at enim lectus. Donec et urna at sapien maximus luctus non mattis justo. Donec libero urna, ullamcorper non est vitae, rutrum pellentesque mauris.
+                    <br>
+                    <br> Vestibulum finibus velit in dolor dapibus, eget consequat sem efficitur. Quisque dictum ante.</p>
+                <p class="content-goal"> 769/800 words <i class="fas fa-times-circle red"></i></p>
                 <button class="close-button" data-close aria-label="Close modal" type="button">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -195,8 +227,12 @@
         <!-- placeholder #5 -->
         <div id="modal-container">
             <div class="reveal" id="exampleModal5" data-reveal>
-                <h1>Awesome. I Have It.</h1>
-                <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+                <h1 class="content-title">Struggling as an Artist</h1>
+                <p class="content-date">Jan 3, 2018 - Great American Novel</p>
+                <p class="content-body">Despite my years of dedication to my craft, no one is willing to purchase my wares. Maecenas fermentum dolor aliquet nunc facilisis luctus. Proin ac tempus augue. Aliquam vestibulum fringilla ante, vel congue nisl elementum quis. Proin ac ligula id urna scelerisque fermentum non at velit. Curabitur et quam ut enim porta tincidunt. Fusce commodo faucibus ex nec viverra. Nulla facilisi. Suspendisse magna est, pellentesque pellentesque magna a, porta vulputate mauris. Maecenas quis mattis dui.
+                    <br>
+                    <br> Nam feugiat interdum nisl, vitae finibus neque suscipit sit amet. Morbi faucibus maximus magna tincidunt hendrerit. Integer at maximus dolor, nec rutrum dui. Morbi viverra, dolor congue venenatis tristique, magna metus iaculis magna, in viverra felis diam quis est. Pellentesque viverra eros ut sollicitudin porta. Nulla tempor varius elit, vitae bibendum ante bibendum cursus. Duis vulputate vitae nibh sit amet laoreet. Praesent ornare dolor id arcu rutrum mattis. Phasellus tempus in nisi a malesuada. Nulla a porttitor erat. Etiam sollicitudin aliquam nisl sit amet blandit. Sed arcu nibh, dignissim lobortis metus a, venenatis rhoncus purus. Proin at nulla egestas dui vehi.</p>
+                <p class="content-goal">1201/1000 characters <i class="fas fa-check-circle green"></i></p>
                 <button class="close-button" data-close aria-label="Close modal" type="button">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -205,19 +241,27 @@
         <!-- placeholder #6 -->
         <div id="modal-container">
             <div class="reveal" id="exampleModal6" data-reveal>
-                <h1>Awesome. I Have It.</h1>
-                <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+                <h1 class="content-title">My Time Spent Abroad</h1>
+                <p class="content-date">November 11, 2017 - Travel Blog</p>
+                <p class="content-body">I remember when I first boarded the plane. My heart was pounding with excitement. Nam faucibus eget leo a sollicitudin. Duis sit amet enim tellus. Morbi odio tortor, lobortis eget ligula ac, lacinia pellentesque purus. Donec ac imperdiet turpis. Fusce ipsum mi, rutrum quis eleifend quis, cursus a nisi. Etiam pretium fringilla ipsum, sed pellentesque eros molestie in. Vestibulum varius, odio vitae efficitur feugiat, ex elit pharetra est, id pellentesque justo diam ut turpis. Nam ac leo orci. Donec gravida pellentesque faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer in pharetra magna. Donec at enim lectus. Donec et urna at sapien maximus luctus non mattis justo. Donec libero urna, ullamcorper non est vitae, rutrum pellentesque mauris.
+                    <br>
+                    <br> Vestibulum finibus velit in dolor dapibus, eget consequat sem efficitur. Quisque dictum a augue in tempus. Nulla vel lorem a quam vestibulum dignissim. Praesent a viverra metus. Mauris lacinia eros quis augue tempor pharetra. Donec a urna at orci feugiat euismod. Fusce vitae odio commodo, ullamcorper nisl a, ullamcorper ante. Praesent nisl elit, sagittis in ultrices nec, placerat nec magna. Donec vitae posuere justo. Ut vehicula purus eget laoreet ultricies. Fusce consectetur rutrum arcu ut condimentum. Integer a lectus quis turpis condimentum vestibulum in vel dui. Proin ullamcorper tellus nec pretium laoreet. Donec vel lacus maximus, accumsan mi sit amet, mattis nisl.
+                    <br>
+                    <br>
+                </p>
+                <p class="content-goal">221/200 words <i class="fas fa-check-circle green"></i></p>
                 <button class="close-button" data-close aria-label="Close modal" type="button">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
         </div>
     </div>
+    <footer>
+</footer>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/what-input/dist/what-input.js"></script>
     <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
     <script src="js/min/app-min.js"></script>
     <script src="js/fontawesome-all.js"></script>
 </body>
-
 </html>

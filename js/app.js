@@ -62,6 +62,8 @@ let body = document.body;
 let modal_container = document.getElementById("modal-container");
 // hide icon
 let hide_icon = document.getElementById("hide-icon");
+// teaser character limit
+let teaserLimit = 57;
 
 // EDITOR FUNCTIONALITY
 
@@ -188,9 +190,12 @@ function paragraphCount(s) {
 // applies active class to unit buttons
 function unitButtonActive() {
     removeActiveUnitButton();
+    // removeActiveUnitButton();
     if (this.classList.contains("active")) {
         this.classList.remove("active");
-    } else this.classList.add("active");
+    } else {
+        this.classList.add("active");
+    }
 }
 
 // remove active class from unit buttons
@@ -310,6 +315,7 @@ let autoExpand = function(field) {
 // clears input and updates progress feedback after submission
 function clearInput() {
     words_input.value = "";
+    title_input.value ="";
     refreshAll();
 
 }
@@ -344,7 +350,7 @@ save_button.addEventListener("click", createEntry);
 
 // generates the content teaser for entry cards, first 55 characters
 function generateTeaser(s) {
-    if (s.length < 57) {
+    if (s.length < teaserLimit) {
         return s;
     } else {
         let teaser = s.substring(0, 56) + "...";

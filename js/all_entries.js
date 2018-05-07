@@ -21,7 +21,6 @@ function searchEntry() {
     var i;
     for (i = 0; i < all_entries.length; i++) {
         if (all_entries[i].innerText.toLowerCase().includes(search_term)) {
-            console.log(all_entries[i].innerText)
             all_entries[i].classList.remove("hide");
             all_entries[i].parentElement.classList.remove("hide");
         } else {
@@ -40,7 +39,6 @@ function searchProject() {
     } else {
         for (i = 0; i < all_entries.length; i++) {
             if (all_entries[i].dataset.project == project_value) {
-                console.log(all_entries[i].innerText)
                 all_entries[i].classList.remove("hide");
                 all_entries[i].parentElement.classList.remove("hide");
             } else {

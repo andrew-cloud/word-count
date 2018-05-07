@@ -75,6 +75,9 @@ body {
     background: #f5f6f6;
     font-family: 'Lato', sans-serif;
     -ms-overflow-style: none;
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 1rem;
 }
 
 body::-webkit-scrollbar {
@@ -169,7 +172,7 @@ textarea {
         color: white;
     }
 
-    .active {
+    .nav-active {
         color: $active;
     }
 }
@@ -364,6 +367,7 @@ textarea {
     width: 100%;
     border-radius: 4px;
     background-color: $container-background;
+    margin-bottom: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
     transition: all 800ms ease;
@@ -392,7 +396,7 @@ textarea {
     width: 100%;
     overflow: hidden;
     @include breakpoint(small only) {
-        height: 10rem;
+        height: 11rem;
     }
 
 
@@ -655,6 +659,7 @@ textarea {
     width: 100%;
     border-radius: 4px;
     background-color: $container-background;
+    margin-bottom: 2rem;
     padding: 2rem 2rem 0.5rem 2rem;
     overflow: hidden;
     @include box-shadow;
@@ -705,6 +710,15 @@ textarea {
     margin: 0.5rem 0;
 }
 
+// FOOTER
+
+footer {
+    position: absolute;
+    background-color: $purple;
+    height: 1rem;
+    width: 100%;
+}
+
 // MODALS
 .reveal {
     border-radius: $border-radius;
@@ -715,6 +729,11 @@ textarea {
         font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 0;
+        @include breakpoint(small only) {
+        line-height: 1.75rem;
+    }
+
+        
     }
 
     .content-date {
