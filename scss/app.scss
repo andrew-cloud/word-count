@@ -663,26 +663,24 @@ textarea {
 
         input[type='text'] {
             border-radius: $border-radius 0 0 $border-radius;
-            border: 2px solid #d4d5d6;
-            // border-right: none;
+            border: 2px solid #d4d5d6; // border-right: none;
         }
 
         #search-bar-icon {
-            color: white;
-            background-color: #d4d5d6;
             border-radius: 0 $border-radius $border-radius 0;
-            border: 2px solid #d4d5d6;
             border-left: none;
-            position: relative;
         }
 
-        #search-bar-icon-focused {
+        .search-bar-icon-unfocused {
+            color: white;
+            background-color: #d4d5d6;
+            border: 2px solid #d4d5d6;
+        }
+
+        .search-bar-icon-focused {
             color: white;
             background-color: #C0C0C0;
-            border-radius: 0 $border-radius $border-radius 0;
             border: 2px solid #C0C0C0;
-            border-left: none;
-            position: relative;
             box-shadow: 0 0 5px $medium-gray;
         }
     }

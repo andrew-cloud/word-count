@@ -3,6 +3,7 @@ $(document).foundation();
 // ALL ENTRIES
 let all_entries = document.getElementsByClassName("entry");
 let search_input = document.getElementById("search-input");
+let search_bar_icon = document.getElementById("search-bar-icon");
 let container = document.getElementById("all-entries-inner-container");
 let search_term = search_input.value.toLowerCase();
 let project_dropdown = document.getElementById("project-dropdown");
@@ -60,9 +61,25 @@ function displayAllEntries() {
     }
 }
 
+// adds focused class to search icon
+function focusSearchIcon() {
+	search_bar_icon.classList.remove("search-bar-icon-unfocused");
+    search_bar_icon.classList.add("search-bar-icon-focused");
+}
+
+// removes focused class from search icon
+function unfocusSearchIcon() {
+	search_bar_icon.classList.add("search-bar-icon-unfocused");
+    search_bar_icon.classList.remove("search-bar-icon-focused");
+}
+
 // refreshes search term on input
 search_input.addEventListener('input', refreshSearchTerm);
 // listens for words entered in search bar
 search_input.addEventListener('input', searchEntry);
+// listens for focus on search bar
+search_input.addEventListener('focus', focusSearchIcon);
+// listens for unfocus on search bar
+search_input.addEventListener('blur', unfocusSearchIcon);
 // listens for new dropdown selection
 project_dropdown.addEventListener('input', searchProject);
