@@ -6021,10 +6021,12 @@ textarea {
     position: relative; }
     #all-entries-container #search-bar input[type='text'] {
       border-radius: 4px 0 0 4px;
-      border: 2px solid #d4d5d6; }
+      border: 2px solid #d4d5d6;
+      border-right: none; }
     #all-entries-container #search-bar #search-bar-icon {
       border-radius: 0 4px 4px 0;
-      border-left: none; }
+      border-left: none;
+      transition: 230ms; }
     #all-entries-container #search-bar .search-bar-icon-unfocused {
       color: white;
       background-color: #d4d5d6;
