@@ -70,6 +70,11 @@ $lightGrey: #6c716f;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
+html {
+    position: relative;
+    height: 100%;
+}
+
 // BODY
 body {
     background: #f5f6f6;
@@ -185,6 +190,7 @@ textarea {
     width: 60%;
     padding: 2rem 1rem 2rem 1rem;
     border-radius: 4px;
+    min-height: 100%;
     @include breakpoint(medium only) {
         width: 90%;
     }
@@ -713,10 +719,14 @@ textarea {
 // FOOTER
 
 footer {
-    position: absolute;
     background-color: $purple;
-    height: 1rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 20px;
     width: 100%;
+    overflow: hidden;
+    margin-top: 2rem;
 }
 
 // MODALS

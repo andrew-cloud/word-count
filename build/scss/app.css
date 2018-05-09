@@ -5597,7 +5597,7 @@ a.thumbnail {
 
 html {
   position: relative;
-  height: 100%; }
+  min-height: 100%; }
 
 body {
   background: #f5f6f6;
@@ -6060,14 +6060,13 @@ textarea {
   margin: 0.5rem 0; }
 
 footer {
-  background-color: #674CAA;
+  background-color: orange;
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 20px;
+  height: 100px;
   width: 100%;
-  overflow: hidden;
-  margin-top: 2rem; }
+  overflow: hidden; }
 
 .reveal {
   border-radius: 4px;
